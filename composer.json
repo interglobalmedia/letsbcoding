@@ -1,0 +1,16 @@
+{
+    "name": "letsbcoding/letsbcoding",
+    "type": "application",
+    "description": "A WordPress application for an educational community site built with WordPress",
+    "keywords": ["wordpress, composer, phpdotenv"],
+    "license": "ISC",
+    "repositories": [
+        {
+        "type": "composer",
+        "url": "https://wpackagist.org"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.3"
+    }
+}
