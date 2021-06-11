@@ -1,7 +1,7 @@
 .search-overlay {
   overflow-y: auto;
   overflow-x: hidden;
-  z-index: 110;
+  z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
