@@ -74,15 +74,50 @@ class Search {
     }
 
     async renderHTML() {
-        const apiResPost = fetch(`${bcodingData.root_url}/wp-json/wp/v2/posts?search=${this.searchField.value}`).then((response) => response.json())
-        const apiResPage = fetch(`${bcodingData.root_url}/wp-json/wp/v2/pages?search=${this.searchField.value}`).then((response) => response.json())
-        const data = await Promise.all([apiResPost, apiResPage])
-        this.searchResultsDiv.innerHTML = `
-        <h2 class="search-overlay__section-title">Search Results</h2>
-        <ul class="link-list min-list">
-            ${!data[0].length && !data[1].length ? `<p>No result matches your search<p>` :
-            `${data[0].map(arr => `<li><a href="${arr.link}">${arr.title.rendered}</a> by ${arr.authorName}</li>`).join(''). concat(data[1].map(arr => `<li><a href="${arr.link}">${arr.title.rendered}</a></li>`).join(''))}    
-        </ul> `}`
+        // await response of fetch call
+        let response = await fetch(`${bcodingData.root_url}/wp-json/bcoding/v1/search?term=${this.searchField.value}`)
+        // only proceed once promise is resolved
+        let results = await response.json()
+        // const results = await this.apiEndpointCall()
+        return this.searchResultsDiv.innerHTML = `
+            <div class="row">
+                <div class="one-third">
+
+                    <h2 class="search-overlay__section-title">General Search Results</h2>
+
+                    <ul class="link-list min-list">
+                        ${!results.generalResults.length ? `<p>No data matches your search<p>` :
+                        `${results.generalResults.map(result => `<li><a href="${result.permalink}">${result.title}</a> by ${result.authorName}</li>`).join('')}    
+                    </ul> `}
+
+                </div>
+                <div class="one-third">
+
+                    <h2 class="search-overlay__section-title">Programs</h2>
+                    
+                    <ul class="link-list min-list">
+                        ${!results.programs.length ? `<p>No programs match your search. <a href="${bcodingData.root_url}/programs">View all programs.</a><p>` :
+                        `${results.programs.map(result => `<li><a href="${result.permalink}">${result.title}</a></li>`).join('')}    
+                    </ul> `}
+
+                    <h2 class="search-overlay__section-title">Professors</h2>
+                    
+
+                </div>
+                <div class="one-third">
+
+                    <h2 class="search-overlay__section-title">Campuses</h2>
+
+                        <ul class="link-list min-list">
+                            ${!results.campuses.length ? `<p>No campuses matches your search. <a href="${bcodingData.root_url}/campuses">View all programs.</a><p>` :
+                            `${results.campuses.map(result => `<li><a href="${result.permalink}">${result.title}</a></li>`).join('')}    
+                        </ul> `}
+
+                    <h2 class="search-overlay__section-title">Events</h2>
+                    
+                </div>
+            </div>
+        `
     }
 
     getSearchResults() {
@@ -103,8 +138,8 @@ class Search {
 		//else return true
 		return true;
     }
-    
-    addSearchHTML() {
+
+     addSearchHTML() {
         // create a new element
         const elem = document.createElement('div');
         // set a class attribute
