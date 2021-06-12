@@ -101,20 +101,44 @@ class Search {
                     </ul> `}
 
                     <h2 class="search-overlay__section-title">Professors</h2>
-                    
+
+                    <ul class="professor-cards">
+                        ${!results.professors.length ? `<p>No professors match your search.<p>` :
+            `${results.professors.map(result => `
+
+                        <li class="professor-card__list-item">
+                            <a class="professor-card" href="${result.permalink}">
+                                <img class="professor-card__image" src="${result.image}">
+                                <span class="professor-card__name">${result.title}</span>
+                            </a>
+                        </li>
+                        `).join('')}
+                    </ul> `}
 
                 </div>
                 <div class="one-third">
 
                     <h2 class="search-overlay__section-title">Campuses</h2>
 
-                        <ul class="link-list min-list">
-                            ${!results.campuses.length ? `<p>No campuses matches your search. <a href="${bcodingData.root_url}/campuses">View all programs.</a><p>` :
-                            `${results.campuses.map(result => `<li><a href="${result.permalink}">${result.title}</a></li>`).join('')}    
-                        </ul> `}
-
+                    <ul class="link-list min-list">
+                        ${!results.campuses.length ? `<p>No campuses matches your search. <a href="${bcodingData.root_url}/campuses">View all programs.</a><p>` :
+                        `${results.campuses.map(result => `<li><a href="${result.permalink}">${result.title}</a></li>`).join('')}    
+                    </ul> `}
                     <h2 class="search-overlay__section-title">Events</h2>
                     
+                        ${!results.events.length ? `<p>No campuses matches your search. <a href="${bcodingData.root_url}/events">View all events.</a><p>` :
+                        `${results.events.map(result => `
+                        <div class="event-summary">
+                            <a class="event-summary__date event-summary__date--blue t-center" href="${result.permalink}">
+                            <span class="event-summary__month">${result.month}</span>
+                            <span class="event-summary__day">${result.day}</span>
+                            </a>
+                            <div class="event-summary__content">
+                            <h5 class="event-summary__title headline headline--tiny"><a href="${result.permalink}">${result.title}</a></h5>
+                            <p>${result.description} <a href="${result.permalink}" class="nu gray">Read more</a></p>
+                        </div>
+                    </div>
+                        `).join('')}`}
                 </div>
             </div>
         `
