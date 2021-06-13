@@ -82,30 +82,21 @@ class Search {
         return this.searchResultsDiv.innerHTML = `
             <div class="row">
                 <div class="one-third">
-
-                    <h2 class="search-overlay__section-title">General Search Results</h2>
-
-                    <ul class="link-list min-list">
-                        ${!results.generalResults.length ? `<p>No data matches your search<p>` :
-                        `${results.generalResults.map(result => `<li><a href="${result.permalink}">${result.title}</a> by ${result.authorName}</li>`).join('')}    
-                    </ul> `}
-
+                    <h2 class="search-overlay__section-title">General Results</h2>
+                        ${results.generalResults.length ? `<ul class="link-list min-list">` : `<p>No data matches your search<p>`}
+                        ${results.generalResults.map(result => `<li><a href="${result.permalink}">${result.title}</a> by ${result.authorName}</li>`).join('')}    
+                    ${results.generalResults.length ? `</ul>` : ``}
                 </div>
-                <div class="one-third">
 
+                <div class="one-third">
                     <h2 class="search-overlay__section-title">Programs</h2>
-                    
-                    <ul class="link-list min-list">
-                        ${!results.programs.length ? `<p>No programs match your search. <a href="${bcodingData.root_url}/programs">View all programs.</a><p>` :
-                        `${results.programs.map(result => `<li><a href="${result.permalink}">${result.title}</a></li>`).join('')}    
-                    </ul> `}
+                        ${results.programs.length ? `<ul class="link-list min-list">` : `<p>No programs match your search. <a href="${bcodingData.root_url}/programs">View all programs.</a><p>`}
+                        ${results.programs.map(result => `<li><a href="${result.permalink}">${result.title}</a></li>`).join('')}    
+                    ${results.programs.length ? `</ul>` : ``}
 
                     <h2 class="search-overlay__section-title">Professors</h2>
-
-                    <ul class="professor-cards">
-                        ${!results.professors.length ? `<p>No professors match your search.<p>` :
-            `${results.professors.map(result => `
-
+                        ${results.professors.length ? `<ul class="professor-cards">` : `<p>No professors match your search.<p>`}
+                        ${results.professors.map(result => `
                         <li class="professor-card__list-item">
                             <a class="professor-card" href="${result.permalink}">
                                 <img class="professor-card__image" src="${result.image}">
@@ -113,20 +104,17 @@ class Search {
                             </a>
                         </li>
                         `).join('')}
-                    </ul> `}
-
+                    ${results.professors.length ? `</ul>` : ``}
                 </div>
+                
                 <div class="one-third">
-
                     <h2 class="search-overlay__section-title">Campuses</h2>
+                        ${results.campuses.length ? `<ul class="link-list min-list">` : `<p>No campuses matches your search. <a href="${bcodingData.root_url}/campuses">View all programs.</a></p>`}
+                        ${results.campuses.map(result => `<li><a href="${result.permalink}">${result.title}</a> ${result.postType === 'post' ? `by ${result.authorName}` : ``}</li>`).join('')}
+                        ${results.campuses.length ? `</ul>` : ``}
 
-                    <ul class="link-list min-list">
-                        ${!results.campuses.length ? `<p>No campuses matches your search. <a href="${bcodingData.root_url}/campuses">View all programs.</a><p>` :
-                        `${results.campuses.map(result => `<li><a href="${result.permalink}">${result.title}</a></li>`).join('')}    
-                    </ul> `}
                     <h2 class="search-overlay__section-title">Events</h2>
-                    
-                        ${!results.events.length ? `<p>No campuses matches your search. <a href="${bcodingData.root_url}/events">View all events.</a><p>` :
+                        ${!results.events.length ? `<p>No campuses matches your search. <a href="${bcodingData.root_url}/events">View all events.</a></p>` :
                         `${results.events.map(result => `
                         <div class="event-summary">
                             <a class="event-summary__date event-summary__date--blue t-center" href="${result.permalink}">
@@ -134,10 +122,10 @@ class Search {
                             <span class="event-summary__day">${result.day}</span>
                             </a>
                             <div class="event-summary__content">
-                            <h5 class="event-summary__title headline headline--tiny"><a href="${result.permalink}">${result.title}</a></h5>
-                            <p>${result.description} <a href="${result.permalink}" class="nu gray">Read more</a></p>
+                                <h5 class="event-summary__title headline headline--tiny"><a href="${result.permalink}">${result.title}</a></h5>
+                                <p>${result.description} <a href="${result.permalink}" class="nu gray">Read more</a></p>
+                            </div>
                         </div>
-                    </div>
                         `).join('')}`}
                 </div>
             </div>

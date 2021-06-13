@@ -59,6 +59,10 @@
     border-bottom: 1px solid #CCC;
   }
 
+  & .professor-cards p {
+      padding-top: 0;
+  }
+
   &__close {
     position: absolute;
     top: 4.5rem;
