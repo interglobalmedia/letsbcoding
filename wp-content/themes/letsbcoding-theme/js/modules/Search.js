@@ -114,12 +114,12 @@ class Search {
                 
                 <div class="one-third">
                     <h2 class="search-overlay__section-title">Campuses</h2>
-                        ${results.campuses.length ? `<ul class="link-list min-list">` : `<p>No campuses matches your search. <a href="${bcodingData.root_url}/campuses">View all programs.</a></p>`}
+                        ${results.campuses.length ? `<ul class="link-list min-list">` : `<p>No campuses matches your search. <a href="${bcodingData.root_url}/campuses">View all campuses.</a></p>`}
                         ${results.campuses.map(result => `<li><a href="${result.permalink}">${result.title}</a> ${result.postType === 'post' ? `by ${result.authorName}` : ``}</li>`).join('')}
                         ${results.campuses.length ? `</ul>` : ``}
 
                     <h2 class="search-overlay__section-title">Events</h2>
-                        ${!results.events.length ? `<p>No campuses matches your search. <a href="${bcodingData.root_url}/events">View all events.</a></p>` :
+                        ${!results.events.length ? `<p>No events matches your search. <a href="${bcodingData.root_url}/events">View all events.</a></p>` :
                         `${results.events.map(result => `
                         <div class="event-summary">
                             <a class="event-summary__date event-summary__date--blue t-center" href="${result.permalink}">
@@ -164,5 +164,4 @@ class Search {
 }
  
 export default Search;
-
 
