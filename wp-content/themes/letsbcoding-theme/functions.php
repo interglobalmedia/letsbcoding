@@ -100,4 +100,27 @@ function bcoding_adjust_queries($query) {
 
 add_action('pre_get_posts', 'bcoding_adjust_queries');
 
+function redirectSubsHome() {
+    $currentUser = wp_get_current_user();
+    // roles is an array that contains all the different roles that have been assigned to a user
+    if (count($currentUser->roles) === 1 AND $currentUser->roles[0] === 'subscriber') {
+        wp_redirect(site_url('/'));
+        exit;
+    }
+}
+
+// redirect subscriber account out of admin and onto home page
+add_action('admin_init', 'redirectSubsHome');
+
+function subsNoAdminBar() {
+    $currentUser = wp_get_current_user();
+    // roles is an array that contains all the different roles that have been assigned to a user
+    if (count($currentUser->roles) === 1 AND $currentUser->roles[0] === 'subscriber') {
+        show_admin_bar(false);
+    }
+}
+
+// hide admin bar from subscriber account
+add_action('wp_loaded', 'subsNoAdminBar');
+
 ?>
