@@ -16,7 +16,7 @@ body.login .button-primary:focus {
 }
 
 body.login {
-  background-color: $beige;
+  background-color: #f9f0e0;
 }
 
 .login h1 a {
