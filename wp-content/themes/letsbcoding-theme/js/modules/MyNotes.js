@@ -1,9 +1,15 @@
+import axios from "axios"
 class MyNotes {
     constructor() {
         this.deleteBtns = document.querySelectorAll('.delete-note')
         this.editBtns = document.querySelectorAll('.edit-note')
         this.updateBtns = document.querySelectorAll('.update-note')
         this.noteValues = {}
+        this.submitNote = document.querySelector('.submit-note')
+        if (this.submitNote) {
+            axios.defaults.headers.common["X-WP-Nonce"] = bcodingData.nonce
+            this.submitNote = document.querySelector('.submit-note')
+        }
         this.events()
     }
     events() {
@@ -15,6 +21,10 @@ class MyNotes {
         })
         this.updateBtns.forEach((updateBtn) => {
             updateBtn.addEventListener('click', (e) => this.updateNote(e))
+        })
+        this.submitNote.addEventListener("click", () => {
+            this.createNote()
+            console.log(`note created!`)
         })
     }
 
@@ -111,6 +121,56 @@ class MyNotes {
             })
             this.makeReadOnly(note)
             console.log(response)
+        } catch (err) {
+            console.log(err)
+        }
+    }
+
+    async createNote() {
+        let newNote = {
+            "title": document.querySelector(".new-note-title").value,
+            "content": document.querySelector(".new-note-body").value,
+            "status": "publish"
+        }
+        try {
+            const response = await axios.post(`${bcodingData.root_url}/wp-json/wp/v2/note/`, newNote)
+            console.log(response.data)
+            if (response.data !== "You have reached your note limit.") {
+                document.querySelector(".new-note-title").value = ``
+                document.querySelector(".new-note-body").value = ``
+                document.querySelector('#my-notes').insertAdjacentHTML("afterbegin",
+                `<li data-note-id="${response.data.id}" class="fade-in-calc">
+                    <input readonly class="note-title-field" value="${response.data.title.raw}">
+                    <span class="edit-note"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</span>
+                    <span class="delete-note"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</span>
+                    <textarea readonly class="note-body-field">${response.data.content.raw}</textarea>
+                    <span class="update-note btn btn--blue btn--small"><i class="fa fa-arrow-right" aria-hidden="true"></i> Save</span>
+                </li>`)
+                // notice in the above HTML for the new <li> I gave it a class of fade-in-calc which will make it invisible temporarily so we can count its natural height
+
+                let finalHeight // browser needs a specific height to transition to, you can't transition to 'auto' height
+                let newlyCreated = document.querySelector("#my-notes li")
+
+                // give the browser 30 milliseconds to have the invisible element added to the DOM before moving on
+                setTimeout(function () {
+                finalHeight = `${newlyCreated.offsetHeight}px`
+                newlyCreated.style.height = "0px"
+                }, 30)
+
+                // give the browser another 20 milliseconds to count the height of the invisible element before moving on
+                setTimeout(function () {
+                newlyCreated.classList.remove("fade-in-calc")
+                newlyCreated.style.height = finalHeight
+                }, 50)
+
+                // wait the duration of the CSS transition before removing the hardcoded calculated height from the element so that our design is responsive once again
+                setTimeout(function () {
+                newlyCreated.style.removeProperty("height")
+                }, 450)
+
+            } else {
+                document.querySelector(".note-limit-message").classList.add("active")
+            }
         } catch (err) {
             console.log(err)
         }
