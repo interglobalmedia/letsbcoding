@@ -24,7 +24,6 @@ class MyNotes {
         })
         this.submitNote.addEventListener("click", () => {
             this.createNote()
-            console.log(`note created!`)
         })
     }
 
@@ -130,12 +129,13 @@ class MyNotes {
         let newNote = {
             "title": document.querySelector(".new-note-title").value,
             "content": document.querySelector(".new-note-body").value,
-            "status": "publish"
+            "status": "private"
         }
         try {
             const response = await axios.post(`${bcodingData.root_url}/wp-json/wp/v2/note/`, newNote)
             console.log(response.data)
             if (response.data !== "You have reached your note limit.") {
+                console.log(`note created!`)
                 document.querySelector(".new-note-title").value = ``
                 document.querySelector(".new-note-body").value = ``
                 document.querySelector('#my-notes').insertAdjacentHTML("afterbegin",
