@@ -1,8 +1,12 @@
+import axios from 'axios'
+
 class Like {
     constructor() {
         this.likeBox = document.querySelector('.like-box')
+        if (this.likeBox) {
+            axios.defaults.headers.common["X-WP-Nonce"] = bcodingData.nonce
+        }
         this.events()
-        
     }
 
     events() {
@@ -20,12 +24,24 @@ class Like {
         }
     }
 
-    createLike() {
-        alert('I just created a like')
+    async createLike() {
+        const url = `${bcodingData.root_url}/wp-json/bcoding/v1/manageLike`
+        try {
+            const response = await axios.post(url)
+            console.log(response.data)
+        } catch (e) {
+            console.error(e)
+        }
     }
 
-    deleteLike() {
-        alert('I just deleted a like')
+    async deleteLike() {
+        try {
+            const url = `${bcodingData.root_url}/wp-json/bcoding/v1/manageLike`
+            const response = await axios.delete(url)
+            console.log(response.data)
+        } catch (err) {
+            console.log(err)
+        }
     }
 }
 
