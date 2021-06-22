@@ -6,6 +6,9 @@ function bcoding_custom_rest() {
     register_rest_field('post', 'authorName', array(
         'get_callback' => function() {return get_the_author();}
     ));
+    register_rest_field('note', 'userNoteCount', array(
+        'get_callback' => function() {return count_user_posts(get_current_user_id(), 'note');}
+    ));
 }
 
 add_action('rest_api_init', 'bcoding_custom_rest');
@@ -52,8 +55,8 @@ function bcoding_files() {
         );
     } else {
         wp_enqueue_script('main-vendors-js', get_theme_file_uri('/bundled-assets/undefined'), NULL, '1.0', true);
-        wp_enqueue_script('main-bcoding-js', get_theme_file_uri('/bundled-assets/scripts.21bfc008e2b007b39d04.js'), NULL, '1.0', true);
-        wp_enqueue_style('main-styles', get_theme_file_uri('/bundled-assets/styles.21bfc008e2b007b39d04.css'));
+        wp_enqueue_script('main-bcoding-js', get_theme_file_uri('/bundled-assets/scripts.07268eb330c6a81abe44.js'), NULL, '1.0', true);
+        wp_enqueue_style('main-styles', get_theme_file_uri('/bundled-assets/styles.07268eb330c6a81abe44.css'));
     }
     wp_localize_script('main-bcoding-js', 'bcodingData', array(
         'root_url' => get_site_url(),
@@ -135,7 +138,7 @@ add_filter('login_headerurl', 'customHeaderUrl');
 
 function customLoginCSS() {
     wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
-    wp_enqueue_style('main-styles', get_theme_file_uri('/bundled-assets/styles.21bfc008e2b007b39d04.css'));
+    wp_enqueue_style('main-styles', get_theme_file_uri('/bundled-assets/styles.07268eb330c6a81abe44.css'));
 }
 
 add_action('login_enqueue_scripts', 'customLoginCSS');
@@ -146,13 +149,16 @@ function customLoginTitle() {
 
 add_filter('login_headertitle', 'customLoginTitle');
 
-function makeNotePrivate($data) {
+function makeNotePrivate($data, $postarr) {
     if ($data['post_type'] === 'note') {
+        if (count_user_posts(get_current_user_id(), 'note') > 2 AND !$postarr['ID'] AND ! in_array( 'administrator', wp_get_current_user()->roles, true)) {
+            die('You have reached your note limit!');
+        }
         $data['post_content'] = sanitize_textarea_field($data['post_content']);
         $data['post_title'] = sanitize_text_field($data['post_title']);
     }
 
-    if ($data['post_type'] === 'note' AND  $data['post_status'] !== 'trash') {
+    if ($data['post_type'] === 'note' AND $data['post_status'] !== 'trash') {
         $data['post_status'] = 'private';
     }
     
@@ -160,6 +166,6 @@ function makeNotePrivate($data) {
 }
 
 // force note posts to be private
-add_filter('wp_insert_post_data', 'makeNotePrivate');
+add_filter('wp_insert_post_data', 'makeNotePrivate', 10, 2);
 
 ?>
