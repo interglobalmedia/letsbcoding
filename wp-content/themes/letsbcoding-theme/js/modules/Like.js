@@ -15,19 +15,24 @@ class Like {
 
     // methods
     clickDispatcher(e) {
-        const currentLikeBox = e.target.closest('.like-box')
+        let currentLikeBox = e.target.closest('.like-box')
+        // while (!currentLikeBox.classList.contains('.like-box')) {
+        //     currentLikeBox = currentLikeBox.parentElement
+        // }
         if (currentLikeBox.getAttribute('data-exists') !== 'yes') {
-            this.createLike()
+            this.createLike(currentLikeBox)
         } else {
-            this.deleteLike()
+            this.deleteLike(currentLikeBox)
             
         }
     }
 
-    async createLike() {
+    async createLike(currentLikeBox) {
         const url = `${bcodingData.root_url}/wp-json/bcoding/v1/manageLike`
         try {
-            const response = await axios.post(url)
+            const response = await axios.post(url, {
+                professorId: currentLikeBox.getAttribute('data-professor')
+            })
             console.log(response.data)
         } catch (e) {
             console.error(e)
