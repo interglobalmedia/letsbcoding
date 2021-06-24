@@ -32,7 +32,7 @@ function createLike($data) {
             return wp_insert_post(array(
                 'post_type' => 'like',
                 'post_status' => 'publish',
-                'post_title' => '2nd PHP Test',
+                'post_title' => get_post_field('post_title', $professor) . ' like made by ' .get_the_author_meta( 'nickname', get_current_user_id() ),
                 'meta_input' => array(
                     'liked_professor_id' => $professor
                 )
@@ -41,12 +41,18 @@ function createLike($data) {
             die('Invalid professor id.');
         }
     } else {
-        die("Only logged in users can create a like!");
+        die('Only logged in users can create a like!');
     }
 }
 
-function deleteLike() {
-    return 'Thanks for trying to delete a like!';
+function deleteLike($data) {
+    $likeId = sanitize_text_field($data['like']);
+    if (get_current_user_id() === get_post_field('post_author', $likeId) AND get_post_type($likeId) === 'like') {
+        wp_delete_post($likeId, true);
+        return 'Like successfully deleted.';
+    } else {
+        die('You do not have permission to delete this like!');
+    }
 }
 
 add_action('rest_api_init', 'bcodingLikeRoutes');
