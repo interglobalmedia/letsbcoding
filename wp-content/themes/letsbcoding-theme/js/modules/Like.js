@@ -5,8 +5,8 @@ class Like {
         this.likeBox = document.querySelector('.like-box')
         if (this.likeBox) {
             axios.defaults.headers.common["X-WP-Nonce"] = bcodingData.nonce
+            this.events()
         }
-        this.events()
     }
 
     events() {
@@ -16,33 +16,43 @@ class Like {
     // methods
     clickDispatcher(e) {
         let currentLikeBox = e.target.closest('.like-box')
-        // while (!currentLikeBox.classList.contains('.like-box')) {
-        //     currentLikeBox = currentLikeBox.parentElement
-        // }
-        if (currentLikeBox.getAttribute('data-exists') !== 'yes') {
+        if (currentLikeBox.getAttribute('data-exists') === 'no') {
             this.createLike(currentLikeBox)
         } else {
             this.deleteLike(currentLikeBox)
-            
         }
     }
 
     async createLike(currentLikeBox) {
-        const url = `${bcodingData.root_url}/wp-json/bcoding/v1/manageLike`
         try {
+            const url = `${bcodingData.root_url}/wp-json/bcoding/v1/manageLike`
             const response = await axios.post(url, {
                 professorId: currentLikeBox.getAttribute('data-professor')
             })
-            console.log(response.data)
+            if (response.data !== 'Only logged in users can create a like!') {
+                currentLikeBox.setAttribute('data-exists', 'yes')
+                let likeCount = parseInt(currentLikeBox.querySelector('.like-count').innerHTML, 10)
+                likeCount++
+                currentLikeBox.querySelector('.like-count').innerHTML = likeCount
+                currentLikeBox.setAttribute('data-like', response.data)
+                console.log(response.data)
+            }
         } catch (e) {
-            console.error(e)
+            console.log('Sorry!')
         }
     }
 
-    async deleteLike() {
+    async deleteLike(currentLikeBox) {
         try {
-            const url = `${bcodingData.root_url}/wp-json/bcoding/v1/manageLike`
-            const response = await axios.delete(url)
+            const url = `${bcodingData.root_url}/wp-json/bcoding/v1/manageLike`    
+            const response = await axios.delete(url, {
+                like: currentLikeBox.getAttribute('data-like')
+            })
+            currentLikeBox.setAttribute('data-exists', 'no')
+            let likeCount = parseInt(currentLikeBox.querySelector('.like-count').innerHTML, 10)
+            likeCount--
+            currentLikeBox.querySelector('.like-count').innerHTML = likeCount
+            currentLikeBox.setAttribute('data-like', '')
             console.log(response.data)
         } catch (err) {
             console.log(err)
