@@ -169,4 +169,11 @@ function makeNotePrivate($data, $postarr) {
 // force note posts to be private
 add_filter('wp_insert_post_data', 'makeNotePrivate', 10, 2);
 
+function filesToIgnore($exclude_filters) {
+    $exclude_filters[] = 'themes/letsbcoding-theme/node_modules';
+    return $exclude_filters;
+}
+
+add_filter('ai1wm_exclude_content_from_export', 'filesToIgnore');
+
 ?>
