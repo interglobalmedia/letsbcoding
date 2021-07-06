@@ -51,9 +51,6 @@ function bcoding_files() {
 
     if (strstr($_SERVER['SERVER_NAME'], 'letsbcoding.local')) {
         wp_enqueue_script('main-bcoding-js', 'http://localhost:3000/bundled.js', NULL, '1.0', true);
-        wp_localize_script('main-bcoding-js', 'php_vars', array(
-            'mapbox_access_token' => $_ENV["MAPBOX_ACCESS_TOKEN"])
-        );
     } else {
         wp_enqueue_script('main-vendors-js', get_theme_file_uri('/bundled-assets/undefined'), NULL, '1.0', true);
         wp_enqueue_script('main-bcoding-js', get_theme_file_uri('/bundled-assets/scripts.c81d27cb8682c6be8622.js'), NULL, '1.0', true);
@@ -63,6 +60,9 @@ function bcoding_files() {
         'root_url' => get_site_url(),
         'nonce' => wp_create_nonce( 'wp_rest')
     ));
+    wp_localize_script('main-bcoding-js', 'php_vars', array(
+        'mapbox_access_token' => $_ENV["MAPBOX_ACCESS_TOKEN"])
+    );
 }
 
 add_action('wp_enqueue_scripts', 'bcoding_files');
