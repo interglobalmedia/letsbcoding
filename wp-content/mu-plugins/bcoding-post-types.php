@@ -87,6 +87,23 @@ function bcoding_post_types() {
         'menu_icon' => 'dashicons-awards'
     ));
 
+    // slide post type
+    register_post_type('slide', array(
+        'supports' => array(
+            'title', 
+            'thumbnail'
+        ),
+        'public' => true,
+        'labels' => array(
+            'name' => 'Slides',
+            'add_new_item' => 'Add New Slide',
+            'edit_item' => 'Edit Slide',
+            'all_items' => 'All Slides',
+            'singular_name' => 'Slide'
+        ),
+        'menu_icon' => 'dashicons-awards'
+    ));
+
     // note post type
     register_post_type('note', array(
         'capability_type' => 'note',
