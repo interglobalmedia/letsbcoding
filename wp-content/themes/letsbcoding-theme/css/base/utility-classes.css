@@ -40,6 +40,11 @@
 }
 
 .no-margin {margin: 0}
+.no-overflow {
+  white-space: normal;
+  overflow-wrap: break-word; 
+  margin: 1.5rem auto;
+}
 .nu {text-decoration: none}
 .nu:hover {text-decoration: underline}
 
