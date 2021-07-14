@@ -54,4 +54,5 @@ node_modules/
 # add your own entries here
 !wp-content/mu-plugins/bcoding-post-types.php
 !wp-content/plugins/post-statistics-plugin/
+!wp-content/plugins/word-filter-plugin/
 !wp-content/themes/letsbcoding-theme/
