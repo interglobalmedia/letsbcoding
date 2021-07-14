@@ -1,11 +1,13 @@
 <?php
 
 /*
-Plugin Name: Our Test Plugin
+Plugin Name: Post Statistics Plugin
 Description: A truly amazing plugin.
 Version: 1.0
 Author: Maria D. Campbell
 Author URI: https://letsbcoding.com
+Text Domain: wcpdomain
+Domain Path: /languages
 */
 
 class WordCountAndTimePlugin {
@@ -23,6 +25,14 @@ class WordCountAndTimePlugin {
             $this,
             'ifWrap'
         ));
+        add_action('init', array(
+            $this,
+            'languages'
+        ));
+    }
+
+    function languages() {
+        load_plugin_textdomain('wcpdomain', false, dirname(plugin_basename(__FILE__)) . '/languages');
     }
 
     function ifWrap($content) {
@@ -47,7 +57,7 @@ class WordCountAndTimePlugin {
         }
 
         if (get_option('wcp_wordcount', '1')) {
-            $html .= 'This post has ' . $wordCount . ' words.<br>';
+            $html .= esc_html__('This post has', 'wcpdomain') . ' ' . $wordCount . ' ' . __('words', 'wcpdomain') . '.<br>';
         }
 
         if (get_option('wcp_charcount', '1')) {
@@ -141,6 +151,20 @@ class WordCountAndTimePlugin {
         return $input;
     }
 
+    /*
+    function wordcountHTML() { ?>
+        <input type="checkbox" name="wcp_wordcount" value="1" <?php checked(get_option('wcp_wordcount'), '1') ?>>
+    <?php }
+
+    function charcountHTML() { ?>
+        <input type="checkbox" name="wcp_charrcount" value="1" <?php checked(get_option('wcp_charcount'), '1') ?>>
+    <?php }
+
+    function readtimeHTML() { ?>
+        <input type="checkbox" name="wcp_readtime" value="1" <?php checked(get_option('wcp_readtime'), '1') ?>>
+    <?php }
+  */
+
     function checkboxHTML($args) { ?>
         <input type="checkbox" name="<?php echo $args['theName'] ?>" value="1" <?php checked(get_option($args['theName']), '1') ?>>
     <?php }
@@ -157,7 +181,7 @@ class WordCountAndTimePlugin {
     <?php }
 
     function adminPage() {
-        add_options_page('Word Count Settings', 'Word Count', 'manage_options', 'word-count-settings-page', array(
+        add_options_page('Word Count Settings', __('Word Count', 'wcpdomain'), 'manage_options', 'word-count-settings-page', array(
             $this,
             'ourHTML'
         ));
