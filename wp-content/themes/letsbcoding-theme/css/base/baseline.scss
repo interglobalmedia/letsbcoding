@@ -4,27 +4,33 @@
   padding: 0;
 }
 
-@define-mixin atSmall {
+@mixin atSmall {
   @media (min-width: 530px) {
-    @mixin-content;
+    @content;
   }
 }
 
-@define-mixin atSmallMedium {
+@mixin atSmallMedium {
   @media (min-width: 767px) {
-    @mixin-content;
+    @content;
   }
 }
 
-@define-mixin atMedium {
+@mixin atSmallMediumSearchFix {
+  @media (min-width: 783px) {
+    @content;
+  }
+}
+
+@mixin atMedium {
   @media (min-width: 960px) {
-    @mixin-content;
+    @content;
   }
 }
 
 body {
   color: #333;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   overflow-x: hidden;
   position: relative;
 }
@@ -42,10 +48,13 @@ a:hover {
   text-decoration: none;
 }
 
-p, ul, ol {
+p,
+ul,
+ol {
   margin: 0 0 1.65em 0;
 }
 
-p, li {
+p,
+li {
   line-height: 1.65;
 }
