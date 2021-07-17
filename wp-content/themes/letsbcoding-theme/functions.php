@@ -44,20 +44,19 @@ function pageBanner($args = NULL) {
 <?php }
 
 function bcoding_files() {
+    wp_enqueue_script('main-bcoding-js', get_theme_file_uri('/build/index.js'), NULL, '1.0', true);
     wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
     wp_enqueue_style('font-awesome', '//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
     wp_enqueue_style('leaflet-map-css', '//unpkg.com/leaflet@1.7.1/dist/leaflet.css');
     wp_enqueue_script('leaflet-map-js', '//unpkg.com/leaflet@1.7.1/dist/leaflet.js', NULL, '1.0', true);
+    wp_enqueue_style('bcoding_main_styles', get_theme_file_uri('/build/style-index.css'));
+    wp_enqueue_style('bcoding_extra_styles', get_theme_file_uri('/build/index.css'));
     $mapbox_access_token = MAPBOX_ACCESS_TOKEN;
     if (strstr($_SERVER['SERVER_NAME'], 'letsbcoding.local')) {
-        wp_enqueue_script('main-bcoding-js', 'http://localhost:3000/bundled.js', NULL, '1.0', true);
         wp_localize_script('main-bcoding-js', 'php_vars', array(
         'mapbox_access_token' => $_ENV['MAPBOX_ACCESS_TOKEN'])
     );
     } else {
-        wp_enqueue_script('main-vendors-js', get_theme_file_uri('/bundled-assets/vendors~scripts.07cb7586e2052fd66bd1.js'), NULL, '1.0', true);
-        wp_enqueue_script('main-bcoding-js', get_theme_file_uri('/bundled-assets/scripts.e6ed2ce9600bd7676d11.js'), NULL, '1.0', true);
-        wp_enqueue_style('main-styles', get_theme_file_uri('/bundled-assets/styles.e6ed2ce9600bd7676d11.css'));
         wp_localize_script('main-bcoding-js', 'php_vars', array(
             'mapbox_access_token' => $mapbox_access_token)
         );
