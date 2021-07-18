@@ -1,21 +1,36 @@
-wp.blocks.registerBlockType('apaplugin/are-you-paying-attention', {
+wp.blocks.registerBlockType('aypaplugin/are-you-paying-attention', {
     title: 'Are You Paying Attention?',
     icon: 'smiley',
     category: 'common',
-    edit: function() {
+    attributes: {
+        skyColor: {
+            type: 'string'
+        },
+        grassColor: {
+            type: 'string'
+        }
+    },
+    edit: function (props) {
+        function updateSkyColor(e) {
+            props.setAttributes({
+                skyColor: e.target.value
+            })
+        }
+        function updateGrassColor(e) {
+            props.setAttributes({
+                grassColor: e.target.value
+            })
+        }
         return (
             <div>
-                <p>Hello, this is a paragraph.</p>
-                <h4>Hi there.</h4>
+                <input type="text" placeholder="sky color" value={props.attributes.skyColor} onChange={updateSkyColor} />
+                <input type="text" placeholder="grass color" value={props.attributes.grassColor} onChange={updateGrassColor} />
             </div>
         )
     },
-    save: function() {
+    save: function(props) {
         return (
-            <>
-                <h3>This is an h3 element.</h3>
-                <h4>This is an h4 element.</h4>
-            </>
+            <p>Today the sky is <span className="skyColor">{props.attributes.skyColor}</span> and the grass is <span className="grassColor">{props.attributes.grassColor}</span>.</p>
         )
     }
 })
