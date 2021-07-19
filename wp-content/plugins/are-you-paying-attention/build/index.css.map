@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack:///./src/index.scss"],"names":[],"mappings":"AAAA;EACI;EACA;EACA;EACA;AACJ,C","file":"index.css","sourcesContent":[".paying-attention-edit-block {\n    padding: 20px;\n    border-radius: 2px;\n    border: 1px solid #f1f1f1;\n    background-color: #d6d6d6;\n}"],"sourceRoot":""}
