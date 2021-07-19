@@ -29,8 +29,6 @@ wp.blocks.registerBlockType('aypaplugin/are-you-paying-attention', {
         )
     },
     save: function(props) {
-        return (
-            <p>Today the sky is <span className="skyColor">{props.attributes.skyColor}</span> and the grass is <span className="grassColor">{props.attributes.grassColor}</span>.</p>
-        )
+        return null
     }
 })
