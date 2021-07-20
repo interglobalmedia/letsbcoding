@@ -154,6 +154,7 @@ function EditComponent(props) {
     }
   }, "Answers:"), props.attributes.answers.map((answer, index) => {
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["Flex"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["FlexBlock"], null, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["TextControl"], {
+      autoFocus: answer === undefined,
       value: answer,
       onChange: newValue => {
         const newAnswers = props.attributes.answers.concat([]);
@@ -174,7 +175,7 @@ function EditComponent(props) {
     isPrimary: true,
     onClick: () => {
       props.setAttributes({
-        answers: props.attributes.answers.concat([''])
+        answers: props.attributes.answers.concat([undefined])
       });
     }
   }, "Add another answer"));
