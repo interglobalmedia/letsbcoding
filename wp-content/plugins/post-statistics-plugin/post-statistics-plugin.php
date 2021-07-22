@@ -1,7 +1,7 @@
 <?php
 
 /*
-Plugin Name: Post Statistics Plugin
+Plugin Name: Post Statistics
 Description: A truly amazing plugin.
 Version: 1.0
 Author: Maria D. Campbell

@@ -1,7 +1,7 @@
 <?php 
 
 /* 
-Plugin Name: Word Filter Plugin
+Plugin Name: Word Filter
 Description: Replaces a list of words.
 Version: 1.0
 Author: Maria D. Campbell
