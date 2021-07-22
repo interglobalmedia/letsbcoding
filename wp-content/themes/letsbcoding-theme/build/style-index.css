@@ -502,19 +502,19 @@ li {
 
 /* Customize Login Screen */
 body.login .button-primary {
-  background-color: #F95738;
-  border-color: #f83e1a;
-  text-shadow: 0 -1px 1px #f8320c, 1px 0 1px #f8320c, 0 1px 1px #f8320c, -1px 0 1px #f8320c;
-  box-shadow: 0 1px 0 #ed2c07;
+  background-color: #8b4726;
+  border-color: #7d4022;
+  text-shadow: 0 -1px 1px #763c20, 1px 0 1px #763c20, 0 1px 1px #f8320c, -1px 0 1px #763c20;
+  box-shadow: 0 1px 0 #6f391e;
 }
 
 body.login .button-primary:active,
 body.login .button-primary:focus,
 body.login .button-primary:hover {
-  background-color: #f8411d;
-  border-color: #F95738;
-  text-shadow: 0 -1px 1px #ed2c07, 1px 0 1px #ed2c07, 0 1px 1px #ed2c07, -1px 0 1px #ed2c07;
-  box-shadow: 0 1px 0 #de2907;
+  background-color: #7e4123;
+  border-color: #8b4726;
+  text-shadow: 0 -1px 1px #6f391e, 1px 0 1px #6f391e, 0 1px 1px #ed2c07, -1px 0 1px #6f391e;
+  box-shadow: 0 1px 0 #68351d;
 }
 
 body.login {
@@ -529,6 +529,10 @@ body.login {
   width: auto;
   height: auto;
   text-indent: 0;
+}
+
+form#loginform {
+  background: #f2a4a4;
 }
 
 .btn {
