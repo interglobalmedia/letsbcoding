@@ -1,0 +1,19 @@
+{
+  "name": "featured-professor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "wp-scripts build",
+    "start": "wp-scripts start",
+    "format": "wp-scripts format",
+    "format:src": "wp-scripts format ./src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Maria D. Campbell",
+  "license": "ISC",
+  "devDependencies": {
+    "@wordpress/scripts": "^17.0.0"
+  }
+}
