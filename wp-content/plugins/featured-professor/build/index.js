@@ -98,16 +98,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.scss */ "./src/index.scss");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__);
 
 
-wp.blocks.registerBlockType('featuredprofplugin/featured-professor', {
-  title: 'Professor Callout',
-  description: 'Include a short description and link to a professor of your choice',
-  icon: 'welcome-learn-more',
-  category: 'common',
+
+wp.blocks.registerBlockType("featuredprofplugin/featured-professor", {
+  title: "Professor Callout",
+  description: "Include a short description and link to a professor of your choice",
+  icon: "welcome-learn-more",
+  category: "common",
   attributes: {
     profId: {
-      type: 'string'
+      type: "string"
     }
   },
   edit: EditComponent,
@@ -117,6 +120,13 @@ wp.blocks.registerBlockType('featuredprofplugin/featured-professor', {
 });
 
 function EditComponent(props) {
+  const allProfs = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_2__["useSelect"])(select => {
+    return select("core").getEntityRecords("postType", "professor", {
+      per_page: -1
+    });
+  });
+  console.log(allProfs);
+  if (allProfs == undefined) return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("p", null, "Loading ...");
   return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
     className: "featured-professor-wrapper"
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", {
@@ -127,16 +137,12 @@ function EditComponent(props) {
     })
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("option", {
     value: ""
-  }, "Select a professor"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("option", {
-    value: "1",
-    selected: props.attributes.profId == 1
-  }, "1"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("option", {
-    value: "2",
-    selected: props.attributes.profId == 2
-  }, "2"), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("option", {
-    value: "3",
-    selected: props.attributes.profId == 3
-  }, "3"))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, "The HTML preview of the selected professor will appear here."));
+  }, "Select a professor"), allProfs.map(prof => {
+    return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("option", {
+      value: prof.id,
+      selected: props.attributes.profId == prof.id
+    }, prof.title.rendered);
+  }))), Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("div", null, "The HTML preview of the selected professor will appear here."));
 }
 
 /***/ }),
@@ -152,6 +158,17 @@ function EditComponent(props) {
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
+
+/***/ }),
+
+/***/ "@wordpress/data":
+/*!******************************!*\
+  !*** external ["wp","data"] ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+(function() { module.exports = window["wp"]["data"]; }());
 
 /***/ }),
 

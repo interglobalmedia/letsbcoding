@@ -1,55 +1,50 @@
-import './index.scss';
+import './index.scss'
+import { useSelect } from '@wordpress/data'
 
-wp.blocks.registerBlockType( 'featuredprofplugin/featured-professor', {
-	title: 'Professor Callout',
+wp.blocks.registerBlockType("featuredprofplugin/featured-professor", {
+	title: "Professor Callout",
 	description:
-		'Include a short description and link to a professor of your choice',
-	icon: 'welcome-learn-more',
-	category: 'common',
+		"Include a short description and link to a professor of your choice",
+	icon: "welcome-learn-more",
+	category: "common",
 	attributes: {
 		profId: {
-			type: 'string',
+		type: "string",
 		},
 	},
 	edit: EditComponent,
 	save: function () {
-		return null;
-	},
-} );
+		return null
+	}
+})
 
-function EditComponent( props ) {
+function EditComponent(props) {
+	const allProfs = useSelect((select) => {
+		return select("core").getEntityRecords("postType", "professor", {
+		per_page: -1,
+		})
+	})
+	
+	console.log(allProfs)
+
+	if (allProfs == undefined) return <p>Loading ...</p>
 	return (
-		<div className="featured-professor-wrapper">
-			<div className="professor-select-container">
-				<select
-					onChange={ ( e ) =>
-						props.setAttributes( { profId: e.target.value } )
-					}
-				>
-					<option value="">Select a professor</option>
-					<option
-						value="1"
-						selected={ props.attributes.profId == 1 }
-					>
-						1
-					</option>
-					<option
-						value="2"
-						selected={ props.attributes.profId == 2 }
-					>
-						2
-					</option>
-					<option
-						value="3"
-						selected={ props.attributes.profId == 3 }
-					>
-						3
-					</option>
-				</select>
-			</div>
-			<div>
-				The HTML preview of the selected professor will appear here.
-			</div>
-		</div>
-	);
+    <div className="featured-professor-wrapper">
+      <div className="professor-select-container">
+        <select onChange={e => props.setAttributes({profId: e.target.value})}>
+          <option value="">Select a professor</option>
+          {allProfs.map(prof => {
+            return (
+              <option value={prof.id} selected={props.attributes.profId == prof.id}>
+                {prof.title.rendered}
+              </option>
+            )
+          })}
+        </select>
+      </div>
+      <div>
+        The HTML preview of the selected professor will appear here.
+      </div>
+    </div>
+  )
 }
