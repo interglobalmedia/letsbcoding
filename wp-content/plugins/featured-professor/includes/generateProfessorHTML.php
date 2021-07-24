@@ -18,7 +18,7 @@ function generateProfessorHTML($id) {
                     <?php 
                     $relatedPrograms = get_field('related_programs');
                     if ($relatedPrograms) { ?>
-                        <p><strong><?php the_title() ?></strong> teaches:
+                        <p><strong><?php echo wp_strip_all_tags(get_the_title()) ?></strong> teaches:
                             <?php foreach($relatedPrograms as $key => $program) {
                                 echo get_the_title($program);
                                 if ($key !== array_key_last($relatedPrograms) && count($relatedPrograms) > 1) {
