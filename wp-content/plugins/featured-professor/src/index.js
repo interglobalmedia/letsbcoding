@@ -24,15 +24,37 @@ function EditComponent(props) {
 	const [thePreview, setThePreview] = useState('')
 
 	useEffect(() => {
-		async function go() {
-			const response = await apiFetch({
-				path: `/featuredProfessor/v1/getHTML?profId=${props.attributes.profId}`,
-				method: 'GET'
-			})
-			setThePreview(response)
+		if (props.attributes.profId) {
+			updateMeta()
+			async function go() {
+				const response = await apiFetch({
+					path: `/featuredProfessor/v1/getHTML?profId=${props.attributes.profId}`,
+					method: 'GET'
+				})
+				setThePreview(response)
+			}
+			go()
 		}
-		go()
 	}, [props.attributes.profId])
+
+	useEffect(() => {
+		return () => {
+			updateMeta()
+		}
+	}, [])
+
+	function updateMeta() {
+		const profsMeta = wp.data.select('core/block-editor')
+			.getBlocks()
+			.filter(x => x.name == 'featuredprofplugin/featured-professor')
+			.map(x => x.attributes.profId)
+			.filter((x, index, arr) => {
+				return arr.indexOf(x) == index
+			})
+		console.log(profsMeta)
+		wp.data.dispatch('core/editor').editPost({meta: {featured_professor: profsMeta}})
+		
+	}
 
 	const allProfs = useSelect((select) => {
 		return select("core").getEntityRecords("postType", "professor", {
