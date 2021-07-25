@@ -109,6 +109,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const __ = wp.i18n.__;
 wp.blocks.registerBlockType("featuredprofplugin/featured-professor", {
   title: "Professor Callout",
   description: "Include a short description and link to a professor of your choice",
@@ -177,7 +178,7 @@ function EditComponent(props) {
     })
   }, Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("option", {
     value: ""
-  }, "Select a professor"), allProfs.map(prof => {
+  }, __("Select a professor", "featured-professor")), allProfs.map(prof => {
     return Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__["createElement"])("option", {
       value: prof.id,
       selected: props.attributes.profId == prof.id
