@@ -57,4 +57,5 @@ node_modules/
 !wp-content/plugins/word-filter-plugin/
 !wp-content/plugins/are-you-paying-attention/
 !wp-content/plugins/featured-professor/
+!wp-content/plugins/pets-custom-database-table/
 !wp-content/themes/letsbcoding-theme/
