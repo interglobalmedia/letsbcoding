@@ -18,8 +18,28 @@ class PetAdoptionTablePlugin {
         
         add_action('activate_pets-custom-database-table/pets-custom-database-table.php', array($this, 'onActivate'));
         // add_action('admin_head', array($this, 'populateFast'));
+        add_action('admin_post_createpet', array($this, 'createPet'));
+        add_action('admin_post_nopriv_createpet', array($this, 'createPet'));
         add_action('wp_enqueue_scripts', array($this, 'loadAssets'));
         add_filter('template_include', array($this, 'loadTemplate'), 99);
+  }
+
+  function createPet() {
+      if (current_user_can('administrator')) {
+          $pet = [];
+          $pet['petname'] = sanitize_text_field($_POST['newpetname']);
+          $pet['species'] = sanitize_text_field($_POST['newspecies']);
+          $pet['petweight'] = sanitize_text_field($_POST['newpetweight']);
+          $pet['birthyear'] = sanitize_text_field($_POST['newbirthyear']);
+          $pet['favhobby'] = sanitize_text_field($_POST['newfavhobby']);
+          $pet['favcolor'] = sanitize_text_field($_POST['newfavcolor']);
+          $pet['favfood'] = sanitize_text_field($_POST['newfavfood']);
+          global $wpdb;
+          $wpdb->insert($this->tablename, $pet);
+          wp_redirect(site_url('/pet-adoption'));
+      } else {
+           wp_redirect(site_url());
+      }
   }
 
   function onActivate() {
