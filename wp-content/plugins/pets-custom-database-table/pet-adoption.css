@@ -45,6 +45,18 @@
   padding: 20px;
   background-color: rgb(240, 240, 240);
   border: 1px solid #ddd;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+fieldset {
+  display: flex;
+  justify-content: space-between; 
+}
+
+.create-pet-form input {
+  width: 65%;
+  height: 2rem;
 }
 
 .create-pet-form p {
