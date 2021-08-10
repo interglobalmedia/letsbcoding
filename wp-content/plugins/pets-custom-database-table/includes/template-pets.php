@@ -43,6 +43,26 @@ get_header(); ?>
       <?php }
     ?>
   </table>
+
+  <?php 
+  
+  if (current_user_can('administrator')) { ?>
+    <form action="<?php echo esc_url(admin_url('admin-post.php'))  ?>" class="create-pet-form" method="POST">
+    <h2>Create a new pet</h2>
+      <p>Enter the name and details for a new pet below.</p>
+      <input type="hidden" name="action" value="createpet">
+       <fieldset>Pet Name: <input type="text" name="newpetname" placeholder="name ..."></fieldset>
+       <fieldset>Species: <input type="text" name="newspecies" placeholder="species ..."></fieldset>
+      <fieldset>Pet Weight: <input type="text" name="newpetweight" placeholder="pet weight ..."></fieldset>
+      <fieldset>Birth Year: <input type="text" name="newbirthyear" placeholder="birth year ..."></fieldset>
+      <fieldset>Favorite Hobby: <input type="text" name="newfavhobby" placeholder="favorite hobby ..."></fieldset>
+      <fieldset>Favorite Color: <input type="text" name="newfavcolor" placeholder="favorite color ..."></fieldset>
+      <fieldset>Favorite Food: <input type="text" name="newfavfood" placeholder="favorite food ..."></fieldset>
+      <button>Add Pet</button>
+    </form>
+  <?php }
+  
+  ?>
   
 </div>
 
