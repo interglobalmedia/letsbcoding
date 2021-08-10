@@ -20,8 +20,24 @@ class PetAdoptionTablePlugin {
         // add_action('admin_head', array($this, 'populateFast'));
         add_action('admin_post_createpet', array($this, 'createPet'));
         add_action('admin_post_nopriv_createpet', array($this, 'createPet'));
+        add_action('admin_post_deletepet', array($this, 'deletePet'));
+        add_action('admin_post_nopriv_deletetepet', array($this, 'deletePet'));
         add_action('wp_enqueue_scripts', array($this, 'loadAssets'));
         add_filter('template_include', array($this, 'loadTemplate'), 99);
+  }
+
+  function deletePet() {
+    if (current_user_can('administrator')) {
+          $id = sanitize_text_field($_POST['idtodelete']);
+          global $wpdb;
+          $wpdb->delete($this->tablename, array(
+            'id' => $id
+          ));
+          wp_safe_redirect(site_url('/pet-adoption'));
+    } else {
+        wp_safe_redirect(site_url());
+    }
+    exit;
   }
 
   function createPet() {
@@ -36,10 +52,11 @@ class PetAdoptionTablePlugin {
           $pet['favfood'] = sanitize_text_field($_POST['newfavfood']);
           global $wpdb;
           $wpdb->insert($this->tablename, $pet);
-          wp_redirect(site_url('/pet-adoption'));
+          wp_safe_redirect(site_url('/pet-adoption'));
       } else {
-           wp_redirect(site_url());
+           wp_safe_redirect(site_url());
       }
+      exit;
   }
 
   function onActivate() {
