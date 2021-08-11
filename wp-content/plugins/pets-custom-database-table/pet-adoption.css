@@ -1,3 +1,9 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 .table-wrapper {
   width: 100%;
   overflow-x: scroll;
@@ -11,6 +17,7 @@
   border-spacing: 0;
   border-collapse: collapse;
   overflow-x: scroll;
+  overflow-y: scroll;
 }
 
 .pet-adoption-table th {
@@ -53,6 +60,10 @@
   padding: 20px;
   background-color: rgb(240, 240, 240);
   border: 1px solid #ddd;
+  width: 92.5%;
+  max-width: 930px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 fieldset {
