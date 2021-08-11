@@ -36,9 +36,9 @@ class PetAdoptionTablePlugin {
           $pet['favfood'] = sanitize_text_field($_POST['newfavfood']);
           global $wpdb;
           $wpdb->insert($this->tablename, $pet);
-          wp_redirect(site_url('/pet-adoption'));
+          wp_safe_redirect(site_url('/pet-adoption'));
       } else {
-           wp_redirect(site_url());
+          wp_safe_redirect(site_url());
       }
   }
 
