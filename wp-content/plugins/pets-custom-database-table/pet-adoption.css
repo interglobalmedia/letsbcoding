@@ -1,8 +1,16 @@
+.table-wrapper {
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: scroll;
+  height: 300px;
+}
+
 .pet-adoption-table {
   margin-top: 20px;
   width: 100%;
   border-spacing: 0;
   border-collapse: collapse;
+  overflow-x: scroll;
 }
 
 .pet-adoption-table th {
@@ -45,18 +53,59 @@
   padding: 20px;
   background-color: rgb(240, 240, 240);
   border: 1px solid #ddd;
-  /* display: flex;
-  flex-direction: column; */
 }
 
 fieldset {
   display: flex;
-  justify-content: space-between; 
+  flex-direction: column;
+  border: none;
+  width: 100%;
+}
+
+fieldset label {
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .create-pet-form input {
-  width: 65%;
+  width: 100%;
   height: 2rem;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  background: rgb(240, 240, 240);
+}
+
+@media (min-width: 600px) {
+  fieldset {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  fieldset label {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+  .create-pet-form input {
+    width: 67%;
+  }
+}
+
+.create-pet-form .add-pet {
+  background: #fdfcf3;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.create-pet-form .add-pet:active, .create-pet-form .add-pet:focus {
+  background: #eec7de;
+  transform: translateY(2px);
+  box-shadow: 0 0.5rem #eeb881;
+  border: none;
 }
 
 .create-pet-form p {
