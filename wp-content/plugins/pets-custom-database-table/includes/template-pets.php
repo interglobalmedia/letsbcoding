@@ -18,7 +18,7 @@ get_header(); ?>
 <div class="container container--narrow page-section">
 
   <p>This page took <strong><?php echo timer_stop();?></strong> seconds to prepare. Found <strong><?php echo $getPets->count; ?></strong> results (showing the first <?php echo count($getPets->pets); ?>).</p>
-
+<div class="table-wrapper">
   <table class="pet-adoption-table">
     <tr>
       <th>Name</th>
@@ -43,7 +43,7 @@ get_header(); ?>
       <?php }
     ?>
   </table>
-
+</div>
   <?php 
   
   if (current_user_can('administrator')) { ?>
@@ -51,14 +51,14 @@ get_header(); ?>
     <h2>Create a new pet</h2>
       <p>Enter the name and details for a new pet below.</p>
       <input type="hidden" name="action" value="createpet">
-       <fieldset>Pet Name: <input type="text" name="newpetname" placeholder="name ..."></fieldset>
-       <fieldset>Species: <input type="text" name="newspecies" placeholder="species ..."></fieldset>
-      <fieldset>Pet Weight: <input type="text" name="newpetweight" placeholder="pet weight ..."></fieldset>
-      <fieldset>Birth Year: <input type="text" name="newbirthyear" placeholder="birth year ..."></fieldset>
-      <fieldset>Favorite Hobby: <input type="text" name="newfavhobby" placeholder="favorite hobby ..."></fieldset>
-      <fieldset>Favorite Color: <input type="text" name="newfavcolor" placeholder="favorite color ..."></fieldset>
-      <fieldset>Favorite Food: <input type="text" name="newfavfood" placeholder="favorite food ..."></fieldset>
-      <button>Add Pet</button>
+       <fieldset><label for="newpetname">Pet Name:</label> <input type="text" name="newpetname" id="newpetname" placeholder="name ..." required></fieldset>
+       <fieldset><label for="newspecies">Species:</label> <input type="text" name="newspecies" id="newspecies" placeholder="species ..." required></fieldset>
+      <fieldset><label for="newpetweight">Pet Weight:</label> <input type="text" name="newpetweight" id="newpetweight"placeholder="pet weight ..." required></fieldset>
+      <fieldset><label for="newbirthyear">Birth Year:</label> <input type="text" name="newbirthyear" id="newbirthyear" placeholder="birth year ..." required></fieldset>
+      <fieldset><label for="newfavhobby">Favorite Hobby:</label> <input type="text" name="newfavhobby" id="newfavhobby" placeholder="favorite hobby ..." required></fieldset>
+      <fieldset><label for="newfavcolor">Favorite Color:</label> <input type="text" name="newfavcolor" id="newfavcolor" placeholder="favorite color ..." required></fieldset>
+      <fieldset><label for="newfavfood">Favorite Food:</label> <input type="text" name="newfavfood" id="newfavfood" placeholder="favorite food ..." required></fieldset>
+      <button class="add-pet">Add Pet</button>
     </form>
   <?php }
   
