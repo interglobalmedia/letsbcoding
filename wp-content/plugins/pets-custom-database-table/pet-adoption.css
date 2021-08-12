@@ -11,6 +11,17 @@
   height: 300px;
 }
 
+#table-search {
+  width: 100%;
+  max-width: 930px;
+  height: 2.25rem;
+  margin-bottom: 1rem;
+  padding-left: 0.5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  outline: none;
+}
+
 .pet-adoption-table {
   margin-top: 20px;
   width: 100%;

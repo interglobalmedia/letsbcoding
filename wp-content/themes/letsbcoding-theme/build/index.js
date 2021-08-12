@@ -5925,7 +5925,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_Search__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/Search */ "./src/modules/Search.js");
 /* harmony import */ var _modules_MyNotes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/MyNotes */ "./src/modules/MyNotes.js");
 /* harmony import */ var _modules_Like__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/Like */ "./src/modules/Like.js");
+/* harmony import */ var _modules_TableSearch__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/TableSearch */ "./src/modules/TableSearch.js");
  // Our modules / classes
+
 
 
 
@@ -5939,7 +5941,8 @@ const heroSlider = new _modules_HeroSlider__WEBPACK_IMPORTED_MODULE_2__["default
 const leafletMap = new _modules_Leaflet__WEBPACK_IMPORTED_MODULE_3__["default"]();
 const search = new _modules_Search__WEBPACK_IMPORTED_MODULE_4__["default"]();
 const myNotes = new _modules_MyNotes__WEBPACK_IMPORTED_MODULE_5__["default"]();
-const like = new _modules_Like__WEBPACK_IMPORTED_MODULE_6__["default"](); // Allow new JS and CSS to load in browser without a traditional page refresh
+const like = new _modules_Like__WEBPACK_IMPORTED_MODULE_6__["default"]();
+const tableSearch = new _modules_TableSearch__WEBPACK_IMPORTED_MODULE_7__["default"](); // Allow new JS and CSS to load in browser without a traditional page refresh
 
 if (false) {}
 
@@ -6516,6 +6519,58 @@ class Search {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Search);
+
+/***/ }),
+
+/***/ "./src/modules/TableSearch.js":
+/*!************************************!*\
+  !*** ./src/modules/TableSearch.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+class TableSearch {
+  //1. create and initiate the object
+  constructor() {
+    this.tableSearch = document.getElementById('table-search');
+    this.events();
+  } //2. events
+
+
+  events() {
+    this.tableSearch.addEventListener('keyup', this.searchPets.bind(this));
+  } //3. methods (or functions)
+
+
+  searchPets() {
+    let input, filter, table, tr, td, i, txtValue;
+    /* Assigning "this", which is your input, gives you access to the value, etc. */
+
+    input = this.tableSearch;
+    filter = input.value.toUpperCase();
+    table = document.querySelector('.pet-adoption-table');
+    tr = table.getElementsByTagName('tr');
+
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[1];
+
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }
+    }
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (TableSearch);
 
 /***/ })
 
