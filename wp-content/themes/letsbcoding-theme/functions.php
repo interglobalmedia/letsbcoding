@@ -1,12 +1,12 @@
 <?php
 
-function becodingQueryVars($vars) {
-    $vars[] = 'skyColor';
-    $vars[] = 'grassColor';
-    return $vars;
-}
+// function becodingQueryVars($vars) {
+//     $vars[] = 'skyColor';
+//     $vars[] = 'grassColor';
+//     return $vars;
+// }
 
-add_filter('query_vars', 'becodingQueryVars');
+// add_filter('query_vars', 'becodingQueryVars');
 
 require get_theme_file_path('/includes/search-route.php');
 require get_theme_file_path('/includes/like-route.php');
