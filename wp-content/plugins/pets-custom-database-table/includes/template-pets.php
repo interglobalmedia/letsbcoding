@@ -17,7 +17,7 @@ get_header(); ?>
 
 <div class="container container--narrow page-section">
   <input type="text" name="table-search" id="table-search" placeholder="search pets by species">
-  <p>This page took <strong><?php echo timer_stop();?></strong> seconds to prepare. Found <strong><?php echo number_format($getPets->count); ?></strong> results (showing the first <?php echo count($getPets->pets); ?>).</p>
+  <p class="table-results">This page took <strong><?php echo timer_stop();?></strong> seconds to prepare. Found <strong><?php echo number_format($getPets->count); ?></strong> results (showing the first <?php echo count($getPets->pets); ?>).</p>
   <div class="table-wrapper">
     <table class="pet-adoption-table">
       <tr>
