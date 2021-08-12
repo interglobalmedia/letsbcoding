@@ -48,7 +48,18 @@ while(have_posts()) {
 	<?php } ?>
 
     <div class="generic-content">
-      <?php the_content(); ?>
+      <?php the_content();
+	  	$skyColorValue = sanitize_text_field(get_query_var('skyColor'));
+		  $grassColorValue = sanitize_text_field(get_query_var('grassColor'));
+	  	if ($skyColorValue == 'blue' && $grassColorValue == 'green') {
+		  echo '<p>The sky is blue today and the grass is green. Life is good.</p>';
+		}
+	  ?>
+	  <form method="get">
+	  	<input type="text" name="skyColor" placeholder="Sky color ...">
+		  <input type="text" name="grassColor" placeholder="Grass color ...">
+		  <button>Submit</button>
+	  </form>
     </div>
 
   </div>
