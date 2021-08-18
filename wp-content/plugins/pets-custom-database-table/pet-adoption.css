@@ -5,46 +5,48 @@
 }
 
 .table-wrapper {
-  width: 100%;
+  height: 300px;
   overflow-x: scroll;
   overflow-y: scroll;
-  height: 300px;
-}
-
-#table-search {
   width: 100%;
-  max-width: 930px;
-  height: 2.25rem;
-  margin-bottom: 1rem;
-  padding-left: 0.5rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  outline: none;
 }
 
 .pet-adoption-table {
-  margin-top: 20px;
-  width: 100%;
-  border-spacing: 0;
   border-collapse: collapse;
-  overflow-x: scroll;
-  overflow-y: scroll;
+  border-spacing: 0;
+  margin-top: 20px;
+  table-layout: fixed;
+  width: 100%;
 }
 
 .pet-adoption-table th {
-  font-weight: bold;
-  color: #fff;
   background-color: #4d4d4d;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
-  text-align: left;
-  padding: 12px 15px;
+  color: #fff;
   font-size: 12px;
+  font-weight: bold;
+  padding: 12px 15px;
+  text-align: center;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+  width: 200px;
+}
+
+.table-search input {
+  height: 2.25rem;
+  outline: none;
+  padding-left: 0.5rem;
+  width: 100%;
 }
 
 .pet-adoption-table td {
   border: 1px solid #ddd;
-  padding: 12px 15px;
   font-size: 12px;
+  padding: 12px 15px;
+  width: 200px;
+}
+
+/* Center Delete button X inside td element */
+.delete-pet {
+  text-align: center;
 }
 
 .pet-adoption-table tr:nth-child(odd) td {
@@ -52,14 +54,14 @@
 }
 
 .delete-pet-button {
-  border: none;
   background-color: #e2e2e2;
+  border: none;
   color: red;
-  transform: scaleX(1.2);
-  font-weight: bold;
-  padding: 3px 5px;
   cursor: pointer;
+  font-weight: bold;
   opacity: 0.65;
+  padding: 3px 5px;
+  transform: scaleX(1.2);
 }
 
 .delete-pet-button:hover {
@@ -67,20 +69,20 @@
 }
 
 .create-pet-form {
-  margin-top: 30px;
-  padding: 20px;
   background-color: rgb(240, 240, 240);
   border: 1px solid #ddd;
-  width: 92.5%;
-  max-width: 930px;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 30px;
+  max-width: 930px;
+  padding: 20px;
+  width: 92.5%;
 }
 
 fieldset {
+  border: none;
   display: flex;
   flex-direction: column;
-  border: none;
   width: 100%;
 }
 
@@ -90,19 +92,19 @@ fieldset label {
 }
 
 .create-pet-form input {
-  width: 100%;
-  height: 2rem;
+  background: rgb(240, 240, 240);
   border-left: none;
   border-right: none;
   border-top: none;
-  background: rgb(240, 240, 240);
+  height: 2rem;
+  width: 100%;
 }
 
 @media (min-width: 600px) {
   fieldset {
+    align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
   }
   fieldset label {
     margin-bottom: 0;
@@ -115,19 +117,19 @@ fieldset label {
 
 .create-pet-form .add-pet {
   background: #fdfcf3;
-  padding: 5px 10px;
   border-radius: 5px;
+  cursor: pointer;
   margin-bottom: 0.5rem;
   margin-left: 0.5rem;
   margin-top: 1rem;
-  cursor: pointer;
+  padding: 5px 10px;
 }
 
 .create-pet-form .add-pet:active, .create-pet-form .add-pet:focus {
   background: #eec7de;
-  transform: translateY(2px);
-  box-shadow: 0 0.5rem #eeb881;
   border: none;
+  box-shadow: 0 0.5rem #eeb881;
+  transform: translateY(2px);
 }
 
 .create-pet-form p {
