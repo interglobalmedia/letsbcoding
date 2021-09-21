@@ -14,7 +14,7 @@ wp-content/*
 wp-content/mu-plugins/*
 wp-content/plugins/*
 wp-content/themes/*
-
+wp-content/themes/letsbcoding-theme/youzify/public/
 # ignore all files starting with . or ~
 .*
 ~*
@@ -58,4 +58,5 @@ node_modules/
 !wp-content/plugins/are-you-paying-attention/
 !wp-content/plugins/featured-professor/
 !wp-content/plugins/pets-custom-database-table/
+!wp-content/plugins/youzify/
 !wp-content/themes/letsbcoding-theme/
