@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function bcodingLikeRoutes() {
     register_rest_route('bcoding/v1', 'manageLike', array(
@@ -27,7 +27,7 @@ function createLike($data) {
             )
         ));
 
-        if ($existQuery->found_posts === 0 AND get_post_type($professor) === 'professor') {
+        if ($existQuery->found_posts == 0 AND get_post_type($professor) == 'professor') {
             // create new like post
             return wp_insert_post(array(
                 'post_type' => 'like',
@@ -47,7 +47,7 @@ function createLike($data) {
 
 function deleteLike($data) {
     $likeId = sanitize_text_field($data['like']);
-    if (get_current_user_id() === get_post_field('post_author', $likeId) AND get_post_type($likeId) === 'like') {
+    if (get_current_user_id() == get_post_field('post_author', $likeId) AND get_post_type($likeId) == 'like') {
         wp_delete_post($likeId, true);
         return 'Like successfully deleted.';
     } else {
