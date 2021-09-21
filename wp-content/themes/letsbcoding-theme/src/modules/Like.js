@@ -2,7 +2,7 @@ import axios from 'axios'
 
 class Like {
     constructor() {
-        this.likeBox = document.querySelector('.like-box')
+    this.likeBox = document.querySelector('.like-box')
         if (this.likeBox) {
             axios.defaults.headers.common["X-WP-Nonce"] = bcodingData.nonce
             this.events()
@@ -45,8 +45,10 @@ class Like {
     async deleteLike(currentLikeBox) {
         try {
             const url = `${bcodingData.root_url}/wp-json/bcoding/v1/manageLike`    
-            const response = await axios.delete(url, {
-                like: currentLikeBox.getAttribute('data-like')
+            const response = await axios({
+                url: url, 
+                method: 'delete',
+                data: { 'like': currentLikeBox.getAttribute('data-like') },
             })
             currentLikeBox.setAttribute('data-exists', 'no')
             let likeCount = parseInt(currentLikeBox.querySelector('.like-count').innerHTML, 10)
