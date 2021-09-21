@@ -6117,8 +6117,12 @@ class Like {
   async deleteLike(currentLikeBox) {
     try {
       const url = `${bcodingData.root_url}/wp-json/bcoding/v1/manageLike`;
-      const response = await axios__WEBPACK_IMPORTED_MODULE_0___default.a.delete(url, {
-        like: currentLikeBox.getAttribute('data-like')
+      const response = await axios__WEBPACK_IMPORTED_MODULE_0___default()({
+        url: url,
+        method: 'delete',
+        data: {
+          'like': currentLikeBox.getAttribute('data-like')
+        }
       });
       currentLikeBox.setAttribute('data-exists', 'no');
       let likeCount = parseInt(currentLikeBox.querySelector('.like-count').innerHTML, 10);
@@ -6405,10 +6409,6 @@ class Search {
   }
 
   keyPressDispatcher(e) {
-    if (e.key === 's' && !this.isOverlayOpen && document.activeElement.tagName !== "INPUT" && document.activeElement.tagName !== "TEXTAREA") {
-      this.openOverlay(); // this.isOverlayOpen = true
-    }
-
     if (e.key === 'Escape' && this.isOverlayOpen) {
       this.closeOverlay(); // this.isOverlayOpen = false
     }
@@ -6439,7 +6439,8 @@ class Search {
       // await response of axios call
       const response = await axios__WEBPACK_IMPORTED_MODULE_0___default()(`${bcodingData.root_url}/wp-json/bcoding/v1/search?term=${this.searchField.value}`); // only proceed once promise is resolved
 
-      const results = response.data; // const results = await this.apiEndpointCall()
+      const results = response.data;
+      console.log(results); // const results = await this.apiEndpointCall()
 
       this.searchResultsDiv.innerHTML = `
             <div class="row">
@@ -6466,7 +6467,19 @@ class Search {
                             </a>
                         </li>
                         `).join('')}
-                    ${results.professors.length ? `</ul>` : ``}
+                        ${results.professors.length ? `</ul>` : ``}
+                    ${results.students.length ? `</ul>` : ``}
+                    <h2 class="search-overlay__section-title">Students</h2>
+                        ${results.students.length ? `<ul class="professor-cards">` : `<p>No professors match your search.<p>`}
+                        ${results.students.map(result => `
+                        <li class="professor-card__list-item">
+                            <a class="professor-card" href="${result.permalink}">
+                                <img class="professor-card__image" src="${result.image}">
+                                <span class="professor-card__name">${result.title}</span>
+                            </a>
+                        </li>
+                        `).join('')}
+                    ${results.students.length ? `</ul>` : ``}
                 </div>
                 
                 <div class="one-third">

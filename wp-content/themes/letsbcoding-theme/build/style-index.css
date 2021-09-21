@@ -1673,4 +1673,86 @@ body.admin-bar .search-overlay {
   margin-bottom: 0;
 }
 
+.youzify-page {
+  background: #ffe8e5 !important;
+}
+
+.youzify-search-landing-image-container {
+  background-color: #ffe8e5 !important;
+}
+
+body.directory.members nav.main-navigation ul li a,
+body.directory.members i.fa-search,
+body.directory.members .school-logo-text a {
+  color: #848b92;
+}
+
+body.directory.members nav.main-navigation ul li a {
+  text-transform: uppercase;
+}
+
+body.directory.members nav.main-navigation ul li a:hover,
+body.directory.members .school-logo-text a:hover {
+  color: #ff7f76;
+}
+
+body.directory.members.logged-in.admin-bar .site-header__menu-trigger {
+  color: #ff7f76;
+}
+
+body.directory.members header.site-header {
+  background: #fff;
+}
+
+.youzify-search-landing-heading {
+  margin-top: 6rem;
+  color: #848b92;
+}
+
+p.youzify-search-landing-heading-text {
+  display: none;
+}
+
+body.bp-user .school-logo-text a,
+body.bp-user nav.main-navigation ul li a {
+  color: #848b92;
+}
+
+body.bp-user nav.main-navigation ul li a {
+  text-transform: uppercase;
+}
+
+body.bp-user nav.main-navigation ul li a:hover,
+body.bp-user .school-logo-text a:hover {
+  color: #ff7f76;
+}
+
+body.bp-user header.site-header {
+  background: #fff;
+}
+
+.youzify-profile-header .youzify-tools {
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.youzify-profile-header {
+  top: 12px;
+  bottom: 0;
+  margin-bottom: 12px;
+}
+
+body.xprofile.bp-user header.site-header {
+  display: none;
+}
+
+.bp-user.my-account.widgets.buddypress.bp-legacy.logged-in.admin-bar header.site-header,
+.settings.bp-user.my-account.general.buddypress.bp-legacy.logged-in.admin-bar header.site-header,
+.settings.bp-user.my-account.notifications.buddypress.bp-legacy.logged-in.admin-bar header.site-header,
+.settings.bp-user.my-account.account-privacy.buddypress.bp-legacy.logged-in.admin-bar header.site-header {
+  display: none;
+}
+
 /*# sourceMappingURL=style-index.css.map*/
