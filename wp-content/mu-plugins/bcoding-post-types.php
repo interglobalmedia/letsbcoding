@@ -87,6 +87,25 @@ function bcoding_post_types() {
         'menu_icon' => 'dashicons-awards'
     ));
 
+    // student post type
+    register_post_type('student', array(
+        'show_in_rest' => true,
+        'supports' => array(
+            'title', 
+            'editor',
+            'thumbnail'
+        ),
+        'public' => true,
+        'labels' => array(
+            'name' => 'Students',
+            'add_new_item' => 'Add New Student',
+            'edit_item' => 'Edit Student',
+            'all_items' => 'All Students',
+            'singular_name' => 'Student'
+        ),
+        'menu_icon' => 'dashicons-awards'
+    ));
+
     // slide post type
     register_post_type('slide', array(
         'supports' => array(
@@ -125,7 +144,7 @@ function bcoding_post_types() {
         'menu_icon' => 'dashicons-welcome-write-blog'
     ));
 
-    // like post type
+    // (professor) like post type
     register_post_type('like', array(
         'supports' => array(
             'title'
@@ -138,6 +157,23 @@ function bcoding_post_types() {
             'edit_item' => 'Edit Like',
             'all_items' => 'All Likes',
             'singular_name' => 'Like'
+        ),
+        'menu_icon' => 'dashicons-heart'
+    ));
+
+    // (student) like post type
+    register_post_type('studentlike', array(
+        'supports' => array(
+            'title'
+        ),
+        'public' => false,
+        'show_ui' => true,
+        'labels' => array(
+            'name' => 'StudentLikes',
+            'add_new_item' => 'Add New StudentLike',
+            'edit_item' => 'Edit StudentLike',
+            'all_items' => 'All StudentLikes',
+            'singular_name' => 'StudentLike'
         ),
         'menu_icon' => 'dashicons-heart'
     ));
