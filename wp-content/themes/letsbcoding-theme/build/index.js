@@ -5927,7 +5927,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_Like__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/Like */ "./src/modules/Like.js");
 /* harmony import */ var _modules_StudentLike__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/StudentLike */ "./src/modules/StudentLike.js");
 /* harmony import */ var _modules_TableSearch__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/TableSearch */ "./src/modules/TableSearch.js");
+/* harmony import */ var _modules_HighlightLink__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/HighlightLink */ "./src/modules/HighlightLink.js");
  // Our modules / classes
+
 
 
 
@@ -5945,7 +5947,8 @@ const search = new _modules_Search__WEBPACK_IMPORTED_MODULE_4__["default"]();
 const myNotes = new _modules_MyNotes__WEBPACK_IMPORTED_MODULE_5__["default"]();
 const like = new _modules_Like__WEBPACK_IMPORTED_MODULE_6__["default"]();
 const studentLike = new _modules_StudentLike__WEBPACK_IMPORTED_MODULE_7__["default"]();
-const tableSearch = new _modules_TableSearch__WEBPACK_IMPORTED_MODULE_8__["default"](); // Allow new JS and CSS to load in browser without a traditional page refresh
+const tableSearch = new _modules_TableSearch__WEBPACK_IMPORTED_MODULE_8__["default"]();
+const highlightLink = new _modules_HighlightLink__WEBPACK_IMPORTED_MODULE_9__["default"](); // Allow new JS and CSS to load in browser without a traditional page refresh
 
 if (false) {}
 
@@ -5990,6 +5993,43 @@ class HeroSlider {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (HeroSlider);
+
+/***/ }),
+
+/***/ "./src/modules/HighlightLink.js":
+/*!**************************************!*\
+  !*** ./src/modules/HighlightLink.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+class HighlightLink {
+  constructor() {
+    this.links = document.querySelectorAll('.menu-link');
+    this.linkHandler();
+  }
+
+  linkHandler() {
+    for (var i = 0; i < this.links.length; i++) {
+      if (this.links[i].href === document.URL) {
+        this.links[i].classList.add('active');
+      }
+
+      if (this.links[0].href === document.URL || document.URL === `${bcodingData.root_url}`) {
+        this.links[0].classList.add('active');
+      }
+
+      if (this.links[1].href === document.URL || document.URL.includes(`${bcodingData.root_url}/members`)) {
+        this.links[1].classList.add('active');
+      }
+    }
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (HighlightLink);
 
 /***/ }),
 

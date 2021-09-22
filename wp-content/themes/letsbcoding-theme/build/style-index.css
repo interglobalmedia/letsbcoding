@@ -783,7 +783,7 @@ form#loginform {
 }
 
 .site-header {
-  z-index: 3;
+  z-index: 99999;
   position: absolute;
   top: 0;
   left: 0;
@@ -860,6 +860,7 @@ form#loginform {
   z-index: 10;
   top: 7px;
   right: 46px;
+  z-index: 10000;
 }
 @media (min-width: 530px) {
   .site-header__menu-trigger {
@@ -891,6 +892,10 @@ form#loginform {
 }
 .site-header .btn--with-photo {
   margin-right: 0;
+}
+
+.active {
+  color: #ff7f76 !important;
 }
 
 .site-footer {
@@ -1729,6 +1734,14 @@ body.bp-user .school-logo-text a:hover {
 
 body.bp-user header.site-header {
   background: #fff;
+}
+
+body.bp-user.my-account.buddypress.bp-legacy.logged-in.admin-bar .site-header__menu-trigger {
+  background: #ff7f76;
+}
+
+body.bp-user.my-account.buddypress.bp-legacy.logged-in.admin-bar i.fa-search {
+  color: #848b92;
 }
 
 .youzify-profile-header .youzify-tools {
