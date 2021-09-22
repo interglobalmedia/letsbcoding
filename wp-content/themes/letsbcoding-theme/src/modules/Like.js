@@ -2,7 +2,7 @@ import axios from 'axios'
 
 class Like {
     constructor() {
-    this.likeBox = document.querySelector('.like-box')
+        this.likeBox = document.querySelector('.like-box')
         if (this.likeBox) {
             axios.defaults.headers.common["X-WP-Nonce"] = bcodingData.nonce
             this.events()
