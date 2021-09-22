@@ -2,6 +2,7 @@
 
 require get_theme_file_path('/includes/search-route.php');
 require get_theme_file_path('/includes/like-route.php');
+require get_theme_file_path('/includes/studentlike-route.php');
 
 function bcoding_custom_rest() {
     register_rest_field('post', 'authorName', array(
@@ -77,6 +78,8 @@ function bcoding_features() {
     add_theme_support('post-thumbnails');
     add_image_size('professorLandscape', 400, 260, true);
     add_image_size('professorPortrait', 480, 650, true);
+    add_image_size('studentLandscape', 400, 260, true);
+    add_image_size('studentPortrait', 480, 650, true);
     add_image_size('pageBanner', 1500, 350, true);
 }
 
