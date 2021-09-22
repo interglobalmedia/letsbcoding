@@ -5925,8 +5925,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_Search__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/Search */ "./src/modules/Search.js");
 /* harmony import */ var _modules_MyNotes__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/MyNotes */ "./src/modules/MyNotes.js");
 /* harmony import */ var _modules_Like__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./modules/Like */ "./src/modules/Like.js");
-/* harmony import */ var _modules_TableSearch__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/TableSearch */ "./src/modules/TableSearch.js");
+/* harmony import */ var _modules_StudentLike__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/StudentLike */ "./src/modules/StudentLike.js");
+/* harmony import */ var _modules_TableSearch__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/TableSearch */ "./src/modules/TableSearch.js");
  // Our modules / classes
+
 
 
 
@@ -5942,7 +5944,8 @@ const leafletMap = new _modules_Leaflet__WEBPACK_IMPORTED_MODULE_3__["default"](
 const search = new _modules_Search__WEBPACK_IMPORTED_MODULE_4__["default"]();
 const myNotes = new _modules_MyNotes__WEBPACK_IMPORTED_MODULE_5__["default"]();
 const like = new _modules_Like__WEBPACK_IMPORTED_MODULE_6__["default"]();
-const tableSearch = new _modules_TableSearch__WEBPACK_IMPORTED_MODULE_7__["default"](); // Allow new JS and CSS to load in browser without a traditional page refresh
+const studentLike = new _modules_StudentLike__WEBPACK_IMPORTED_MODULE_7__["default"]();
+const tableSearch = new _modules_TableSearch__WEBPACK_IMPORTED_MODULE_8__["default"](); // Allow new JS and CSS to load in browser without a traditional page refresh
 
 if (false) {}
 
@@ -6532,6 +6535,92 @@ class Search {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Search);
+
+/***/ }),
+
+/***/ "./src/modules/StudentLike.js":
+/*!************************************!*\
+  !*** ./src/modules/StudentLike.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+
+class StudentLike {
+  constructor() {
+    this.studentLikeBox = document.querySelector('.student-like-box');
+
+    if (this.studentLikeBox) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.defaults.headers.common["X-WP-Nonce"] = bcodingData.nonce;
+      this.events();
+    }
+  }
+
+  events() {
+    this.studentLikeBox.addEventListener('click', e => this.studentClickDispatcher(e));
+    console.log(this.studentLikeBox);
+  } // methods
+
+
+  studentClickDispatcher(e) {
+    let currentStudentLikeBox = e.target.closest('.student-like-box');
+
+    if (currentStudentLikeBox.getAttribute('data-student-exists') === 'no') {
+      this.createStudentLike(currentStudentLikeBox);
+    } else {
+      this.deleteStudentLike(currentStudentLikeBox);
+    }
+  }
+
+  async createStudentLike(currentStudentLikeBox) {
+    try {
+      const url = `${bcodingData.root_url}/wp-json/bcoding/v1/manageStudentLike`;
+      const response = await axios__WEBPACK_IMPORTED_MODULE_0___default.a.post(url, {
+        studentId: currentStudentLikeBox.getAttribute('data-student')
+      });
+
+      if (response.studentData !== 'Only logged in users can create a like!') {
+        currentStudentLikeBox.setAttribute('data-student-exists', 'yes');
+        let studentLikeCount = parseInt(currentStudentLikeBox.querySelector('.student-like-count').innerHTML, 10);
+        studentLikeCount++;
+        currentStudentLikeBox.querySelector('.student-like-count').innerHTML = studentLikeCount;
+        currentStudentLikeBox.setAttribute('data-student-like', response.studentData);
+        console.log(response.studentData);
+      }
+    } catch (e) {
+      console.log('Sorry!');
+    }
+  }
+
+  async deleteStudentLike(currentStudentLikeBox) {
+    try {
+      const url = `${bcodingData.root_url}/wp-json/bcoding/v1/manageStudentLike`;
+      const response = await axios__WEBPACK_IMPORTED_MODULE_0___default()({
+        url: url,
+        method: 'delete',
+        studentData: {
+          'studentlike': currentStudentLikeBox.getAttribute('data-student-like')
+        }
+      });
+      currentStudentLikeBox.setAttribute('data-student-exists', 'no');
+      let studentLikeCount = parseInt(currentStudentLikeBox.querySelector('.student-like-count').innerHTML, 10);
+      studentLikeCount--;
+      currentStudentLikeBox.querySelector('.student-like-count').innerHTML = studentLikeCount;
+      currentStudentLikeBox.setAttribute('data-student-like', '');
+      console.log(response.studentDdata);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (StudentLike);
 
 /***/ }),
 

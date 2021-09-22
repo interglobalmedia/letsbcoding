@@ -453,7 +453,7 @@ li {
 }
 
 /* Like Box */
-.generic-content .like-box {
+.generic-content .like-box, .generic-content .student-like-box {
   float: right;
   font-size: 1rem;
   background-color: #ededed;
@@ -466,21 +466,21 @@ li {
   position: relative;
 }
 
-.generic-content .like-box:hover {
+.generic-content .like-box:hover, .generic-content .student-like-box:hover {
   background-color: #dedede;
 }
 
-.like-count {
+.like-count, .student-like-count {
   padding-left: 10px;
 }
 
-.like-box .fa-heart-o {
+.like-box .fa-heart-o, .student-like-box .fa-heart-o {
   transition: all 0.35s ease-out;
   position: absolute;
   left: 10px;
 }
 
-.like-box .fa-heart {
+.like-box .fa-heart, .student-like-box .fa-heart {
   left: 10px;
   transition: all 0.4s ease-out;
   position: absolute;
@@ -489,13 +489,13 @@ li {
   opacity: 0;
 }
 
-.like-box[data-exists=yes] .fa-heart {
+.like-box[data-exists=yes] .fa-heart, .student-like-box[data-student-exists=yes] .fa-heart {
   transform: scale(1);
   visibility: visible;
   opacity: 1;
 }
 
-.like-box[data-exists=yes] .fa-heart-o {
+.like-box[data-exists=yes] .fa-heart-o, .student-like-box[data-student-exists=yes] .fa-heart-o {
   visibility: hidden;
   opacity: 0;
 }
