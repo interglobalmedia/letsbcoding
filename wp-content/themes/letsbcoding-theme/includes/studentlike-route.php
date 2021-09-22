@@ -11,9 +11,9 @@ function bcodingStudentLikeRoutes() {
     ));
 }
 
-function createStudentLike($studentData) {
+function createStudentLike($data) {
     if (is_user_logged_in()) {
-        $student = sanitize_text_field($studentData['studentId']);
+        $student = sanitize_text_field($data['studentId']);
 
         $existStudentQuery = new WP_Query(array(
             'author' => get_current_user_id(),
@@ -45,8 +45,8 @@ function createStudentLike($studentData) {
     }
 }
 
-function deleteStudentLike($studentData) {
-    $studentLikeId = sanitize_text_field($studentData['studentlike']);
+function deleteStudentLike($data) {
+    $studentLikeId = sanitize_text_field($data['studentlike']);
     if (get_current_user_id() == get_post_field('post_author', $studentLikeId) AND get_post_type($studentLikeId) == 'studentlike') {
         wp_delete_post($studentLikeId, true);
         return 'Like successfully deleted.';
