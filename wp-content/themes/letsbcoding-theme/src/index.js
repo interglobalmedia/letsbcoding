@@ -7,6 +7,7 @@ import LeafletMap from "./modules/Leaflet"
 import Search from './modules/Search'
 import MyNotes from './modules/MyNotes'
 import Like from './modules/Like'
+import StudentLike from './modules/StudentLike'
 import TableSearch from './modules/TableSearch'
 
 
@@ -17,6 +18,7 @@ const leafletMap = new LeafletMap()
 const search = new Search()
 const myNotes = new MyNotes()
 const like = new Like()
+const studentLike = new StudentLike()
 const tableSearch = new TableSearch()
 
 
