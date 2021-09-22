@@ -30,13 +30,13 @@ class StudentLike {
             const response = await axios.post(url, {
                 studentId: currentStudentLikeBox.getAttribute('data-student')
             })
-            if (response.studentData !== 'Only logged in users can create a like!') {
+            if (response.data !== 'Only logged in users can create a like!') {
                 currentStudentLikeBox.setAttribute('data-student-exists', 'yes')
                 let studentLikeCount = parseInt(currentStudentLikeBox.querySelector('.student-like-count').innerHTML, 10)
                 studentLikeCount++
                 currentStudentLikeBox.querySelector('.student-like-count').innerHTML = studentLikeCount
-                currentStudentLikeBox.setAttribute('data-student-like', response.studentData)
-                console.log(response.studentData)
+                currentStudentLikeBox.setAttribute('data-student-like', response.data)
+                console.log(response.data)
             }
         } catch (e) {
             console.log('Sorry!')
@@ -48,15 +48,15 @@ class StudentLike {
             const url = `${bcodingData.root_url}/wp-json/bcoding/v1/manageStudentLike`    
             const response = await axios({
                 url: url, 
-                method: 'delete',
-                studentData: { 'studentlike': currentStudentLikeBox.getAttribute('data-student-like') },
+                method: 'DELETE',
+                data: { 'studentlike': currentStudentLikeBox.getAttribute('data-student-like') },
             })
             currentStudentLikeBox.setAttribute('data-student-exists', 'no')
             let studentLikeCount = parseInt(currentStudentLikeBox.querySelector('.student-like-count').innerHTML, 10)
             studentLikeCount--
             currentStudentLikeBox.querySelector('.student-like-count').innerHTML = studentLikeCount
             currentStudentLikeBox.setAttribute('data-student-like', '')
-            console.log(response.studentDdata)
+            console.log(response.data)
         } catch (err) {
             console.log(err)
         }
