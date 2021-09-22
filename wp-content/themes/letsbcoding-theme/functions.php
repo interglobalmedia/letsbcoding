@@ -1,15 +1,8 @@
 <?php
 
-// function becodingQueryVars($vars) {
-//     $vars[] = 'skyColor';
-//     $vars[] = 'grassColor';
-//     return $vars;
-// }
-
-// add_filter('query_vars', 'becodingQueryVars');
-
 require get_theme_file_path('/includes/search-route.php');
 require get_theme_file_path('/includes/like-route.php');
+require get_theme_file_path('/includes/studentlike-route.php');
 
 function bcoding_custom_rest() {
     register_rest_field('post', 'authorName', array(
@@ -85,6 +78,8 @@ function bcoding_features() {
     add_theme_support('post-thumbnails');
     add_image_size('professorLandscape', 400, 260, true);
     add_image_size('professorPortrait', 480, 650, true);
+    add_image_size('studentLandscape', 400, 260, true);
+    add_image_size('studentPortrait', 480, 650, true);
     add_image_size('pageBanner', 1500, 350, true);
 }
 
@@ -187,5 +182,28 @@ function filesToIgnore($exclude_filters) {
 }
 
 add_filter('ai1wm_exclude_content_from_export', 'filesToIgnore');
+
+// Remove tools in admin dashboard
+function TRIM_ADMIN_MENU() {
+    global $current_user;
+    if(!current_user_can('administrator')) {
+        remove_menu_page( 'tools.php' ); // No tools for <= editors
+    }
+}
+add_action('admin_init', 'TRIM_ADMIN_MENU');
+
+// remove dashboard, WP logo, site name, and comments, and search links from admin-bar
+function letsbcoding_admin_bar_render() {
+    global $wp_admin_bar;
+    if ( is_admin() && ! current_user_can( 'administrator' ) && ! wp_doing_ajax() ) {
+        $wp_admin_bar->remove_menu('dashboard');
+        $wp_admin_bar->remove_menu('wp-logo');
+        $wp_admin_bar->remove_menu('site-name');
+        $wp_admin_bar->remove_menu('comments');
+        $wp_admin_bar->remove_menu('search');
+    }
+}
+
+add_action('wp_before_admin_bar_render', 'letsbcoding_admin_bar_render');
 
 ?>

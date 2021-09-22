@@ -45,10 +45,6 @@ class Search {
     }
 
     keyPressDispatcher(e) {
-        if (e.key === 's' && !this.isOverlayOpen && document.activeElement.tagName !== "INPUT" && document.activeElement.tagName !== "TEXTAREA") {
-            this.openOverlay()
-            // this.isOverlayOpen = true
-        }
 
         if (e.key === 'Escape' && this.isOverlayOpen) {
             this.closeOverlay()
@@ -82,6 +78,7 @@ class Search {
             const response = await axios(`${bcodingData.root_url}/wp-json/bcoding/v1/search?term=${this.searchField.value}`)
         // only proceed once promise is resolved
             const results = response.data
+            console.log(results)
             
         // const results = await this.apiEndpointCall()
         this.searchResultsDiv.innerHTML = `
@@ -109,7 +106,19 @@ class Search {
                             </a>
                         </li>
                         `).join('')}
-                    ${results.professors.length ? `</ul>` : ``}
+                        ${results.professors.length ? `</ul>` : ``}
+                    ${results.students.length ? `</ul>` : ``}
+                    <h2 class="search-overlay__section-title">Students</h2>
+                        ${results.students.length ? `<ul class="professor-cards">` : `<p>No professors match your search.<p>`}
+                        ${results.students.map(result => `
+                        <li class="professor-card__list-item">
+                            <a class="professor-card" href="${result.permalink}">
+                                <img class="professor-card__image" src="${result.image}">
+                                <span class="professor-card__name">${result.title}</span>
+                            </a>
+                        </li>
+                        `).join('')}
+                    ${results.students.length ? `</ul>` : ``}
                 </div>
                 
                 <div class="one-third">

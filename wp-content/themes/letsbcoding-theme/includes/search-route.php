@@ -11,13 +11,14 @@ function bcodingRegisterRearch() {
 
 function bcodingSearchResults($data) {
     $mainResults = new WP_Query(array(
-        'post_type' => array('post', 'page', 'professor', 'program', 'campus', 'event'),
+        'post_type' => array('post', 'page', 'professor', 'student', 'program', 'campus', 'event'),
         's' => sanitize_text_field($data['term'])
     ));
 
     $results = array(
         'generalResults' => array(),
         'professors' => array(),
+        'students' => array(),
         'programs' => array(),
         'campuses' => array(),
         'events' => array()
@@ -40,6 +41,14 @@ function bcodingSearchResults($data) {
                 'title' => get_the_title(),
                 'permalink' => get_the_permalink(),
                 'image' => get_the_post_thumbnail_url(0, 'professorLandscape')
+            ));
+        }
+
+        if (get_post_type() === 'student') {
+            array_push($results['students'], array(
+                'title' => get_the_title(),
+                'permalink' => get_the_permalink(),
+                'image' => get_the_post_thumbnail_url(0, 'studentLandscape')
             ));
         }
 
@@ -136,6 +145,8 @@ function bcodingSearchResults($data) {
         }
 
         $results['professors'] = array_values(array_unique($results['professors'], SORT_REGULAR));
+
+        $results['students'] = array_values(array_unique($results['students'], SORT_REGULAR));
 
         $results['events'] = array_values(array_unique($results['events'], SORT_REGULAR));
         $results['campuses'] = array_values(array_unique($results['campuses'], SORT_REGULAR));
