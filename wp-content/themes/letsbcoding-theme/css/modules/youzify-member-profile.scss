@@ -16,6 +16,14 @@ body.bp-user header.site-header {
     background: #fff;
 }
 
+body.bp-user.my-account.buddypress.bp-legacy.logged-in.admin-bar .site-header__menu-trigger {
+    background: #ff7f76;
+}
+
+body.bp-user.my-account.buddypress.bp-legacy.logged-in.admin-bar i.fa-search {
+    color: #848b92;
+}
+
 .youzify-profile-header .youzify-tools {
     position: relative;
     left: 0;
