@@ -23,16 +23,17 @@
 }
 
 @mixin atMedium {
-  @media (min-width: 960px) {
+  @media (min-width: 1024px) {
     @content;
   }
 }
 
 body {
-  color: #333;
+  color: #555;
   font-family: "Roboto", sans-serif;
   overflow-x: hidden;
   position: relative;
+  background: $mainBodyColor;
 }
 
 img {
@@ -41,7 +42,7 @@ img {
 }
 
 a {
-  color: $mainBlue;
+  color: $mainCoral;
 }
 
 a:hover {
