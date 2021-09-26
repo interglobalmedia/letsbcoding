@@ -46,16 +46,21 @@
 }
 
 .school-logo-text a {
+  text-shadow: 1px 2px 1px rgba(0,0,0,0.3);
   color: #fff;
   text-decoration: none;
+
+  &:hover {
+    color: $beige;
+  }
 }
 
 .school-logo-text--alt-color a {
   color: #666;
+  text-shadow: none;
 
   &:hover {
-    color: $mainBlue;
-    text-decoration: underline;
+    color: $mainCoral;
   }
 }
 
@@ -85,7 +90,7 @@
   color: $darkOrange;
 }
 .c-blue {
-  color: $mainBlue;
+  color: $mainCoral;
 }
 .c-white {
   color: #fff;
@@ -111,7 +116,8 @@
 }
 
 .search-trigger:hover {
-  opacity: 0.65;
+  opacity: 1;
+  color: $beige;
 }
 
 .social-icons-list {
@@ -167,7 +173,7 @@
 }
 
 .nav-list a:hover {
-  color: $mainBlue;
+  color: $mainCoral;
   text-decoration: underline;
 }
 
@@ -225,7 +231,9 @@
 
 /* Seach Form */
 .search-form {
-  background-color: #dedede;
+  background-color: $beige;
+  border-radius: 4px;
+  box-shadow: 1px 2px 1px rgba(0,0,0,0.3);
   padding: 20px;
   text-align: center;
 }
@@ -239,6 +247,8 @@
 }
 
 .search-form .s {
+  border-radius: 4px;
+  box-shadow: 1px 2px 1px rgba(22, 17, 17, 0.2);
   min-width: 20px;
   flex-basis: auto;
   flex-grow: 1;
@@ -255,7 +265,8 @@
   border: none;
   border-radius: 4px;
   outline: none;
-  background-color: $mainBlue;
+  background-color: $mainCoral;
+  box-shadow: 1px 2px 1px rgba(0,0,0,0.3);
   font-family: "Roboto", sans-serif;
   padding: 0 20px;
   margin-left: 10px;

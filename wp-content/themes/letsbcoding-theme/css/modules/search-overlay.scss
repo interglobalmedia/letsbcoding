@@ -1,7 +1,7 @@
 .search-overlay {
   overflow-y: auto;
   overflow-x: hidden;
-  z-index: 1000;
+  z-index: 99999;
   position: fixed;
   top: 0;
   left: 0;
@@ -13,6 +13,9 @@
   transform: scale(1.09);
   transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
   box-sizing: border-box;
+  @include atSmallMediumSearchFix {
+    margin-top: -1rem;
+  }
 
   p {
     padding-top: 15px;

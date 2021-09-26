@@ -1,5 +1,5 @@
 .site-header {
-  z-index: 99999;
+  z-index: 10001;
   position: absolute;
   top: 0;
   left: 0;
@@ -21,11 +21,12 @@
   &__menu {
     visibility: hidden;
     position: absolute;
-    background-color: adjust-color($mainBlue, $alpha: -0.11, $lightness: -1%);
+    background-color: adjust-color($mobileNavBackground, $alpha: -0.11, $lightness: -60%);
     left: 0;
     right: 0;
     top: -20px;
     padding-top: 58px;
+    // height: 0;
     opacity: 0;
     transform: translateY(-20%);
     transition: opacity 0.3s ease-out, visibility 0.3s ease-out, transform 0.3s ease-out;
@@ -36,7 +37,11 @@
       transform: translateY(0);
       visibility: visible;
       height: 100vh;
-      background: $mainBlue;
+      background: $mobileNavBackground;
+      & .main-navigation ul {
+        margin-top: 1.5rem;
+        margin-bottom: 2.5rem;
+      }
     }
 
     @include atMedium {
@@ -90,6 +95,10 @@
     }
   }
 
+  & i.fa.fa-window-close:hover {
+      color: $beige;
+  }
+
   &__util {
     padding: 0 0 0 20px;
 
@@ -112,5 +121,5 @@
 }
 
 .active {
-    color: #ff7f76 !important;
+    color: $beige !important;
 }

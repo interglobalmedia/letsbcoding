@@ -32,11 +32,13 @@
 }
 
 .main-navigation a {
+  text-shadow: 1px 2px 1px rgba(0,0,0,0.3);
   display: block;
   padding: 10px 20px;
   color: #fff;
   text-decoration: none;
   font-weight: 300;
+  font-size: 1.2rem;
   @include atMedium {
     display: inline-block;
     padding: 0;

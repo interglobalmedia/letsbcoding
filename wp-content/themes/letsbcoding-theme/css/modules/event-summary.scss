@@ -6,10 +6,11 @@
   margin-bottom: 20px;
 
   &__title a {
-    color: #173f58;
+    color: $mainCoral;
   }
 
   &__date {
+    box-shadow: 1px 2px 1px rgba(0,0,0,0.3);
     text-decoration: none;
     display: block;
     top: 0;
@@ -18,7 +19,7 @@
     padding: 14px 0 11px 0;
     color: #FFF;
     border-radius: 50%;
-    background-color: $mainBlue;
+    background-color: $mainCoral;
     width: 80px;
     line-height: 1;
     transition: opacity .33s;
@@ -30,7 +31,7 @@
   }
 
   &__date--beige {
-    background-color: $rustBrown;
+    background-color: $dateBeige;
   }
 
   &__month {

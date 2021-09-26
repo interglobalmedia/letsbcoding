@@ -1,39 +1,88 @@
 .youzify-page {
-    background: #ffe8e5 !important;
+    background: $mainBodyColor !important;
 }
 
 .youzify-search-landing-image-container {
-    background-color: #ffe8e5 !important;
+    background-color: $mainBodyColor !important;
 }
 
 body.directory.members nav.main-navigation ul li a,
 body.directory.members i.fa-search,
 body.directory.members .school-logo-text a {
-    color: #848b92;
+    // color: #848b92;
 }
 
 body.directory.members nav.main-navigation ul li a {
-    text-transform: uppercase;
+    // text-transform: uppercase;
 }
 
 body.directory.members nav.main-navigation ul li a:hover,
 body.directory.members .school-logo-text a:hover {
-    color: #ff7f76;
+    // color: #ff7f76;
 }
 
 body.directory.members.logged-in.admin-bar .site-header__menu-trigger {
-    color: #ff7f76;
+    // color: #ff7f76;
 }
 
 body.directory.members header.site-header {
-    background: #fff;
+    z-index: 999;
 }
 
-.youzify-search-landing-heading {
-    margin-top: 6rem;
-    color: #848b92;
+body.directory.members.youzify-search-header.youzify-search-landing-image-container {
+    display: none !important;
+}
+
+body.directory.members.youzify-search-landing-image-container {
+    display: none !important;
+}
+
+body.directory.members div.youzify-search-landing-heading {
+    display: none !important;
 }
 
 p.youzify-search-landing-heading-text {
     display: none;
+}
+
+body.directory.members .youzify-search-input-form {
+    background: #f6f6f6;
+    border-radius: 8px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+body.directory.members .youzify-mobile-nav {
+    background: $mainCoral;
+    border-radius: 8px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+body.directory.members .youzify-directory-filter, body.directory.members .youzify-mobile-nav-container {
+    background: #fbcbb9;
+    border-radius: 8px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+body.directory.members .youzify-mobile-nav .youzify-mobile-nav-item i {
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+body.directory.members .youzify-directory-filter .item-list-tabs:not(#subnav) ul, body.directory.members #members-order-select.last.filter {
+    border-radius: 8px;
+    margin-bottom: 0;
+}
+
+body.directory.members #youzify-members-list>li .youzify-user-data {
+    background: rgba($mainCoral, 1);
+    border-radius: 8px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    margin-top: 1.5rem;
+}
+
+body.directory.members #youzify-members-list>li .youzify-user-data .youzify-item-avatar a img {
+    box-shadow: 2px 4px 2px rgba(0,0,0,0.3);
+}
+
+body.directory.members #youzify-members-list>li .youzify-user-data a.youzify-fullname {
+    color: #fff;
 }
