@@ -1,6 +1,6 @@
 .site-footer {
   padding: 2rem 0 3.5rem 0;
-  background-image: linear-gradient(#fff, #ececec);
+  background-image: linear-gradient($mainBodyColor, $mainBodyColor);
 
   p {
     font-size: 0.9rem;
@@ -17,12 +17,12 @@
   }
 
   &__link:hover {
-    color: $mainBlue;
+    color: $mainCoral;
     text-decoration: underline;
   }
 
   &__inner {
-    border-top: 1px dotted #dedede;
+    border-top: 1px dotted $mainBodyColor;
     padding-top: 3.5rem;
   }
 
