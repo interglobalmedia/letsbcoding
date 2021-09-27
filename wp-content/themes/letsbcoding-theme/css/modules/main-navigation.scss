@@ -31,6 +31,16 @@
   }
 }
 
+/* sub-menu styling pre-visibility */
+
+li ul.sub-nav {
+  display: flex;
+  flex-direction: column;
+  @include atMedium {
+    display: none;
+  }
+}
+
 .main-navigation a {
   text-shadow: 1px 2px 1px rgba(0,0,0,0.3);
   display: block;
@@ -49,3 +59,48 @@
 .main-navigation a:hover {
   color: $beige;
 }
+
+/* Community sub-menu styling screens >= 1024px */
+
+li ul.subnav-show {
+  @include atMedium {
+    box-shadow: 1px 2px 1px rgba(0,0,0,0.3);
+    display: flex;
+    cursor: pointer;
+    flex-direction: row;
+    font-weight: 300;
+    position: absolute;
+    background: $mainCoral;
+    width: 100%;
+    left: 0;
+    border-radius: 3px;
+    text-shadow: 1px 2px 1px rgba(0,0,0,0.3);
+    margin-top: 1rem;
+    & li {
+      margin-bottom: 0.5rem;
+      margin-top: 0.5rem;
+      & a:hover {
+        color: $beige;
+      }
+    }
+  }
+}
+
+.menu-link.members {
+  display: none;
+  &:hover {
+    color: $beige;
+  }
+  @include atMedium {
+    display: flex;
+    cursor: pointer;
+    padding-left: 0;
+    margin-top: 0;
+    font-size: 1.2rem;
+    text-shadow: 1px 2px 1px rgba(0,0,0,0.3);
+    color: #fff;
+    font-weight: 300;
+  }
+}
+
+

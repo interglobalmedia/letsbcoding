@@ -5928,7 +5928,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_StudentLike__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./modules/StudentLike */ "./src/modules/StudentLike.js");
 /* harmony import */ var _modules_TableSearch__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/TableSearch */ "./src/modules/TableSearch.js");
 /* harmony import */ var _modules_HighlightLink__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/HighlightLink */ "./src/modules/HighlightLink.js");
+/* harmony import */ var _modules_NavSubNav__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/NavSubNav */ "./src/modules/NavSubNav.js");
  // Our modules / classes
+
 
 
 
@@ -5948,7 +5950,8 @@ const myNotes = new _modules_MyNotes__WEBPACK_IMPORTED_MODULE_5__["default"]();
 const like = new _modules_Like__WEBPACK_IMPORTED_MODULE_6__["default"]();
 const studentLike = new _modules_StudentLike__WEBPACK_IMPORTED_MODULE_7__["default"]();
 const tableSearch = new _modules_TableSearch__WEBPACK_IMPORTED_MODULE_8__["default"]();
-const highlightLink = new _modules_HighlightLink__WEBPACK_IMPORTED_MODULE_9__["default"](); // Allow new JS and CSS to load in browser without a traditional page refresh
+const highlightLink = new _modules_HighlightLink__WEBPACK_IMPORTED_MODULE_9__["default"]();
+const navSubNav = new _modules_NavSubNav__WEBPACK_IMPORTED_MODULE_10__["default"](); // Allow new JS and CSS to load in browser without a traditional page refresh
 
 if (false) {}
 
@@ -6008,17 +6011,39 @@ __webpack_require__.r(__webpack_exports__);
 class HighlightLink {
   constructor() {
     this.links = document.querySelectorAll('.menu-link');
+    this.subLinks = document.querySelectorAll('ul.sub-nav li a');
+    console.log(this.subLinks);
     this.linkHandler();
   }
 
   linkHandler() {
-    for (var i = 0; i < this.links.length; i++) {
+    for (let i = 0; i < this.links.length; i++) {
       if (this.links[1].href == document.URL || document.URL.includes(`${bcodingData.root_url}/members`)) {
         this.links[1].classList.add('active');
       }
 
+      if (this.links[1].href == document.URL || document.URL.includes(`${bcodingData.root_url}/members`)) {
+        this.subLinks[0].classList.add('active');
+      }
+
       if (this.links[3].href == document.URL || document.URL.includes(`${bcodingData.root_url}/events`)) {
         this.links[3].classList.add('current-menu-item');
+      }
+
+      if (this.links[1].href == document.URL || document.URL.includes(`/group`) || document.URL.includes(`/groups`)) {
+        this.links[1].classList.add('active');
+      }
+
+      if (this.links[1].href == document.URL || document.URL.includes(`/group`) || document.URL.includes(`/groups`)) {
+        this.subLinks[1].classList.add('active');
+      }
+
+      if (this.links[1].href == document.URL || document.URL.includes(`/forum`) || document.URL.includes(`/forums`)) {
+        this.links[1].classList.add('active');
+      }
+
+      if (this.links[1].href == document.URL || document.URL.includes(`${bcodingData.root_url}/forums`)) {
+        this.subLinks[2].classList.add('active');
       }
     }
   }
@@ -6386,6 +6411,37 @@ class MyNotes {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (MyNotes);
+
+/***/ }),
+
+/***/ "./src/modules/NavSubNav.js":
+/*!**********************************!*\
+  !*** ./src/modules/NavSubNav.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+class NavSubNav {
+  constructor() {
+    this.parentNavLink = document.querySelector('div .members');
+    this.childNavUl = document.querySelector('ul.sub-nav');
+    this.events();
+  }
+
+  events() {
+    this.parentNavLink.addEventListener('click', e => this.subnavHandler(e));
+  }
+
+  subnavHandler(e) {
+    e.preventDefault();
+    this.childNavUl.classList.toggle('subnav-show');
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (NavSubNav);
 
 /***/ }),
 
