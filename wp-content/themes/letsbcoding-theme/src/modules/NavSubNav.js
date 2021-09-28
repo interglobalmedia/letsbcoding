@@ -1,6 +1,6 @@
 class NavSubNav {
     constructor() {
-        this.parentNavLink = document.querySelector('div .members')
+        this.parentNavLink = document.querySelector('div .nav-highlight-community')
         this.childNavUl = document.querySelector('ul.sub-nav')
         this.events()
     }
