@@ -17,7 +17,7 @@
           <nav class="main-navigation">
             <ul>
               <li <?php if (is_page(11, 'about-us', 'About Us') or wp_get_post_parent_id(0) == 11) echo 'class="current-menu-item"' ?>><a  class="menu-link current-page-ancestor" href="<?php echo site_url('/about-us') ?>">About Us</a></li>
-             <li ><div class="menu-link members">Community</div>
+             <li ><div class="menu-link nav-highlight-community">Community</div>
               <ul class="sub-nav">
                <li><a class="menu-link" href="<?php echo site_url('/members'); ?>">Members</a></li>
                 <li><a class="menu-link" href="<?php echo site_url('/groups'); ?>">Groups</a></li>
