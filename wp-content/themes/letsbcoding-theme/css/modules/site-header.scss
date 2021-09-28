@@ -19,7 +19,7 @@
   }
 
   &__menu {
-    visibility: hidden;
+    display: none;
     position: absolute;
     background-color: adjust-color($mobileNavBackground, $alpha: -0.11, $lightness: -60%);
     left: 0;
@@ -35,7 +35,7 @@
     &--active {
       opacity: 1;
       transform: translateY(0);
-      visibility: visible;
+      display: block;
       height: 100vh;
       background: $mobileNavBackground;
       & .main-navigation ul {
@@ -45,7 +45,7 @@
     }
 
     @include atMedium {
-      visibility: visible;
+      display: flex;
       opacity: 1;
       transform: translateY(0) scale(1);
       position: static;

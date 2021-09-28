@@ -277,7 +277,7 @@ li {
   top: 1px;
   margin-left: 20px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .search-trigger {
     display: inline-block;
     top: 6px;
@@ -358,7 +358,7 @@ li {
   padding-bottom: 1.6rem;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .row {
     margin-right: -50px;
   }
@@ -813,7 +813,7 @@ form#loginform {
   height: 30px;
 }
 .site-header__menu {
-  visibility: hidden;
+  display: none;
   position: absolute;
   background-color: rgba(6, 5, 5, 0.89);
   left: 0;
@@ -828,7 +828,7 @@ form#loginform {
 .site-header__menu--active {
   opacity: 1;
   transform: translateY(0);
-  visibility: visible;
+  display: block;
   height: 100vh;
   background: #a89e95;
 }
@@ -836,9 +836,9 @@ form#loginform {
   margin-top: 1.5rem;
   margin-bottom: 2.5rem;
 }
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .site-header__menu {
-    visibility: visible;
+    display: flex;
     opacity: 1;
     transform: translateY(0) scale(1);
     position: static;
@@ -863,7 +863,7 @@ form#loginform {
     font-size: 1.4rem;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .site-header__search-trigger {
     display: none;
   }
@@ -884,7 +884,7 @@ form#loginform {
     font-size: 1.4rem;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .site-header__menu-trigger {
     display: none;
   }
@@ -895,7 +895,7 @@ form#loginform {
 .site-header__util {
   padding: 0 0 0 20px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .site-header__util {
     padding: 0;
     float: right;
@@ -904,7 +904,7 @@ form#loginform {
 .site-header__btn {
   margin-right: 20px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .site-header__btn {
     float: left;
   }
@@ -943,7 +943,7 @@ form#loginform {
 .site-footer__col-one {
   text-align: left;
 }
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .site-footer__col-one {
     text-align: left;
     width: 33%;
@@ -955,7 +955,7 @@ form#loginform {
   width: 85%;
   margin: 0 auto;
 }
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .site-footer__col-two-three-group {
     text-align: left;
     float: left;
@@ -978,7 +978,7 @@ form#loginform {
   clear: both;
   text-align: left;
 }
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .site-footer__col-four {
     padding-top: 0;
     margin: 0;
@@ -1004,7 +1004,7 @@ form#loginform {
 .main-navigation ul:after {
   clear: both;
 }
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .main-navigation {
     float: left;
     margin-right: 20px;
@@ -1014,7 +1014,7 @@ form#loginform {
 .main-navigation li {
   list-style: none;
 }
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .main-navigation li {
     float: left;
     padding-left: 20px;
@@ -1026,7 +1026,7 @@ li ul.sub-nav {
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   li ul.sub-nav {
     display: none;
   }
@@ -1041,7 +1041,7 @@ li ul.sub-nav {
   font-weight: 300;
   font-size: 1.2rem;
 }
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .main-navigation a {
     display: inline-block;
     padding: 0;
@@ -1054,7 +1054,7 @@ li ul.sub-nav {
 }
 
 /* Community sub-menu styling screens >= 1024px */
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   li ul.subnav-show {
     box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
     display: flex;
@@ -1078,14 +1078,14 @@ li ul.sub-nav {
   }
 }
 
-.menu-link.members {
+.menu-link.nav-highlight-community {
   display: none;
 }
-.menu-link.members:hover {
+.menu-link.nav-highlight-community:hover {
   color: #ffb990;
 }
-@media (min-width: 1024px) {
-  .menu-link.members {
+@media (min-width: 960px) {
+  .menu-link.nav-highlight-community {
     display: flex;
     cursor: pointer;
     padding-left: 0;
@@ -1158,7 +1158,7 @@ li ul.sub-nav {
   padding-top: 60px;
   padding-bottom: 60px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .hero-slider__interior {
     padding-top: 130px;
     padding-bottom: 130px;
@@ -1174,7 +1174,7 @@ li ul.sub-nav {
   padding: 40px;
   color: #fff;
 }
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .hero-slider__overlay {
     width: 50%;
   }
@@ -1190,7 +1190,7 @@ li ul.sub-nav {
   text-align: center;
   top: 15px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .slick-dots {
     top: 50px;
   }
@@ -1232,7 +1232,7 @@ li ul.sub-nav {
   text-align: center;
   top: 15px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .glide__bullets {
     top: 50px;
   }
@@ -1300,7 +1300,7 @@ body.admin-bar .search-overlay {
   font-size: 1.8rem;
   color: #F95738;
 }
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .search-overlay__icon {
     font-size: 2.5rem;
   }
@@ -1338,7 +1338,7 @@ body.admin-bar .search-overlay {
     font-size: 2.1rem;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .search-overlay__close {
     top: 26px;
     font-size: 2.8rem;
@@ -1368,7 +1368,7 @@ body.admin-bar .search-overlay {
     font-size: 1.5rem;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .search-term {
     width: 80%;
     font-size: 3rem;
@@ -1544,7 +1544,7 @@ body.admin-bar .search-overlay {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .full-width-split {
     display: flex;
   }
@@ -1553,12 +1553,12 @@ body.admin-bar .search-overlay {
   flex: 1;
   padding: 1.6rem 16px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .full-width-split__one {
     padding: 40px;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .full-width-split__one .full-width-split__inner {
     float: right;
   }
@@ -1568,7 +1568,7 @@ body.admin-bar .search-overlay {
   background-color: #ffb990;
   padding: 1.6rem 16px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 960px) {
   .full-width-split__two {
     padding: 40px;
   }
