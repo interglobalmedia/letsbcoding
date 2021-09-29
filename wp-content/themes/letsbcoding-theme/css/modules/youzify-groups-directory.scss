@@ -1,0 +1,54 @@
+/* results in the customization of the (directory page) */
+body.directory.groups .youzify-page.youzify-groups-directory-page, body.directory.groups #youzify {
+    background: $groupsBodyColor !important;
+}
+
+body.directory.groups div.youzify-search-landing-heading {
+    display: none !important;
+}
+
+body.directory.groups p.youzify-search-landing-heading-text {
+    display: none;
+}
+
+body.directory.groups .youzify-search-input-form {
+    background: $groupsInputColor;
+    border-radius: 8px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+body.directory.groups .youzify-mobile-nav {
+    background: $groupsMobileNavBgColor;
+    border-radius: 8px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+body.directory.groups .youzify-directory-filter, body.directory.groups .youzify-mobile-nav-container {
+    background: rgba($groupsSearchFilterColor, 1);
+    border-radius: 8px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+body.directory.groups .youzify-mobile-nav .youzify-mobile-nav-item i {
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+body.directory.groups .youzify-directory-filter .item-list-tabs:not(#subnav) ul, body.directory.groups #groups-order-select.last.filter {
+    border-radius: 8px;
+    margin-bottom: 0;
+}
+
+body.directory.groups #youzify-groups-list>li .youzify-group-data {
+    background: rgba($groupsCardBgColor, 1);
+    border-radius: 8px;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    margin-top: 1.5rem;
+}
+
+body.directory.groups footer.site-footer {
+    background-image: linear-gradient($groupsBodyColor, $groupsBodyColor);
+    &__inner {
+        border-top: 1px solid black !important;
+        padding-top: 3.5rem;
+    }
+}

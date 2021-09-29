@@ -21,7 +21,6 @@
               <ul class="sub-nav">
                <li><a class="menu-link" href="<?php echo site_url('/members'); ?>">Members</a></li>
                 <li><a class="menu-link" href="<?php echo site_url('/groups'); ?>">Groups</a></li>
-                <li><a class="menu-link" href="<?php echo site_url('/forums'); ?>">Forums</a></li>
               </ul>
              </li>
              <li <?php  if(get_post_type() === 'program') echo 'class="current-menu-item"' ?>><a href="<?php echo get_post_type_archive_link('program'); ?>">Programs</a></li>

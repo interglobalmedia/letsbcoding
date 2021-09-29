@@ -1,64 +1,41 @@
-.youzify-page {
-    background: $mainBodyColor !important;
+/* Second part of Sticky Footer styling (for page content) - affects all pages */
+#youzify {
+    flex: 1;
+    width: 100%;
+}
+/* End decond part of Sticky Footer styling 8 */
+
+body.directory .youzify-members-directory-page {
+    background: rgba($mainBodyColor, 1) !important;
 }
 
-.youzify-search-landing-image-container {
+/* this changes color on every directory page */
+body.directory.members .youzify-search-landing-image-container {
     background-color: $mainBodyColor !important;
-}
-
-body.directory.members nav.main-navigation ul li a,
-body.directory.members i.fa-search,
-body.directory.members .school-logo-text a {
-    // color: #848b92;
-}
-
-body.directory.members nav.main-navigation ul li a {
-    // text-transform: uppercase;
-}
-
-body.directory.members nav.main-navigation ul li a:hover,
-body.directory.members .school-logo-text a:hover {
-    // color: #ff7f76;
-}
-
-body.directory.members.logged-in.admin-bar .site-header__menu-trigger {
-    // color: #ff7f76;
-}
-
-body.directory.members header.site-header {
-    z-index: 999;
-}
-
-body.directory.members.youzify-search-header.youzify-search-landing-image-container {
-    display: none !important;
-}
-
-body.directory.members.youzify-search-landing-image-container {
-    display: none !important;
 }
 
 body.directory.members div.youzify-search-landing-heading {
     display: none !important;
 }
 
-p.youzify-search-landing-heading-text {
+body.directory.members p.youzify-search-landing-heading-text {
     display: none;
 }
 
 body.directory.members .youzify-search-input-form {
-    background: #f6f6f6;
+    background: rgba($membersSearchInputColor, 0.7);
     border-radius: 8px;
     box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 body.directory.members .youzify-mobile-nav {
-    background: $mainCoral;
+    background: rgba($membersMobileNavBgColor, 0.8);
     border-radius: 8px;
     box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 body.directory.members .youzify-directory-filter, body.directory.members .youzify-mobile-nav-container {
-    background: #fbcbb9;
+    background: rgba(#bbc3ac, 1);
     border-radius: 8px;
     box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
@@ -73,7 +50,7 @@ body.directory.members .youzify-directory-filter .item-list-tabs:not(#subnav) ul
 }
 
 body.directory.members #youzify-members-list>li .youzify-user-data {
-    background: rgba($mainCoral, 1);
+    background: rgba($membersCardBgColor, 0.9);
     border-radius: 8px;
     box-shadow: 1px 1px 2px rgba(0,0,0,0.3);
     margin-top: 1.5rem;

@@ -12,8 +12,18 @@ body {
   overflow-x: hidden;
   position: relative;
   background: #f9e5e5;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
+/* added for WordPress site sticky footer styling */
+.container {
+  flex: 1;
+  width: 100%;
+}
+
+/* end sticky footer addition for WordPress site */
 img {
   max-width: 100%;
   height: auto;
@@ -937,7 +947,7 @@ form#loginform {
   text-decoration: underline;
 }
 .site-footer__inner {
-  border-top: 1px dotted #f9e5e5;
+  border-top: 1px dotted #999;
   padding-top: 3.5rem;
 }
 .site-footer__col-one {
@@ -1763,48 +1773,44 @@ body.admin-bar .search-overlay {
   margin-bottom: 0;
 }
 
-.youzify-page {
+/* Second part of Sticky Footer styling (for page content) - affects all pages */
+#youzify {
+  flex: 1;
+  width: 100%;
+}
+
+/* End decond part of Sticky Footer styling 8 */
+body.directory .youzify-members-directory-page {
   background: #f9e5e5 !important;
 }
 
-.youzify-search-landing-image-container {
+/* this changes color on every directory page */
+body.directory.members .youzify-search-landing-image-container {
   background-color: #f9e5e5 !important;
-}
-
-body.directory.members header.site-header {
-  z-index: 999;
-}
-
-body.directory.members.youzify-search-header.youzify-search-landing-image-container {
-  display: none !important;
-}
-
-body.directory.members.youzify-search-landing-image-container {
-  display: none !important;
 }
 
 body.directory.members div.youzify-search-landing-heading {
   display: none !important;
 }
 
-p.youzify-search-landing-heading-text {
+body.directory.members p.youzify-search-landing-heading-text {
   display: none;
 }
 
 body.directory.members .youzify-search-input-form {
-  background: #f6f6f6;
+  background: rgba(197, 203, 198, 0.7);
   border-radius: 8px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 body.directory.members .youzify-mobile-nav {
-  background: #ee6b6b;
+  background: rgba(68, 42, 69, 0.8);
   border-radius: 8px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 body.directory.members .youzify-directory-filter, body.directory.members .youzify-mobile-nav-container {
-  background: #fbcbb9;
+  background: #bbc3ac;
   border-radius: 8px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
@@ -1819,7 +1825,7 @@ body.directory.members .youzify-directory-filter .item-list-tabs:not(#subnav) ul
 }
 
 body.directory.members #youzify-members-list > li .youzify-user-data {
-  background: #ee6b6b;
+  background: rgba(68, 42, 69, 0.9);
   border-radius: 8px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   margin-top: 1.5rem;
@@ -1843,6 +1849,61 @@ body.bp-user div.youzify-header-cover {
 
 .youzify-cover-content, header.youzify-header-content {
   margin-top: -0.75rem;
+}
+
+/* results in the customization of the (directory page) */
+body.directory.groups .youzify-page.youzify-groups-directory-page, body.directory.groups #youzify {
+  background: #cdc1c8 !important;
+}
+
+body.directory.groups div.youzify-search-landing-heading {
+  display: none !important;
+}
+
+body.directory.groups p.youzify-search-landing-heading-text {
+  display: none;
+}
+
+body.directory.groups .youzify-search-input-form {
+  background: #e6d7d1;
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+body.directory.groups .youzify-mobile-nav {
+  background: #9bb88e;
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+body.directory.groups .youzify-directory-filter, body.directory.groups .youzify-mobile-nav-container {
+  background: #e5be95;
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+body.directory.groups .youzify-mobile-nav .youzify-mobile-nav-item i {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+body.directory.groups .youzify-directory-filter .item-list-tabs:not(#subnav) ul, body.directory.groups #groups-order-select.last.filter {
+  border-radius: 8px;
+  margin-bottom: 0;
+}
+
+body.directory.groups #youzify-groups-list > li .youzify-group-data {
+  background: #9bb88e;
+  border-radius: 8px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  margin-top: 1.5rem;
+}
+
+body.directory.groups footer.site-footer {
+  background-image: linear-gradient(#cdc1c8, #cdc1c8);
+}
+body.directory.groups footer.site-footer__inner {
+  border-top: 1px solid black !important;
+  padding-top: 3.5rem;
 }
 
 /*# sourceMappingURL=style-index.css.map*/

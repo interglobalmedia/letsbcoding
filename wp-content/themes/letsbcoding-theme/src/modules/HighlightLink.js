@@ -23,12 +23,6 @@ class HighlightLink {
             if (this.links[1].href == document.URL || document.URL.includes(`/group`) || document.URL.includes(`/groups`)) {
                 this.subLinks[1].classList.add('active')
             }
-            if (this.links[1].href == document.URL || document.URL.includes(`/forum`) || document.URL.includes(`/forums`)) {
-                this.links[1].classList.add('active')
-            }
-            if (this.links[1].href == document.URL || document.URL.includes(`${bcodingData.root_url}/forums`)) {
-                this.subLinks[2].classList.add('active')
-            }
         }
     }
 }
