@@ -1799,19 +1799,19 @@ body.directory.members p.youzify-search-landing-heading-text {
 
 body.directory.members .youzify-search-input-form {
   background: rgba(197, 203, 198, 0.7);
-  border-radius: 8px;
+  border-radius: 5px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 body.directory.members .youzify-mobile-nav {
   background: rgba(68, 42, 69, 0.8);
-  border-radius: 8px;
+  border-radius: 5px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 body.directory.members .youzify-directory-filter, body.directory.members .youzify-mobile-nav-container {
   background: #bbc3ac;
-  border-radius: 8px;
+  border-radius: 5px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
@@ -1820,13 +1820,13 @@ body.directory.members .youzify-mobile-nav .youzify-mobile-nav-item i {
 }
 
 body.directory.members .youzify-directory-filter .item-list-tabs:not(#subnav) ul, body.directory.members #members-order-select.last.filter {
-  border-radius: 8px;
+  border-radius: 5px;
   margin-bottom: 0;
 }
 
 body.directory.members #youzify-members-list > li .youzify-user-data {
   background: rgba(68, 42, 69, 0.9);
-  border-radius: 8px;
+  border-radius: 5px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   margin-top: 1.5rem;
 }
@@ -1866,19 +1866,19 @@ body.directory.groups p.youzify-search-landing-heading-text {
 
 body.directory.groups .youzify-search-input-form {
   background: #e6d7d1;
-  border-radius: 8px;
+  border-radius: 5px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 body.directory.groups .youzify-mobile-nav {
   background: #9bb88e;
-  border-radius: 8px;
+  border-radius: 5px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 body.directory.groups .youzify-directory-filter, body.directory.groups .youzify-mobile-nav-container {
   background: #e5be95;
-  border-radius: 8px;
+  border-radius: 5px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
@@ -1887,13 +1887,13 @@ body.directory.groups .youzify-mobile-nav .youzify-mobile-nav-item i {
 }
 
 body.directory.groups .youzify-directory-filter .item-list-tabs:not(#subnav) ul, body.directory.groups #groups-order-select.last.filter {
-  border-radius: 8px;
+  border-radius: 5px;
   margin-bottom: 0;
 }
 
 body.directory.groups #youzify-groups-list > li .youzify-group-data {
   background: #9bb88e;
-  border-radius: 8px;
+  border-radius: 5px;
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
   margin-top: 1.5rem;
 }
