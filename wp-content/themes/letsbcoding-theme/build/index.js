@@ -6160,6 +6160,8 @@ class HighlightLink {
   constructor() {
     this.links = document.querySelectorAll('.menu-link');
     this.subLinks = document.querySelectorAll('ul.sub-nav li a');
+    this.logoText = document.querySelector('.site-header h1 a');
+    console.log(this.logoText);
     console.log(this.subLinks);
     console.log(this.links[3]);
     this.linkHandler();
@@ -6189,6 +6191,10 @@ class HighlightLink {
 
       if (this.links[i].href == document.URL || document.URL.includes(`/student`) || document.URL.includes(`/professor`)) {
         this.links[4].classList.add('active');
+      }
+
+      if (this.logoText.href == document.URL) {
+        this.logoText.classList.add('active');
       }
     }
   }
