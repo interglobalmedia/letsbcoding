@@ -5929,7 +5929,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_TableSearch__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./modules/TableSearch */ "./src/modules/TableSearch.js");
 /* harmony import */ var _modules_HighlightLink__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./modules/HighlightLink */ "./src/modules/HighlightLink.js");
 /* harmony import */ var _modules_NavSubNav__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./modules/NavSubNav */ "./src/modules/NavSubNav.js");
+/* harmony import */ var _modules_CommunityHeader__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./modules/CommunityHeader */ "./src/modules/CommunityHeader.js");
+/* harmony import */ var _modules_CommunityFooter__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./modules/CommunityFooter */ "./src/modules/CommunityFooter.js");
  // Our modules / classes
+
+
 
 
 
@@ -5951,9 +5955,153 @@ const like = new _modules_Like__WEBPACK_IMPORTED_MODULE_6__["default"]();
 const studentLike = new _modules_StudentLike__WEBPACK_IMPORTED_MODULE_7__["default"]();
 const tableSearch = new _modules_TableSearch__WEBPACK_IMPORTED_MODULE_8__["default"]();
 const highlightLink = new _modules_HighlightLink__WEBPACK_IMPORTED_MODULE_9__["default"]();
-const navSubNav = new _modules_NavSubNav__WEBPACK_IMPORTED_MODULE_10__["default"](); // Allow new JS and CSS to load in browser without a traditional page refresh
+const navSubNav = new _modules_NavSubNav__WEBPACK_IMPORTED_MODULE_10__["default"]();
+const communityHeader = new _modules_CommunityHeader__WEBPACK_IMPORTED_MODULE_11__["default"]();
+const communityFooter = new _modules_CommunityFooter__WEBPACK_IMPORTED_MODULE_12__["default"](); // Allow new JS and CSS to load in browser without a traditional page refresh
 
 if (false) {}
+
+/***/ }),
+
+/***/ "./src/modules/CommunityFooter.js":
+/*!****************************************!*\
+  !*** ./src/modules/CommunityFooter.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+class CommunityFooter {
+  constructor() {
+    this.footerNavLinks = document.querySelectorAll(".footer-menu-link");
+    console.log(this.footerNavLinks[0]);
+    this.footerHandler();
+  }
+
+  footerHandler() {
+    for (let i = 0; i < this.footerNavLinks.length; i++) {
+      if (this.footerNavLinks[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/about-us`)) {
+        this.footerNavLinks[0].classList.add('no-footer-link');
+        this.footerNavLinks[3].classList.add('no-footer-link');
+        this.footerNavLinks[4].classList.add('no-footer-link');
+        this.footerNavLinks[5].classList.add('no-footer-link');
+        this.footerNavLinks[6].classList.add('no-footer-link');
+      }
+
+      if (this.footerNavLinks[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/programs`)) {
+        this.footerNavLinks[0].classList.add('no-footer-link');
+        this.footerNavLinks[3].classList.add('no-footer-link');
+        this.footerNavLinks[4].classList.add('no-footer-link');
+        this.footerNavLinks[5].classList.add('no-footer-link');
+        this.footerNavLinks[6].classList.add('no-footer-link');
+      }
+
+      if (this.footerNavLinks[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/events`)) {
+        this.footerNavLinks[0].classList.add('no-footer-link');
+        this.footerNavLinks[3].classList.add('no-footer-link');
+        this.footerNavLinks[4].classList.add('no-footer-link');
+        this.footerNavLinks[5].classList.add('no-footer-link');
+        this.footerNavLinks[6].classList.add('no-footer-link');
+      }
+
+      if (this.footerNavLinks[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/campuses`)) {
+        this.footerNavLinks[0].classList.add('no-footer-link');
+        this.footerNavLinks[3].classList.add('no-footer-link');
+        this.footerNavLinks[4].classList.add('no-footer-link');
+        this.footerNavLinks[5].classList.add('no-footer-link');
+        this.footerNavLinks[6].classList.add('no-footer-link');
+      }
+
+      if (this.footerNavLinks[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/student`)) {
+        this.footerNavLinks[0].classList.add('no-footer-link');
+        this.footerNavLinks[3].classList.add('no-footer-link');
+        this.footerNavLinks[4].classList.add('no-footer-link');
+        this.footerNavLinks[5].classList.add('no-footer-link');
+        this.footerNavLinks[6].classList.add('no-footer-link');
+      }
+
+      if (this.footerNavLinks[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/professor`)) {
+        this.footerNavLinks[0].classList.add('no-footer-link');
+        this.footerNavLinks[3].classList.add('no-footer-link');
+        this.footerNavLinks[4].classList.add('no-footer-link');
+        this.footerNavLinks[5].classList.add('no-footer-link');
+        this.footerNavLinks[6].classList.add('no-footer-link');
+      }
+
+      if (this.footerNavLinks[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/blog`)) {
+        this.footerNavLinks[0].classList.add('no-footer-link');
+        this.footerNavLinks[3].classList.add('no-footer-link');
+        this.footerNavLinks[4].classList.add('no-footer-link');
+        this.footerNavLinks[5].classList.add('no-footer-link');
+        this.footerNavLinks[6].classList.add('no-footer-link');
+      }
+
+      if (this.footerNavLinks[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/20`)) {
+        this.footerNavLinks[0].classList.add('no-footer-link');
+        this.footerNavLinks[3].classList.add('no-footer-link');
+        this.footerNavLinks[4].classList.add('no-footer-link');
+        this.footerNavLinks[5].classList.add('no-footer-link');
+        this.footerNavLinks[6].classList.add('no-footer-link');
+      }
+
+      if (this.footerNavLinks[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/members`)) {
+        this.footerNavLinks[1].classList.add('no-footer-link');
+        this.footerNavLinks[2].classList.add('no-footer-link');
+      }
+
+      if (this.footerNavLinks[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/groups`)) {
+        this.footerNavLinks[1].classList.add('no-footer-link');
+        this.footerNavLinks[2].classList.add('no-footer-link');
+      }
+    }
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (CommunityFooter);
+
+/***/ }),
+
+/***/ "./src/modules/CommunityHeader.js":
+/*!****************************************!*\
+  !*** ./src/modules/CommunityHeader.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+class CommunityHeader {
+  constructor() {
+    this.mainNavigationLinks = document.querySelectorAll('a.menu-link');
+    this.communityLinks = document.querySelectorAll('div.menu-link');
+    this.communityHandler();
+  }
+
+  communityHandler() {
+    for (let i = 0; i < this.mainNavigationLinks.length; i++) {
+      if (this.communityLinks[0].href == document.URL || document.URL.includes(`${bcodingData.root_url}/members`)) {
+        this.mainNavigationLinks[0].classList.add('no-nav-link');
+        this.mainNavigationLinks[3].classList.add('no-nav-link');
+        this.mainNavigationLinks[4].classList.add('no-nav-link');
+        this.mainNavigationLinks[5].classList.add('no-nav-link');
+        this.mainNavigationLinks[6].classList.add('no-nav-link');
+      }
+
+      if (this.communityLinks[0].href == document.URL || document.URL.includes(`${bcodingData.root_url}/groups`)) {
+        this.mainNavigationLinks[0].classList.add('no-nav-link');
+        this.mainNavigationLinks[3].classList.add('no-nav-link');
+        this.mainNavigationLinks[4].classList.add('no-nav-link');
+        this.mainNavigationLinks[5].classList.add('no-nav-link');
+        this.mainNavigationLinks[6].classList.add('no-nav-link');
+      }
+    }
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (CommunityHeader);
 
 /***/ }),
 
