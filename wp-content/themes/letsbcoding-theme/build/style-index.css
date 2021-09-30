@@ -927,6 +927,10 @@ form#loginform {
   color: #ffb990 !important;
 }
 
+.no-nav-link, .no-footer-link {
+  display: none !important;
+}
+
 .site-footer {
   padding: 2rem 0 3.5rem 0;
   background-image: linear-gradient(#f9e5e5, #f9e5e5);
@@ -1839,7 +1843,7 @@ body.directory.members #youzify-members-list > li .youzify-user-data a.youzify-f
   color: #fff;
 }
 
-body.bp-user div.youzify-header-cover {
+-body.bp-user div.youzify-header-cover {
   margin-top: -2rem;
 }
 
@@ -1904,6 +1908,10 @@ body.directory.groups footer.site-footer {
 body.directory.groups footer.site-footer__inner {
   border-top: 1px solid black !important;
   padding-top: 3.5rem;
+}
+
+body.directory.members header.site-header .site-header__util .btn.btn--small, body.directory.groups header.site-header .site-header__util .btn.btn--small, body.single-item.groups header.site-header .site-header__util .btn.btn--small, body.bp-user header.site-header .site-header__util .btn.btn--small {
+  display: none !important;
 }
 
 /*# sourceMappingURL=style-index.css.map*/
