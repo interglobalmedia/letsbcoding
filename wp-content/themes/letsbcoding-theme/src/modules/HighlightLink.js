@@ -3,6 +3,7 @@ class HighlightLink {
         this.links = document.querySelectorAll('.menu-link')
         this.subLinks = document.querySelectorAll('ul.sub-nav li a')
         console.log(this.subLinks)
+        console.log(this.links[3])
         this.linkHandler()
     }
 
@@ -22,6 +23,9 @@ class HighlightLink {
             }
             if (this.links[1].href == document.URL || document.URL.includes(`/group`) || document.URL.includes(`/groups`)) {
                 this.subLinks[1].classList.add('active')
+            }
+            if (this.links[i].href == document.URL || document.URL.includes(`/student`) || document.URL.includes(`/professor`)) {
+                this.links[4].classList.add('active')
             }
         }
     }
