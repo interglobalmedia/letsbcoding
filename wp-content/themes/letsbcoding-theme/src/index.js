@@ -11,6 +11,8 @@ import StudentLike from './modules/StudentLike'
 import TableSearch from './modules/TableSearch'
 import HighlightLink from './modules/HighlightLink'
 import NavSubNav from './modules/NavSubNav'
+import CommunityHeader from './modules/CommunityHeader'
+import CommunityFooter from './modules/CommunityFooter'
 
 // Instantiate a new object using our modules/classes
 const mobileMenu = new MobileMenu()
@@ -23,6 +25,8 @@ const studentLike = new StudentLike()
 const tableSearch = new TableSearch()
 const highlightLink = new HighlightLink()
 const navSubNav = new NavSubNav()
+const communityHeader = new CommunityHeader()
+const communityFooter = new CommunityFooter()
 
 // Allow new JS and CSS to load in browser without a traditional page refresh
 if (module.hot) {
