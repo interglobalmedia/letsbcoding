@@ -123,3 +123,7 @@
 .active {
     color: $beige !important;
 }
+
+.no-nav-link, .no-footer-link {
+    display: none !important;
+}
