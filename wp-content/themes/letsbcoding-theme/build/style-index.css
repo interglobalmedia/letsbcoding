@@ -1851,8 +1851,21 @@ body.directory.members #youzify-members-list > li .youzify-user-data a.youzify-f
   display: none;
 }
 
+/* Points to wherever these classes are being used, not just single group view */
 .youzify-cover-content, header.youzify-header-content {
   margin-top: -0.75rem;
+}
+
+body.single-item.groups .youzify-page.youzify-group, body.single-item.groups #youzify {
+  background: #cdc1c8 !important;
+}
+
+body.single-item.groups footer.site-footer {
+  background-image: linear-gradient(#cdc1c8, #cdc1c8);
+}
+body.single-item.groups footer.site-footer__inner {
+  border-top: 1px solid black !important;
+  padding-top: 3.5rem;
 }
 
 /* results in the customization of the (directory page) */
