@@ -10,8 +10,20 @@
   }
 }
 
+@mixin atSmallMediumMax {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
 @mixin atSmallMedium {
   @media (min-width: 767px) {
+    @content;
+  }
+}
+
+@mixin atSmallMediumMin {
+  @media (min-width: 769px) {
     @content;
   }
 }
@@ -22,14 +34,32 @@
   }
 }
 
+@mixin atSmallMedium799Max {
+  @media (max-width: 799px) {
+    @content;
+  }
+} 
+
+@mixin atSmallMedium800Min {
+  @media (min-width: 800px) {
+    @content;
+  }
+}
+
 @mixin atMedium {
   @media (min-width: 960px) {
     @content;
   }
 }
 
-@mixin atLarge {
-  @media (min-width: 1200px) {
+@mixin atSmallLarge {
+  @media (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin atSmallLargeMax {
+  @media (max-width: 1024px) {
     @content;
   }
 }
@@ -43,6 +73,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  width: 100vw;
 }
 /* added for WordPress site sticky footer styling */
 .container {
