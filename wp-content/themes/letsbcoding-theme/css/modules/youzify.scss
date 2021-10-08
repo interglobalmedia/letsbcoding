@@ -1,0 +1,62 @@
+#youzify,
+.youzify-page {
+  width: 100% !important;
+  margin: 0 auto;
+  @include atSmallMediumMin {
+    width: 100% !important;
+  }
+}
+
+body.buddypress.bp-legacy {
+  margin: 0 auto; 
+}
+
+body.buddypress.bp-legacy header.site-header,
+body.single-item.groups header.site-header {
+  margin: 0 auto;  
+  @include atSmallLarge {
+    padding-left: 0;
+  }
+}
+
+#youzify .youzify .youzify-profile-header {
+  @include atSmallLargeMax {
+    margin-bottom: 0 !important;
+  }
+}
+
+.youzify-content header {
+  @media #{$atSmallMediumMin} and #{$atSmallLargeMax} {
+    width: 100% !important;
+  }
+}
+
+.youzify-header-cover {
+  @include atSmallLarge {
+    margin: 0 auto;
+  }
+}
+
+/* Points to wherever these classes are being used, not just single user view */
+.youzify-cover-content, header.youzify-header-content {
+    width: 100%;
+}
+
+.youzify-content #youzify-profile-navmenu {
+  @media #{$atSmallMediumMin} {
+    width: 100% !important;
+  }
+}
+
+/* Styling for inner content of Member, Group, and Forum */
+
+body.single-item.groups .youzify-cover-content .youzify-inner-content {
+  bottom: 0;
+  width: 100%;
+  max-width: 1300px;
+  left: 0;
+  top: 1.5rem;
+  @media #{$atSmallMediumMin} {
+    top: 6rem;
+  }
+}
