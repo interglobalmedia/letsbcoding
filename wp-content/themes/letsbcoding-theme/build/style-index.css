@@ -1,5 +1,9 @@
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./css/style.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************/
 /* 3rd party packages */
 /* SASS and Global'ish Stuff */
+/* media queries */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,6 +19,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  width: 100vw;
 }
 
 /* added for WordPress site sticky footer styling */
@@ -812,6 +817,16 @@ form#loginform {
   right: 0;
   padding: 20px 0;
 }
+@media (max-width: 1024px) {
+  .site-header {
+    right: 1rem;
+  }
+}
+@media (min-width: 1025px) and (max-width: 1340px) {
+  .site-header {
+    right: 1rem;
+  }
+}
 .site-header__avatar {
   position: absolute;
   top: 0;
@@ -846,7 +861,7 @@ form#loginform {
   margin-top: 1.5rem;
   margin-bottom: 2.5rem;
 }
-@media (min-width: 960px) {
+@media (min-width: 1024px) {
   .site-header__menu {
     display: flex;
     opacity: 1;
@@ -865,18 +880,20 @@ form#loginform {
   font-size: 1.2rem;
   position: absolute;
   top: 6px;
-  right: 16px;
+  right: 1rem;
 }
 @media (min-width: 530px) {
   .site-header__search-trigger {
     top: 4px;
-    font-size: 1.4rem;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 1024px) {
   .site-header__search-trigger {
     display: none;
   }
+}
+.site-header i.fa.fa-search {
+  font-size: 1.2rem;
 }
 .site-header__menu-trigger {
   color: #fff;
@@ -885,7 +902,7 @@ form#loginform {
   position: absolute;
   z-index: 10;
   top: 7px;
-  right: 46px;
+  right: 3rem;
   z-index: 10000;
 }
 @media (min-width: 530px) {
@@ -894,7 +911,7 @@ form#loginform {
     font-size: 1.4rem;
   }
 }
-@media (min-width: 960px) {
+@media (min-width: 1024px) {
   .site-header__menu-trigger {
     display: none;
   }
@@ -905,7 +922,7 @@ form#loginform {
 .site-header__util {
   padding: 0 0 0 20px;
 }
-@media (min-width: 960px) {
+@media (min-width: 1024px) {
   .site-header__util {
     padding: 0;
     float: right;
@@ -914,7 +931,7 @@ form#loginform {
 .site-header__btn {
   margin-right: 20px;
 }
-@media (min-width: 960px) {
+@media (min-width: 1024px) {
   .site-header__btn {
     float: left;
   }
@@ -1018,7 +1035,7 @@ form#loginform {
 .main-navigation ul:after {
   clear: both;
 }
-@media (min-width: 960px) {
+@media (min-width: 1024px) {
   .main-navigation {
     float: left;
     margin-right: 20px;
@@ -1028,7 +1045,7 @@ form#loginform {
 .main-navigation li {
   list-style: none;
 }
-@media (min-width: 960px) {
+@media (min-width: 1024px) {
   .main-navigation li {
     float: left;
     padding-left: 20px;
@@ -1040,7 +1057,7 @@ li ul.sub-nav {
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 960px) {
+@media (min-width: 1024px) {
   li ul.sub-nav {
     display: none;
   }
@@ -1055,7 +1072,7 @@ li ul.sub-nav {
   font-weight: 300;
   font-size: 1.2rem;
 }
-@media (min-width: 960px) {
+@media (min-width: 1024px) {
   .main-navigation a {
     display: inline-block;
     padding: 0;
@@ -1068,7 +1085,7 @@ li ul.sub-nav {
 }
 
 /* Community sub-menu styling screens >= 1024px */
-@media (min-width: 960px) {
+@media (min-width: 1024px) {
   li ul.subnav-show {
     box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
     display: flex;
@@ -1098,7 +1115,7 @@ li ul.sub-nav {
 .menu-link.nav-highlight-community:hover {
   color: #ffb990;
 }
-@media (min-width: 960px) {
+@media (min-width: 1024px) {
   .menu-link.nav-highlight-community {
     display: flex;
     cursor: pointer;
@@ -1843,17 +1860,138 @@ body.directory.members #youzify-members-list > li .youzify-user-data a.youzify-f
   color: #fff;
 }
 
--body.bp-user div.youzify-header-cover {
-  margin-top: -2rem;
+body.bp-user div.youzify-header-cover {
+  padding-top: 1.75rem;
+}
+
+@media (min-width: 769px) {
+  body.bp-user .youzify-hdr-v1 .youzify-cover-content .youzify-inner-content {
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1300px;
+    width: 97%;
+    margin-left: 0.5rem;
+  }
+}
+
+@media (min-width: 769px) {
+  body.bp-user .youzify-hdr-v1 .youzify-cover-content .youzify-user-statistics {
+    padding-right: 0;
+  }
+}
+
+body.bp-user .youzify-hdr-v1 .youzify-cover-content .youzify-user-statistics li {
+  margin: 0 auto;
+}
+
+body.bp-user .youzify-user-statistics li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 769px) {
+  body.bp-user .youzify-settings-area {
+    padding-right: 1.5rem;
+    padding-left: -1.5rem;
+  }
+}
+
+@media (min-width: 769px) {
+  body.bp-user .youzify-settings-area .youzify-nav-settings {
+    padding-right: 0.75rem;
+    padding-left: -1.5rem;
+  }
+}
+
+body.bp-user .youzify-widget {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+html body .youzify-user-balance-box .gamipress-user-points .gamipress-points {
+  justify-content: flex-start !important;
+}
+
+body.bp-user.my-account .youzify-widget .youzify-user-balance-box {
+  background-image: none;
+  text-transform: capitalize;
+}
+@media (max-width: 768px) {
+  body.bp-user.my-account .youzify-widget .youzify-user-balance-box {
+    padding-left: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  body.bp-user.my-account .youzify-widget .youzify-user-balance-box .youzify-box-head {
+    margin-left: -1rem;
+  }
+}
+
+body.bp-user .gamipress-points .gamipress-user-points-description {
+  display: flex;
+  align-items: center;
+}
+
+body.bp-user .gamipress-points .gamipress-user-points-description .gamipress-user-points-amount {
+  font-size: 2.5rem;
+  margin-left: -1rem;
+}
+
+body.bp-user .gamipress-points .gamipress-user-points-description .gamipress-user-points-amount:after {
+  content: "";
 }
 
 .settings.bp-user.my-account.general.buddypress.bp-legacy.logged-in.admin-bar header.site-header, .settings.bp-user.my-account.notifications.buddypress.bp-legacy.logged-in.admin-bar header.site-header, .settings.bp-user.my-account.data.buddypress.bp-legacy.logged-in.admin-bar header.site-header, .settings.bp-user.my-account.account-privacy.buddypress.bp-legacy.logged-in.admin-bar header.site-header, body.xprofile.bp-user header.site-header, .bp-user.my-account.widgets.buddypress.bp-legacy.logged-in.admin-bar header.site-header {
   display: none;
 }
 
-/* Points to wherever these classes are being used, not just single group view */
-.youzify-cover-content, header.youzify-header-content {
-  margin-top: -0.75rem;
+@media (min-width: 769px) {
+  body.single-item.groups .youzify-hdr-v1 .youzify-cover-content .youzify-inner-content {
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1300px;
+    width: 97.5%;
+    margin-left: 0.5rem;
+  }
+}
+
+@media (min-width: 769px) {
+  body.single-item.groups .youzify-hdr-v1 .youzify-cover-content .youzify-user-statistics {
+    padding-right: 0;
+    margin-right: 0.5rem;
+  }
+}
+
+body.single-item.groups .youzify-hdr-v1 .youzify-cover-content .youzify-user-statistics li {
+  margin: 0 auto;
+}
+
+body.single-item.groups .youzify-user-statistics li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 769px) {
+  body.single-item.groups .youzify-settings-area {
+    padding-right: 1.5rem;
+    padding-left: -1.5rem;
+  }
+}
+
+@media (min-width: 769px) {
+  body.single-item.groups .youzify-settings-area .youzify-nav-settings {
+    padding-right: 0.75rem;
+    padding-left: -1.5rem;
+  }
+}
+
+.youzify-page.youzify-group .container {
+  width: 100%;
+  margin: 0 auto;
 }
 
 body.single-item.groups .youzify-page.youzify-group, body.single-item.groups #youzify {
@@ -1925,6 +2063,76 @@ body.directory.groups footer.site-footer__inner {
 
 body.directory.members header.site-header .site-header__util .btn.btn--small, body.directory.groups header.site-header .site-header__util .btn.btn--small, body.single-item.groups header.site-header .site-header__util .btn.btn--small, body.bp-user header.site-header .site-header__util .btn.btn--small {
   display: none !important;
+}
+
+#youzify,
+.youzify-page {
+  width: 100% !important;
+  margin: 0 auto;
+}
+@media (min-width: 769px) {
+  #youzify,
+.youzify-page {
+    width: 100% !important;
+  }
+}
+
+body.buddypress.bp-legacy {
+  margin: 0 auto;
+}
+
+body.buddypress.bp-legacy header.site-header,
+body.single-item.groups header.site-header {
+  margin: 0 auto;
+}
+@media (min-width: 1024px) {
+  body.buddypress.bp-legacy header.site-header,
+body.single-item.groups header.site-header {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  #youzify .youzify .youzify-profile-header {
+    margin-bottom: 0 !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .youzify-content header {
+    width: 100% !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .youzify-header-cover {
+    margin: 0 auto;
+  }
+}
+
+/* Points to wherever these classes are being used, not just single user view */
+.youzify-cover-content, header.youzify-header-content {
+  width: 100%;
+}
+
+@media (min-width: 769px) {
+  .youzify-content #youzify-profile-navmenu {
+    width: 100% !important;
+  }
+}
+
+/* Styling for inner content of Member, Group, and Forum */
+body.single-item.groups .youzify-cover-content .youzify-inner-content {
+  bottom: 0;
+  width: 100%;
+  max-width: 1300px;
+  left: 0;
+  top: 1.5rem;
+}
+@media (min-width: 769px) {
+  body.single-item.groups .youzify-cover-content .youzify-inner-content {
+    top: 6rem;
+  }
 }
 
 /*# sourceMappingURL=style-index.css.map*/
