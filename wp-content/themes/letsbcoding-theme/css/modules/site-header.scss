@@ -6,6 +6,14 @@
   right: 0;
   padding: 20px 0;
 
+  @media #{$atSmallLargeMax} {
+    right: 1rem;
+  }
+
+  @media #{$atSmallLargeMin1025} and #{$atLarge1340Max} {
+    right: 1rem;
+  }
+
   &__avatar {
     position: absolute;
     top: 0;
@@ -26,7 +34,6 @@
     right: 0;
     top: -20px;
     padding-top: 58px;
-    // height: 0;
     opacity: 0;
     transform: translateY(-20%);
     transition: opacity 0.3s ease-out, visibility 0.3s ease-out, transform 0.3s ease-out;
@@ -44,7 +51,7 @@
       }
     }
 
-    @include atMedium {
+    @include atSmallLarge {
       display: flex;
       opacity: 1;
       transform: translateY(0) scale(1);
@@ -63,16 +70,19 @@
     font-size: 1.2rem;
     position: absolute;
     top: 6px;
-    right: 16px;
+    right: 1rem;
 
     @include atSmall {
       top: 4px;
-      font-size: 1.4rem;
     }
 
-    @include atMedium {
+    @include atSmallLarge {
       display: none;
     }
+  }
+
+  & i.fa.fa-search {
+    font-size: 1.2rem;
   }
 
   &__menu-trigger {
@@ -82,7 +92,7 @@
     position: absolute;
     z-index: 10;
     top: 7px;
-    right: 46px;
+    right: 3rem;
     z-index: 10000;
 
     @include atSmall {
@@ -90,7 +100,7 @@
       font-size: 1.4rem;
     }
 
-    @include atMedium {
+    @include atSmallLarge {
       display: none;
     }
   }
@@ -102,7 +112,7 @@
   &__util {
     padding: 0 0 0 20px;
 
-    @include atMedium {
+    @include atSmallLarge {
       padding: 0;
       float: right;
     }
@@ -110,7 +120,7 @@
 
   &__btn {
     margin-right: 20px;
-    @include atMedium {
+    @include atSmallLarge {
       float: left;
     }
   }
