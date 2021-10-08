@@ -1,6 +1,47 @@
-/* Points to wherever these classes are being used, not just single group view */
-.youzify-cover-content, header.youzify-header-content {
-    margin-top: -0.75rem;
+body.single-item.groups .youzify-hdr-v1 .youzify-cover-content .youzify-inner-content {
+    @media #{$atSmallMediumMin} {
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1300px;
+    width: 97.5%;
+    margin-left: 0.5rem;
+  }
+}
+
+body.single-item.groups .youzify-hdr-v1 .youzify-cover-content .youzify-user-statistics {
+  @media #{$atSmallMediumMin} {
+    padding-right: 0;
+    margin-right: 0.5rem;
+  }
+}
+
+body.single-item.groups .youzify-hdr-v1 .youzify-cover-content .youzify-user-statistics li {
+  margin: 0 auto;
+}
+
+body.single-item.groups .youzify-user-statistics li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+body.single-item.groups .youzify-settings-area {
+  @include atSmallMediumMin {
+    padding-right: 1.5rem;
+    padding-left: -1.5rem;
+  }
+}
+
+body.single-item.groups .youzify-settings-area .youzify-nav-settings {
+  @include atSmallMediumMin {
+    padding-right: 0.75rem;
+    padding-left: -1.5rem;
+  }
+}
+
+.youzify-page.youzify-group .container {
+  width: 100%;
+  margin: 0 auto;
 }
 
 body.single-item.groups .youzify-page.youzify-group, body.single-item.groups #youzify  {
