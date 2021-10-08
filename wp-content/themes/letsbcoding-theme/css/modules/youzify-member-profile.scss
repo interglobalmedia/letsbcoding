@@ -1,3 +1,81 @@
--body.bp-user div.youzify-header-cover {
-  margin-top: -2rem;
+body.bp-user div.youzify-header-cover {
+  padding-top:1.75rem;
+}
+
+body.bp-user .youzify-hdr-v1 .youzify-cover-content .youzify-inner-content {
+  @media #{$atSmallMediumMin} {
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 1300px;
+    width: 97%;
+    margin-left: 0.5rem;
+  }
+}
+
+body.bp-user .youzify-hdr-v1 .youzify-cover-content .youzify-user-statistics {
+  @media #{$atSmallMediumMin} {
+    padding-right: 0;
+  }
+}
+
+body.bp-user .youzify-hdr-v1 .youzify-cover-content .youzify-user-statistics li {
+  margin: 0 auto;
+}
+
+body.bp-user .youzify-user-statistics li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} 
+
+body.bp-user .youzify-settings-area {
+  @include atSmallMediumMin {
+    padding-right: 1.5rem;
+    padding-left: -1.5rem;
+  }
+}
+
+body.bp-user .youzify-settings-area .youzify-nav-settings {
+  @include atSmallMediumMin {
+    padding-right: 0.75rem;
+    padding-left: -1.5rem;
+  }
+}
+
+body.bp-user .youzify-widget {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+html body .youzify-user-balance-box .gamipress-user-points .gamipress-points {
+  justify-content: flex-start !important;
+}
+
+body.bp-user.my-account .youzify-widget .youzify-user-balance-box {
+  background-image: none;
+  text-transform: capitalize;
+  @include atSmallMediumMax {
+    padding-left: 2.5rem;
+  }
+}
+
+body.bp-user.my-account .youzify-widget .youzify-user-balance-box .youzify-box-head {
+  @include atSmallMediumMax {
+    margin-left: -1rem;
+  }
+}
+
+body.bp-user .gamipress-points .gamipress-user-points-description {
+  display: flex;
+  align-items: center;
+}
+
+body.bp-user .gamipress-points .gamipress-user-points-description .gamipress-user-points-amount {
+  font-size: 2.5rem;
+  margin-left: -1rem;
+}
+
+body.bp-user .gamipress-points .gamipress-user-points-description .gamipress-user-points-amount:after {
+    content: '';
 }
