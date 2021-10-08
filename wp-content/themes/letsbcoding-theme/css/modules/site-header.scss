@@ -11,7 +11,7 @@
   }
 
   @media #{$atSmallLargeMin1025} and #{$atLarge1340Max} {
-    right: 1rem;
+    right: 0;
   }
 
   &__avatar {
@@ -44,6 +44,7 @@
       transform: translateY(0);
       display: block;
       height: 100vh;
+      width: 100vw;
       background: $mobileNavBackground;
       & .main-navigation ul {
         margin-top: 1.5rem;
@@ -70,7 +71,7 @@
     font-size: 1.2rem;
     position: absolute;
     top: 6px;
-    right: 1rem;
+    right: 0;
 
     @include atSmall {
       top: 4px;
@@ -83,6 +84,9 @@
 
   & i.fa.fa-search {
     font-size: 1.2rem;
+    @include atSmallLarge {
+      right: 0;
+    }
   }
 
   &__menu-trigger {
@@ -92,7 +96,7 @@
     position: absolute;
     z-index: 10;
     top: 7px;
-    right: 3rem;
+    right: 2.5rem;
     z-index: 10000;
 
     @include atSmall {
@@ -103,6 +107,10 @@
     @include atSmallLarge {
       display: none;
     }
+  }
+
+  & i.fa.fa-window-close {
+    right: 1rem;
   }
 
   & i.fa.fa-window-close:hover {
