@@ -126,6 +126,15 @@ function add_tags_to_pages() {
 
 add_action('init', 'add_tags_to_pages');
 
+/* Add default tag on publish */
+function set_archive_tag_on_publish($post_id,$post) {
+  if ($post->post_type == 'post'
+    && $post->post_status == 'publish') {
+      wp_set_post_tags( $post_id, 'LetsBCoding', true );
+    }
+  }
+add_action('save_post','set_archive_tag_on_publish',10,2);
+
 /* Display tags and categories for custom post types */
 function add_taxonomies_to_cpt() {
     register_taxonomy_for_object_type('category', 'campus');
