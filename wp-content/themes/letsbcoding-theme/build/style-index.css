@@ -1528,10 +1528,19 @@ body.admin-bar .search-overlay {
 .generic-content li {
   font-size: 1.15rem;
 }
+.generic-content blockquote {
+  border-left: 5px solid #008080;
+  padding-left: 8px;
+}
 .generic-content blockquote,
 .generic-content blockquote p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-style: italic;
+  color: #008080;
+}
+.generic-content cite {
+  color: #1b85b8;
+  font-size: 1rem;
 }
 .generic-content h1,
 .generic-content h2,
@@ -1762,6 +1771,7 @@ body.admin-bar .search-overlay {
 }
 .metabox__main {
   padding: 10px 15px 10px 11px;
+  color: #1b85b8;
 }
 .metabox p {
   margin: 0;
@@ -1788,6 +1798,80 @@ body.admin-bar .search-overlay {
   text-decoration: none;
   background-color: #eb5454;
 }
+.metabox .tags {
+  margin-top: 0;
+}
+.metabox .categories-text,
+.metabox .tags-text {
+  color: #1b85b8;
+}
+
+.metabox__categories,
+.metabox__tags,
+.metabox__categories--single,
+.metabox__tags--single {
+  background-color: #ffb990;
+  border-radius: 3px;
+  padding: 10px 15px;
+  display: inline-block;
+  margin-bottom: 1rem;
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
+}
+
+.metabox__categories--single {
+  margin-top: 1.5rem;
+}
+
+.metabox__categories,
+.metabox__tags {
+  margin-top: 0;
+}
+
+.metabox__categories p.categories,
+.metabox__categories p.tags,
+.metabox__tags p.categories,
+.metabox__tags p.tags,
+.metabox__categories--single p.categories,
+.metabox__categories--single p.tags,
+.metabox__tags--single p.categories,
+.metabox__tags--single p.tags {
+  font-size: 0.9rem;
+  color: #1b85b8;
+}
+.metabox__categories p.categories a,
+.metabox__categories p.tags a,
+.metabox__tags p.categories a,
+.metabox__tags p.tags a,
+.metabox__categories--single p.categories a,
+.metabox__categories--single p.tags a,
+.metabox__tags--single p.categories a,
+.metabox__tags--single p.tags a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+.metabox__categories p.categories .tags-seperator, .metabox__categories p.categories .categories-seperator,
+.metabox__categories p.tags .tags-seperator,
+.metabox__categories p.tags .categories-seperator,
+.metabox__tags p.categories .tags-seperator,
+.metabox__tags p.categories .categories-seperator,
+.metabox__tags p.tags .tags-seperator,
+.metabox__tags p.tags .categories-seperator,
+.metabox__categories--single p.categories .tags-seperator,
+.metabox__categories--single p.categories .categories-seperator,
+.metabox__categories--single p.tags .tags-seperator,
+.metabox__categories--single p.tags .categories-seperator,
+.metabox__tags--single p.categories .tags-seperator,
+.metabox__tags--single p.categories .categories-seperator,
+.metabox__tags--single p.tags .tags-seperator,
+.metabox__tags--single p.tags .categories-seperator {
+  color: black;
+  font-weight: bold;
+}
+
+.metabox__tags {
+  margin-bottom: 2.5rem;
+}
 
 .post-item {
   border-bottom: 1px dotted #DEDEDE;
@@ -1795,7 +1879,10 @@ body.admin-bar .search-overlay {
   margin-bottom: 1.7rem;
 }
 .post-item .metabox {
-  margin-top: 30px;
+  margin-top: 1.88rem;
+}
+.post-item .metabox p {
+  color: #1b85b8;
 }
 .post-item:last-of-type {
   border-bottom: none;
