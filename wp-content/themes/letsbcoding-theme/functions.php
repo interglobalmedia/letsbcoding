@@ -112,6 +112,41 @@ function bcoding_adjust_queries($query) {
 
 add_action('pre_get_posts', 'bcoding_adjust_queries');
 
+/* Add categories to Pages */
+function add_categories_to_pages() {
+    register_taxonomy_for_object_type('category', 'page');
+}
+
+add_action('init', 'add_categories_to_pages');
+
+/* Add tags to Pages */
+function add_tags_to_pages() {
+    register_taxonomy_for_object_type('post_tag', 'page');
+}
+
+add_action('init', 'add_tags_to_pages');
+
+/* Display tags and categories for custom post types */
+function add_taxonomies_to_cpt() {
+    register_taxonomy_for_object_type('category', 'campus');
+    register_taxonomy_for_object_type('category', 'event');
+    register_taxonomy_for_object_type('category', 'program');
+    register_taxonomy_for_object_type('category', 'professor');
+    register_taxonomy_for_object_type('category', 'student');
+    register_taxonomy_for_object_type('category', 'note');
+
+    register_taxonomy_for_object_type( 'post_tag', 'campus' );
+    register_taxonomy_for_object_type( 'post_tag', 'event' );
+    register_taxonomy_for_object_type( 'post_tag', 'program' );
+    register_taxonomy_for_object_type( 'post_tag', 'professor' );
+    register_taxonomy_for_object_type( 'post_tag', 'student' );
+    register_taxonomy_for_object_type( 'post_tag', 'note' );
+    
+    
+}
+
+add_action( 'init', 'add_taxonomies_to_cpt');
+
 function redirectSubsHome() {
     $currentUser = wp_get_current_user();
     // roles is an array that contains all the different roles that have been assigned to a user
