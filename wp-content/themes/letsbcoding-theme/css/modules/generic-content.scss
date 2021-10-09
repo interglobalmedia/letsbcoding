@@ -4,10 +4,22 @@
     font-size: 1.15rem;
   }
 
+  blockquote {
+    border-left: 5px solid $blockquoteColor;
+    padding-left: 8px;
+  }
+
   blockquote,
   blockquote p {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-style: italic;
+    color: $blockquoteColor;
+
+  }
+
+ cite {
+    color: $citeColor;
+    font-size: 1rem;
   }
 
   h1,
