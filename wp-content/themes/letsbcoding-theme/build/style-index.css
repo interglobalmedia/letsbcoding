@@ -816,12 +816,12 @@ form#loginform {
   right: 0;
   padding: 20px 0;
 }
-@media (max-width: 1024px) {
+@media (max-width: 1026px) {
   .site-header {
     right: 1rem;
   }
 }
-@media (min-width: 1025px) and (max-width: 1340px) {
+@media (min-width: 1027px) and (max-width: 1340px) {
   .site-header {
     right: 0;
   }
@@ -861,7 +861,10 @@ form#loginform {
   margin-top: 1.5rem;
   margin-bottom: 2.5rem;
 }
-@media (min-width: 1024px) {
+.site-header__menu--active i.fa.fa-search {
+  display: none;
+}
+@media (min-width: 1027px) {
   .site-header__menu {
     display: flex;
     opacity: 1;
@@ -887,17 +890,9 @@ form#loginform {
     top: 4px;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1027px) {
   .site-header__search-trigger {
     display: none;
-  }
-}
-.site-header i.fa.fa-search {
-  font-size: 1.2rem;
-}
-@media (min-width: 1024px) {
-  .site-header i.fa.fa-search {
-    right: 0;
   }
 }
 .site-header__menu-trigger {
@@ -916,13 +911,13 @@ form#loginform {
     font-size: 1.4rem;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1027px) {
   .site-header__menu-trigger {
     display: none;
   }
 }
 .site-header i.fa.fa-window-close {
-  right: 1rem;
+  right: 2.5rem;
 }
 .site-header i.fa.fa-window-close:hover {
   color: #ffb990;
@@ -930,7 +925,7 @@ form#loginform {
 .site-header__util {
   padding: 0 0 0 20px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1027px) {
   .site-header__util {
     padding: 0;
     float: right;
@@ -939,7 +934,7 @@ form#loginform {
 .site-header__btn {
   margin-right: 20px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1027px) {
   .site-header__btn {
     float: left;
   }
@@ -1043,9 +1038,8 @@ form#loginform {
 .main-navigation ul:after {
   clear: both;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1027px) {
   .main-navigation {
-    float: left;
     margin-right: 20px;
   }
 }
@@ -1053,7 +1047,7 @@ form#loginform {
 .main-navigation li {
   list-style: none;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1027px) {
   .main-navigation li {
     float: left;
     padding-left: 20px;
@@ -1065,7 +1059,7 @@ li ul.sub-nav {
   display: flex;
   flex-direction: column;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1027px) {
   li ul.sub-nav {
     display: none;
   }
@@ -1080,7 +1074,7 @@ li ul.sub-nav {
   font-weight: 300;
   font-size: 1.2rem;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1027px) {
   .main-navigation a {
     display: inline-block;
     padding: 0;
@@ -1093,7 +1087,7 @@ li ul.sub-nav {
 }
 
 /* Community sub-menu styling screens >= 1024px */
-@media (min-width: 1024px) {
+@media (min-width: 1027px) {
   li ul.subnav-show {
     box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
     display: flex;
@@ -1123,7 +1117,7 @@ li ul.sub-nav {
 .menu-link.nav-highlight-community:hover {
   color: #ffb990;
 }
-@media (min-width: 1024px) {
+@media (min-width: 1027px) {
   .menu-link.nav-highlight-community {
     display: flex;
     cursor: pointer;
@@ -1315,7 +1309,7 @@ li ul.sub-nav {
 }
 @media (min-width: 783px) {
   .search-overlay {
-    margin-top: -1rem;
+    margin-top: -0.25rem;
   }
 }
 .search-overlay p {
@@ -1755,10 +1749,9 @@ body.admin-bar .search-overlay {
 
 .metabox {
   background-color: #ffb990;
-  border-radius: 3px;
   padding: 10px 15px;
   display: inline-block;
-  margin-bottom: 30px;
+  margin-bottom: 1.88rem;
   box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
 }
 .metabox--position-up {
@@ -1791,7 +1784,6 @@ body.admin-bar .search-overlay {
   color: #fff;
   display: inline-block;
   padding: 10px 15px;
-  border-radius: 3px 0 0 3px;
   font-weight: normal;
 }
 .metabox .metabox__blog-home-link:hover {
@@ -1806,12 +1798,20 @@ body.admin-bar .search-overlay {
   color: #1b85b8;
 }
 
+.metabox-single-wrapper {
+  margin-top: 1.7rem;
+}
+@media (min-width: 530px) {
+  .metabox-single-wrapper {
+    margin-top: 0;
+  }
+}
+
 .metabox__categories,
 .metabox__tags,
 .metabox__categories--single,
 .metabox__tags--single {
   background-color: #ffb990;
-  border-radius: 3px;
   padding: 10px 15px;
   display: inline-block;
   margin-bottom: 1rem;
@@ -1877,6 +1877,14 @@ body.admin-bar .search-overlay {
   border-bottom: 1px dotted #DEDEDE;
   padding-bottom: 1.7rem;
   margin-bottom: 1.7rem;
+}
+.post-item h2:nth-of-type(1) {
+  margin-top: 1.7rem;
+}
+@media (min-width: 530px) {
+  .post-item h2:nth-of-type(1) {
+    margin-top: 0;
+  }
 }
 .post-item .metabox {
   margin-top: 1.88rem;
