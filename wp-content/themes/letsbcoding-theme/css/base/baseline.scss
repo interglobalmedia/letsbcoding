@@ -58,8 +58,20 @@
   }
 }
 
+@mixin atSmallLargeFix {
+  @media (min-width: 1027px) {
+    @content;
+  }
+}
+
 @mixin atSmallLargeMax {
   @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin atSmallLargeMaxFix {
+  @media (max-width: 1026px) {
     @content;
   }
 }
