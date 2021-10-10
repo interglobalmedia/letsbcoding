@@ -3,6 +3,13 @@
   padding-bottom: 1.7rem;
   margin-bottom: 1.7rem;
 
+  & h2:nth-of-type(1) {
+    margin-top: 1.7rem;
+    @include atSmall {
+      margin-top: 0;
+    }
+  }
+
   & .metabox {
     margin-top: 1.88rem;
     & p {

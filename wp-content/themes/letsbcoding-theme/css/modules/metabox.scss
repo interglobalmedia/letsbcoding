@@ -1,9 +1,8 @@
 .metabox {
   background-color: $beige;
-  border-radius: 3px;
   padding: 10px 15px;
   display: inline-block;
-  margin-bottom: 30px;
+  margin-bottom: 1.88rem;
   box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
 
   &--position-up {
@@ -42,7 +41,6 @@
     color: #fff;
     display: inline-block;
     padding: 10px 15px;
-    border-radius: 3px 0 0 3px;
     font-weight: normal;
   }
 
@@ -61,12 +59,18 @@
   }
 }
 
+.metabox-single-wrapper {
+  margin-top: 1.7rem;
+  @include atSmall {
+    margin-top: 0;
+  }
+}
+
 .metabox__categories,
 .metabox__tags,
 .metabox__categories--single,
 .metabox__tags--single {
   background-color: $beige;
-  border-radius: 3px;
   padding: 10px 15px;
   display: inline-block;
   margin-bottom: 1rem;

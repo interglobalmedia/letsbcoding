@@ -16,8 +16,7 @@
     clear: both;
   }
 
-  @include atSmallLarge {
-    float: left;
+  @include atSmallLargeFix {
     margin-right: 20px;
   }
 }
@@ -25,7 +24,7 @@
 .main-navigation li {
   list-style: none;
 
-  @include atSmallLarge {
+  @include atSmallLargeFix {
     float: left;
     padding-left: 20px;
   }
@@ -36,7 +35,7 @@
 li ul.sub-nav {
   display: flex;
   flex-direction: column;
-  @include atSmallLarge {
+  @include atSmallLargeFix {
     display: none;
   }
 }
@@ -49,7 +48,7 @@ li ul.sub-nav {
   text-decoration: none;
   font-weight: 300;
   font-size: 1.2rem;
-  @include atSmallLarge {
+  @include atSmallLargeFix {
     display: inline-block;
     padding: 0;
   }
@@ -63,7 +62,7 @@ li ul.sub-nav {
 /* Community sub-menu styling screens >= 1024px */
 
 li ul.subnav-show {
-  @include atSmallLarge {
+  @include atSmallLargeFix {
     box-shadow: 1px 2px 1px rgba(0,0,0,0.3);
     display: flex;
     cursor: pointer;
@@ -91,7 +90,7 @@ li ul.subnav-show {
   &:hover {
     color: $beige;
   }
-  @include atSmallLarge {
+  @include atSmallLargeFix {
     display: flex;
     cursor: pointer;
     padding-left: 0;
