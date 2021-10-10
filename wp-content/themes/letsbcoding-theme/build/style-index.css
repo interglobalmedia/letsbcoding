@@ -1309,7 +1309,7 @@ li ul.sub-nav {
 }
 @media (min-width: 783px) {
   .search-overlay {
-    margin-top: -1rem;
+    margin-top: -0.25rem;
   }
 }
 .search-overlay p {
