@@ -156,6 +156,22 @@ function add_taxonomies_to_cpt() {
 
 add_action( 'init', 'add_taxonomies_to_cpt');
 
+/* Display last modified time of post */
+function display_last_updated_date( $content ) {
+    $original_time = get_the_time('U');
+    $modified_time = get_the_modified_time('U');
+    $modified_content = '';
+    if ($modified_time >= $original_time + 86400) {
+        $updated_time = get_the_modified_time('h:i a');
+        $updated_day = get_the_modified_time('F jS, Y');
+        $modified_content .= '<p class="last-modified">This post was last updated on '. $updated_day . ' at '. $updated_time .'</p>';
+    }
+    $modified_content .= $content;
+    return $modified_content;
+}
+
+add_filter( 'the_content', 'display_last_updated_date' );
+
 function redirectSubsHome() {
     $currentUser = wp_get_current_user();
     // roles is an array that contains all the different roles that have been assigned to a user
