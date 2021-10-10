@@ -6,11 +6,11 @@
   right: 0;
   padding: 20px 0;
 
-  @media #{$atSmallLargeMax} {
+  @media #{$atSmallLargeMaxFix} {
     right: 1rem;
   }
 
-  @media #{$atSmallLargeMin1025} and #{$atLarge1340Max} {
+  @media #{$atSmallLargeFix} and #{$atLarge1340Max} {
     right: 0;
   }
 
@@ -50,9 +50,12 @@
         margin-top: 1.5rem;
         margin-bottom: 2.5rem;
       }
+      & i.fa.fa-search {
+        display: none;
+      }
     }
 
-    @include atSmallLarge {
+    @include atSmallLargeFix {
       display: flex;
       opacity: 1;
       transform: translateY(0) scale(1);
@@ -77,15 +80,8 @@
       top: 4px;
     }
 
-    @include atSmallLarge {
+    @include atSmallLargeFix {
       display: none;
-    }
-  }
-
-  & i.fa.fa-search {
-    font-size: 1.2rem;
-    @include atSmallLarge {
-      right: 0;
     }
   }
 
@@ -104,13 +100,13 @@
       font-size: 1.4rem;
     }
 
-    @include atSmallLarge {
+    @include atSmallLargeFix {
       display: none;
     }
   }
 
   & i.fa.fa-window-close {
-    right: 1rem;
+    right: 2.5rem;
   }
 
   & i.fa.fa-window-close:hover {
@@ -120,7 +116,7 @@
   &__util {
     padding: 0 0 0 20px;
 
-    @include atSmallLarge {
+    @include atSmallLargeFix {
       padding: 0;
       float: right;
     }
@@ -128,7 +124,7 @@
 
   &__btn {
     margin-right: 20px;
-    @include atSmallLarge {
+    @include atSmallLargeFix {
       float: left;
     }
   }
