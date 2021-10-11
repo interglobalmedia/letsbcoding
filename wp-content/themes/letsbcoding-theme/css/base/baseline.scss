@@ -102,6 +102,13 @@ a {
   color: $mainCoral;
 }
 
+p a {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 a:hover {
   text-decoration: none;
 }
