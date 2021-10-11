@@ -156,21 +156,58 @@ function add_taxonomies_to_cpt() {
 
 add_action( 'init', 'add_taxonomies_to_cpt');
 
-/* Display last modified time of post */
-function display_last_updated_date( $content ) {
-    $original_time = get_the_time('U');
-    $modified_time = get_the_modified_time('U');
-    $modified_content = '';
-    if ($modified_time >= $original_time + 86400) {
-        $updated_time = get_the_modified_time('h:i a');
-        $updated_day = get_the_modified_time('F jS, Y');
-        $modified_content .= '<p class="last-modified">This post was last updated on '. $updated_day . ' at '. $updated_time .'</p>';
+/* Create Breadcrumb functionality for categories */
+function get_cat_breadcrumb() {
+    echo '<a href="'.site_url('/categories').'" rel="nofollow">Categories</a>';
+    if (is_category() || is_single()) {
+        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+        the_category(' &bull; ');
+            if (is_single()) {
+                echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
+                the_title();
+            }
+    } elseif (is_page()) {
+        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+        echo the_title();
+    } elseif (is_search()) {
+        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;Search Results for... ";
+        echo '"<em>';
+        echo the_search_query();
+        echo '</em>"';
     }
-    $modified_content .= $content;
-    return $modified_content;
 }
 
-add_filter( 'the_content', 'display_last_updated_date' );
+/* Create Breadcrumb functionality for tags */
+function get_tag_breadcrumb() {
+    echo '<span>Tags</span>';
+    if (is_tag() || is_single()) {
+        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+        echo get_the_tag_list('',' • ','');
+            if (is_single()) {
+                echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
+                the_title();
+            }
+    } elseif (is_page()) {
+        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
+        echo the_title();
+    } elseif (is_search()) {
+        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;Search Results for... ";
+        echo '"<em>';
+        echo the_search_query();
+        echo '</em>"';
+    }
+}
+
+/* Create shortcode for listing all categories on a page */
+/* this function outputs your category list where you
+use the [my_cat_list] shortcode. */
+function my_list_categories_shortcode() {
+    $args = array( 'echo'=>false );
+    return wp_list_categories( $args ); 
+}
+
+/* This creates the [my_cat_list] shortcode and calls the my_list_categories_shortcode() function. */
+add_shortcode( 'my_cat_list', 'my_list_categories_shortcode' );
 
 function redirectSubsHome() {
     $currentUser = wp_get_current_user();
@@ -180,6 +217,20 @@ function redirectSubsHome() {
         exit;
     }
 }
+
+/* So we can manipulate the generated HTML code for our tag cloud */
+function set_wp_generate_tag_cloud($content, $tags, $args) { 
+    $count=0;
+    $output=preg_replace_callback('(</a\s*>)', 
+    function($match) use ($tags, &$count) {
+        return "<span class=\"tagcount\">(". $tags[$count++]-> count .")</span></a>";  
+    }
+    , $content);
+    
+    return $output;
+}
+
+add_filter('wp_generate_tag_cloud','set_wp_generate_tag_cloud', 10, 3);  
 
 // redirect subscriber account out of admin and onto home page
 add_action('admin_init', 'redirectSubsHome');

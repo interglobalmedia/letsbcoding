@@ -48,34 +48,35 @@ while(have_posts()) {
 
               }
             ?>
-                <span class="like-box" data-like="<?php echo $existQuery->posts[0]->ID; ?>" data-professor="<?php the_ID(); ?>" data-exists="<?php echo $existStatus; ?>">
-                    <i class="fa fa-heart-o" aria-hidden="true"></i>
-                    <i class="fa fa-heart" aria-hidden="true"></i>
-                    <span class="like-count"><?php echo $likeCount->found_posts; ?></span>
-                </span>
-                <?php the_content(); ?>
+            <span class="like-box" data-like="<?php echo $existQuery->posts[0]->ID; ?>" data-professor="<?php the_ID(); ?>" data-exists="<?php echo $existStatus; ?>">
+                <i class="fa fa-heart-o" aria-hidden="true"></i>
+                <i class="fa fa-heart" aria-hidden="true"></i>
+                <span class="like-count"><?php echo $likeCount->found_posts; ?></span>
+            </span>
+            <?php the_content(); ?>
+            <?php
+
+            $relatedPrograms = get_field('related_programs');
+
+            if ($relatedPrograms) {
+              echo '<hr class="section-break">';
+              echo '<h3 class="headline headline--medium">Subject(s) Taught</h3>';
+              echo '<ul class="link-list min-list">';
+              foreach($relatedPrograms as $program) { ?>
+                <li><a href="<?php echo get_the_permalink($program); ?>"><?php echo get_the_title($program); ?></a></li>
+              <?php }
+              echo '</ul>';
+            }
+            ?>
+            <div class="breadcrumb-wrapper">
+              <div class="breadcrumb-cat"><?php get_cat_breadcrumb(); ?></div>
+              <div class="breadcrumb-tag"><?php get_tag_breadcrumb(); ?></div>
             </div>
-
-        </div>
+          </div>
+      </div>
     </div>
-
-    <?php
-
-    $relatedPrograms = get_field('related_programs');
-
-    if ($relatedPrograms) {
-      echo '<hr class="section-break">';
-      echo '<h3 class="headline headline--medium">Subject(s) Taught</h3>';
-      echo '<ul class="link-list min-list">';
-      foreach($relatedPrograms as $program) { ?>
-        <li><a href="<?php echo get_the_permalink($program); ?>"><?php echo get_the_title($program); ?></a></li>
-      <?php }
-      echo '</ul>';
-    }
-    ?>
-    
 	</div>
-  </div>
+</div>
 <?php }
 
 get_footer();
