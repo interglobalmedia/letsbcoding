@@ -7,7 +7,7 @@
 
 <div class="container container--narrow page-section">
 
-<ul class="link-list min-list">
+<ul class="program-list total-list">
 
 <?php 
     while (have_posts()) {
