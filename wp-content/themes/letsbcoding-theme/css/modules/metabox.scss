@@ -70,11 +70,14 @@
 .metabox__tags,
 .metabox__categories--single,
 .metabox__tags--single {
-  background-color: $beige;
-  padding: 10px 15px;
-  display: inline-block;
-  margin-bottom: 1rem;
-  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
+  & p {
+    display: inline-block;
+    margin-top: 0;
+    padding: 10px 15px;
+    background-color: $beige;
+    margin-bottom: 1rem;
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
+  }
 }
 
 .metabox__categories--single {
@@ -83,7 +86,19 @@
 
 .metabox__categories,
 .metabox__tags {
-  margin-top: 0;
+  & p {
+    color: $citeColor;
+    display: inline-block;
+    margin-top: 0;
+    padding: 10px 15px;
+    background-color: $beige;
+    margin-bottom: 1rem;
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
+    & a {
+      color: black;
+      font-weight: bold;
+    }
+  }
 }
 
 .metabox__categories,
@@ -111,5 +126,6 @@
 }
 
 .metabox__tags {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
