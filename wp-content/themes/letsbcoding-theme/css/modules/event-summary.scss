@@ -7,6 +7,10 @@
 
   &__title a {
     color: $mainCoral;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 
   &__date {
