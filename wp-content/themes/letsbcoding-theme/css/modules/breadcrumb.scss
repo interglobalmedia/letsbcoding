@@ -5,6 +5,9 @@
     @include atSmall {
         margin-top: 0.75rem;
     }
+    & a:first-child {
+        color: $rustBrown;
+    }
 }
 
 .breadcrumb-cat,
