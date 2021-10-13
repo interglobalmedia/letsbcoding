@@ -135,69 +135,6 @@ function set_archive_tag_on_publish($post_id,$post) {
   }
 add_action('save_post','set_archive_tag_on_publish',10,2);
 
-/* Display tags and categories for custom post types */
-function add_taxonomies_to_cpt() {
-    register_taxonomy_for_object_type('category', 'campus');
-    register_taxonomy_for_object_type('category', 'event');
-    register_taxonomy_for_object_type('category', 'program');
-    register_taxonomy_for_object_type('category', 'professor');
-    register_taxonomy_for_object_type('category', 'student');
-    register_taxonomy_for_object_type('category', 'note');
-
-    register_taxonomy_for_object_type( 'post_tag', 'campus' );
-    register_taxonomy_for_object_type( 'post_tag', 'event' );
-    register_taxonomy_for_object_type( 'post_tag', 'program' );
-    register_taxonomy_for_object_type( 'post_tag', 'professor' );
-    register_taxonomy_for_object_type( 'post_tag', 'student' );
-    register_taxonomy_for_object_type( 'post_tag', 'note' );
-    
-    
-}
-
-add_action( 'init', 'add_taxonomies_to_cpt');
-
-/* Create Breadcrumb functionality for categories */
-function get_cat_breadcrumb() {
-    echo '<a href="'.site_url('/categories').'" rel="nofollow">Categories</a>';
-    if (is_category() || is_single()) {
-        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
-        the_category(' &bull; ');
-            if (is_single()) {
-                echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
-                the_title();
-            }
-    } elseif (is_page()) {
-        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
-        echo the_title();
-    } elseif (is_search()) {
-        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;Search Results for... ";
-        echo '"<em>';
-        echo the_search_query();
-        echo '</em>"';
-    }
-}
-
-/* Create Breadcrumb functionality for tags */
-function get_tag_breadcrumb() {
-    echo '<span>Tags</span>';
-    if (is_tag() || is_single()) {
-        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
-        echo get_the_tag_list('',' • ','');
-            if (is_single()) {
-                echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
-                the_title();
-            }
-    } elseif (is_page()) {
-        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
-        echo the_title();
-    } elseif (is_search()) {
-        echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;Search Results for... ";
-        echo '"<em>';
-        echo the_search_query();
-        echo '</em>"';
-    }
-}
-
 /* Create shortcode for listing all categories on a page */
 /* this function outputs your category list where you
 use the [my_cat_list] shortcode. */
@@ -208,6 +145,21 @@ function my_list_categories_shortcode() {
 
 /* This creates the [my_cat_list] shortcode and calls the my_list_categories_shortcode() function. */
 add_shortcode( 'my_cat_list', 'my_list_categories_shortcode' );
+
+/* show  custom post types on tag pages */
+function wpse28145_add_custom_types( $query ) {
+    if( is_tag() && $query->is_main_query() ) {
+
+        // this gets all post types:
+        // $post_types = get_post_types();
+
+        // alternately, you can add just specific post types using this line instead of the above:
+        $post_types = array( 'post', 'student', 'program', 'campus', 'event', 'professor', 'event' );
+
+        $query->set( 'post_type', $post_types );
+    }
+}
+add_filter( 'pre_get_posts', 'wpse28145_add_custom_types' );
 
 function redirectSubsHome() {
     $currentUser = wp_get_current_user();
