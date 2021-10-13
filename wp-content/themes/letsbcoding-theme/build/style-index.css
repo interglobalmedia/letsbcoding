@@ -1967,6 +1967,9 @@ body.admin-bar .search-overlay {
     margin-top: 0.75rem;
   }
 }
+.breadcrumb-wrapper a:first-child {
+  color: #8b4726;
+}
 
 .breadcrumb-cat,
 .breadcrumb-tag {
