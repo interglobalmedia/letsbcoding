@@ -71,61 +71,22 @@
 .metabox__categories--single,
 .metabox__tags--single {
   & p {
-    display: inline-block;
-    margin-top: 0;
-    padding: 10px 15px;
-    background-color: $beige;
-    margin-bottom: 1rem;
-    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
-  }
-}
-
-.metabox__categories--single {
-  margin-top: 1.5rem;
-}
-
-.metabox__categories,
-.metabox__tags {
-  & p {
     color: $citeColor;
     display: inline-block;
-    margin-top: 0;
-    padding: 10px 15px;
-    background-color: $beige;
-    margin-bottom: 1rem;
-    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
-    & a {
-      color: black;
-      font-weight: bold;
-    }
-  }
-}
-
-.metabox__categories,
-.metabox__tags,
-.metabox__categories--single,
-.metabox__tags--single {
-
-  & p.categories,
-  p.tags {
     font-size: 0.9rem;
-    color: $citeColor;
-
+    margin-top: 0;
+    padding: 10px 15px;
+    background-color: $beige;
+    margin-bottom: 1rem;
+    box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
     & a {
       text-decoration: none;
       color: black;
       font-weight: bold;
     }
-
-    & .tags-seperator,
-    & .categories-seperator {
-      color: black;
-      font-weight: bold;
-    }
   }
 }
 
-.metabox__tags {
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+.metabox__categories--single {
+  margin-top: 1.5rem;
 }

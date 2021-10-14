@@ -69,8 +69,8 @@ while(have_posts()) {
             }
             ?>
             <div class="breadcrumb-wrapper">
-              <div class="breadcrumb-cat"><?php bcoding_get_cat_breadcrumb(); ?></div>
-              <div class="breadcrumb-tag"><?php bcoding_get_tag_breadcrumb(); ?></div>
+              <p class="breadcrumb"><?php bcoding_get_subject_breadcrumb(); ?></p>
+              <p class="breadcrumb"><?php bcoding_get_theme_breadcrumb(); ?></p>
             </div>
           </div>
       </div>

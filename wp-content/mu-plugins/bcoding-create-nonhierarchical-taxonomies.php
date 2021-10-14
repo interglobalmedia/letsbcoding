@@ -3,42 +3,42 @@
 function bcoding_create_nonhierarchical_taxonomies() {
     /* register taxonomy for custom post topic tag */
     // Add new taxonomy, NOT hierarchical (like tags)
-    $topics_labels = array(
-        'name' => _x( 'Topics', 'taxonomy general name' ),
-        'singular_name' => _x( 'Topic', 'taxonomy singular name' ),
-        'search_items' =>  __( 'Search Topics' ),
-        'popular_items' => __( 'Popular Topics' ),
-        'all_items' => __( 'All Topics' ),
+    $themes_labels = array(
+        'name' => _x( 'Themes', 'taxonomy general name' ),
+        'singular_name' => _x( 'Theme', 'taxonomy singular name' ),
+        'search_items' =>  __( 'Search Themes' ),
+        'popular_items' => __( 'Popular Themes' ),
+        'all_items' => __( 'All Themes' ),
         'parent_item' => null,
         'parent_item_colon' => null,
-        'edit_item' => __( 'Edit Topic' ), 
-        'update_item' => __( 'Update Topic' ),
-        'add_new_item' => __( 'Add New Topic' ),
-        'new_item_name' => __( 'New Topic Name' ),
-        'separate_items_with_commas' => __( 'Separate topics with commas' ),
-        'add_or_remove_items' => __( 'Add or remove topics' ),
-        'choose_from_most_used' => __( 'Choose from the most used topics' ),
-        'menu_name' => __( 'Topics' ),
+        'edit_item' => __( 'Edit Theme' ), 
+        'update_item' => __( 'Update Theme' ),
+        'add_new_item' => __( 'Add New Theme' ),
+        'new_item_name' => __( 'New Theme Name' ),
+        'separate_items_with_commas' => __( 'Separate themes with commas' ),
+        'add_or_remove_items' => __( 'Add or remove themes' ),
+        'choose_from_most_used' => __( 'Choose from the most used themes' ),
+        'menu_name' => __( 'Themes' ),
     );
-    $topics_args = array(
+    $themes_args = array(
         'hierarchical' => false,
-        'labels' => $topics_labels,
+        'labels' => $themes_labels,
         'show_ui' => true,
         'show_in_rest' => true,
         'show_admin_column' => true,
         'update_count_callback' => '_updatepost_term_count',
         'query_var' => true,
         'rewrite' => array(
-            'slug' => 'topic'
+            'slug' => 'theme'
         ),
     );
     register_taxonomy(
-        'topics', // taxonomy
+        'themes', // taxonomy
         array('program', 'professor', 'student', 'event', 'campus'), // post type
-        $topics_args
+        $themes_args
     );
     $collaborations_labels = array(
-        'name' => _x( 'Caollaborations', 'taxonomy general name' ),
+        'name' => _x( 'Collaborations', 'taxonomy general name' ),
         'singular_name' => _x( 'Collaboration', 'taxonomy singular name' ),
         'search_items' =>  __( 'Search Collaborations' ),
         'popular_items' => __( 'Popular Collaborations' ),

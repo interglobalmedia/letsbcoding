@@ -32,12 +32,6 @@
 
 			<div class="generic-content">
 				<?php the_excerpt(); ?>
-				<div class="metabox__categories">
-					<p class="categories"><span class="categories-text">categories: in</span> <span class="categories-seperator"><?php echo get_the_category_list(', '); ?></span></p>
-				</div>
-				<div class="metabox__tags">
-					<p class="tags"><span class="tags-text">tags: in</span> <span class="tags-seperator"><?php echo get_the_tag_list('',', ',''); ?></span></p>
-				</div>
 				<p><a class="btn btn--blue" href="<?php the_permalink(); ?>">Continue reading &raquo;</a></p>
 			</div>
 

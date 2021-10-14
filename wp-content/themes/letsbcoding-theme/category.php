@@ -23,16 +23,12 @@
 							the_author_posts_link();
 							echo " on ";
 							the_modified_time('n.j.y');
-							echo " in ";
-							echo get_the_category_list(', '); 
 						}
 						else {
 							echo "Posted by ";  
 							the_author_posts_link();
 							echo " on ";
 							the_time('n.j.y');
-							echo " in ";
-							echo get_the_category_list(', ');
 						} 
 					?></p>
 				</div>
