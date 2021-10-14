@@ -1546,6 +1546,12 @@ body.admin-bar .search-overlay {
   color: #1b85b8;
   font-size: 1rem;
 }
+.generic-content code {
+  color: #ff357c;
+  font-size: 0.9rem;
+  margin: 0;
+  padding: 0;
+}
 .generic-content h1,
 .generic-content h2,
 .generic-content h3,
