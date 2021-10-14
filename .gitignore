@@ -54,8 +54,10 @@ node_modules/
 !wp-content/mu-plugins/bcoding-create-posts-custom-taxonomies.php
 !wp-content/mu-plugins/bcoding-create-hierarchical-taxonomies.php
 !wp-content/mu-plugins/bcoding-get-cat-breadcrumb.php
-!wp-content/mu-plugins/bcoding-create-nonhierarchical-taxonomies.php
 !wp-content/mu-plugins/bcoding-get-tag-breadcrumb.php
+!wp-content/mu-plugins/bcoding-get-subject-breadcrumb.php
+!wp-content/mu-plugins/bcoding-get-theme-breadcrumb.php
+!wp-content/mu-plugins/bcoding-create-nonhierarchical-taxonomies.php
 !wp-content/mu-plugins/bcoding-post-types.php
 !wp-content/plugins/post-statistics-plugin/
 !wp-content/plugins/word-filter-plugin/
