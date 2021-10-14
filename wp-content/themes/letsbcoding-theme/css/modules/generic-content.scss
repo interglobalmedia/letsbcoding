@@ -25,6 +25,14 @@
     font-size: 1rem;
   }
 
+  code {
+    color: $inlineCodeColor;
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 0;
+  }
+
+
   h1,
   h2,
   h3,
