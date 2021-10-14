@@ -24,8 +24,8 @@ while(have_posts()) {
 		</strong></p>
 	</div>
 	<div class="breadcrumb-wrapper">
-		<div class="breadcrumb-cat"><?php bcoding_get_cat_breadcrumb(); ?></div>
-		<div class="breadcrumb-tag"><?php bcoding_get_tag_breadcrumb(); ?></div>
+		<p class="breadcrumb"><?php bcoding_get_cat_breadcrumb(); ?></p>
+		<p class="breadcrumb"><?php bcoding_get_tag_breadcrumb(); ?></p>
 	</div>
 	<div class="generic-content">
 		<?php the_content(); ?>
