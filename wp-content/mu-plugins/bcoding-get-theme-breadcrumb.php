@@ -10,10 +10,6 @@ function bcoding_get_theme_breadcrumb() {
             if ($term || is_single()) {
                 echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
                 echo '<a href="'.get_term_link($term).'" rel="nofollow">'.$term_name.'</a>';
-                if (is_single()) {
-                    echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
-                    the_title();
-                }
             } elseif (is_page()) {
                 echo "&nbsp;&nbsp;&#187;&nbsp;&nbsp;";
                 echo the_title();
@@ -24,10 +20,14 @@ function bcoding_get_theme_breadcrumb() {
                 echo '</em>"';
             }
         }
+        if (is_single()) {
+            echo " &nbsp;&nbsp;&#187;&nbsp;&nbsp; ";
+            the_title();
+        }
     } else {
         echo "";
     }
 }
 
-add_filter( 'add_topic_breadcrumb', 'bcoding_get_theme_breadcrumb');
+add_filter( 'add_theme_breadcrumb', 'bcoding_get_theme_breadcrumb');
 ?>
