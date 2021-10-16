@@ -58,12 +58,36 @@ function bcoding_post_types() {
         'rewrite' => array('slug' => 'programs'),
         'has_archive' => true,
         'public' => true,
+        'hierarchical' => true,
+        'taxonomies' => array(
+         'subjects', 'themes', 'locations'
+        ),
         'labels' => array(
             'name' => 'Programs',
             'add_new_item' => 'Add New Program',
             'edit_item' => 'Edit Program',
             'all_items' => 'All Programs',
             'singular_name' => 'Program'
+        ),
+        'menu_icon' => 'dashicons-awards'
+    ));
+    // program post type
+    register_post_type('course', array(
+        'show_in_rest' => true,
+        'supports' => array(
+            'title', 
+            'editor'
+        ),
+        'rewrite' => array('slug' => 'courses'),
+        'has_archive' => true,
+        'public' => true,
+        'hierarchical' => true,
+        'labels' => array(
+            'name' => 'Courses',
+            'add_new_item' => 'Add New Course',
+            'edit_item' => 'Edit Course',
+            'all_items' => 'All Courses',
+            'singular_name' => 'Course'
         ),
         'menu_icon' => 'dashicons-awards'
     ));

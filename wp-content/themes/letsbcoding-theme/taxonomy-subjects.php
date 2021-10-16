@@ -28,8 +28,6 @@
 							the_author_posts_link();
 							echo " on ";
 							the_time('n.j.y');
-							echo " in ";
-							echo get_the_tag_list('',', ','');
 						} 
 					?></p>
                 </div>
