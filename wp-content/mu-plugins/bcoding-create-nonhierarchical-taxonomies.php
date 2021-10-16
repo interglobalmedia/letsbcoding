@@ -34,7 +34,7 @@ function bcoding_create_nonhierarchical_taxonomies() {
     );
     register_taxonomy(
         'themes', // taxonomy
-        array('program', 'professor', 'student', 'event', 'campus'), // post type
+        array('program', 'professor', 'student', 'event', 'campus', 'course'), // post type
         $themes_args
     );
     $collaborations_labels = array(
