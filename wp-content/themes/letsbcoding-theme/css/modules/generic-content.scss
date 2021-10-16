@@ -1,6 +1,15 @@
 .generic-content {
   ul {
     list-style-type: none;
+    li {
+      a {
+        text-decoration: none;
+        font-size: 1.3rem;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
   }
   p,
   li {
@@ -23,6 +32,18 @@
  cite {
     color: $citeColor;
     font-size: 1rem;
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .wp-block-code code {
+    background: #ccc;
+    padding: 10px 15px;
+    overflow: auto;
   }
 
   code {

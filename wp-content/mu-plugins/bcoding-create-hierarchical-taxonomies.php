@@ -1,42 +1,5 @@
 <?php 
 function bcoding_create_hierarchical_taxonomies() {
-    /* register taxonomy for custom post course */
-    // Add new taxonomy, nonhierarchical (like tags)
-    $course_labels = array(
-        'name' => _x( 'Courses', 'taxonomy general name' ),
-        'singular_name' => _x( 'Course', 'taxonomy singular name' ),
-        'search_items' =>  __( 'Search Courses' ),
-        'popular_items' => __( 'Popular Courses' ),
-        'all_items' => __( 'All Courses' ),
-        'parent_item' => __( 'Parent Course' ),
-        'parent_item_colon' => __( 'Parent Course:' ),
-        'edit_item' => __( 'Edit Course' ), 
-        'update_item' => __( 'Update Course' ),
-        'add_new_item' => __( 'Add New Course' ),
-        'new_item_name' => __( 'New Course Name' ),
-        'separate_items_with_commas' => __( 'Separate course with commas' ),
-        'add_or_remove_items' => __( 'Add or remove courses' ),
-        'choose_from_most_used' => __( 'Choose from the most used courses' ),
-        'menu_name' => __( 'Courses' ),
-    );
-    $course_args = array(
-        'hierarchical' => true,
-        'labels' => $course_labels,
-        'show_ui' => true,
-        'show_in_rest' => true,
-        'show_admin_column' => true,
-        'update_count_callback' => '_updatepost_term_count',
-        'query_var' => true,
-        'rewrite' => array(
-            'slug' => 'course'
-        ),
-    );
-    register_taxonomy(
-        'course', // taxonomy
-        array('student', 'program', 'professor'),// post type
-        $course_args
-    );
-
     /* register taxonomy for custom post subject */
     // Add new taxonomy, hierarchical (like categories)
     $subject_labels = array(
@@ -48,7 +11,7 @@ function bcoding_create_hierarchical_taxonomies() {
         'parent_item' => __( 'Parent Subject' ),
         'parent_item_colon' => __( 'Parent Subject:' ),
         'edit_item' => __( 'Edit Subject' ), 
-        'update_item' => __( 'Update SUbject' ),
+        'update_item' => __( 'Update Subject' ),
         'add_new_item' => __( 'Add New Subject' ),
         'new_item_name' => __( 'New Subject Name' ),
         'separate_items_with_commas' => __( 'Separate subjects with commas' ),
@@ -72,7 +35,7 @@ function bcoding_create_hierarchical_taxonomies() {
 
     register_taxonomy(
         'subjects', // taxonomy
-        array('program', 'professor', 'student', 'event', 'campus'), // post type
+        array('program', 'professor', 'student', 'event', 'campus', 'course'), // post type
        $subject_args
     );
 
@@ -107,7 +70,7 @@ function bcoding_create_hierarchical_taxonomies() {
     );
     register_taxonomy(
         'location', // taxonomy
-        array('campus', 'program', 'event', 'professor'), // post type
+        array('campus', 'program', 'event', 'professor', 'course'), // post type
         $location_args
     );
 }

@@ -1528,6 +1528,13 @@ body.admin-bar .search-overlay {
 .generic-content ul {
   list-style-type: none;
 }
+.generic-content ul li a {
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+.generic-content ul li a:hover {
+  text-decoration: underline;
+}
 .generic-content p,
 .generic-content li {
   font-size: 1.15rem;
@@ -1545,6 +1552,17 @@ body.admin-bar .search-overlay {
 .generic-content cite {
   color: #1b85b8;
   font-size: 1rem;
+}
+.generic-content cite a {
+  text-decoration: none;
+}
+.generic-content cite a:hover {
+  text-decoration: underline;
+}
+.generic-content .wp-block-code code {
+  background: #ccc;
+  padding: 10px 15px;
+  overflow: auto;
 }
 .generic-content code {
   color: #ff357c;
@@ -1903,7 +1921,7 @@ body.admin-bar .search-overlay {
   margin-bottom: 0;
 }
 
-.last-modified {
+.last-modified, .in-program {
   display: block;
   color: #c8412d;
   font-weight: normal;
