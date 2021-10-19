@@ -8,7 +8,7 @@
                 echo " by ";
                 the_author_posts_link();
                 echo " on ";
-                the_modified_time('n.j.y');
+                the_modified_time('n.j.y'); 
             }
             else {
                 echo "Posted by ";  
@@ -18,6 +18,7 @@
             } 
         ?></p>
     </div>
+
     <div class="generic-content">
         <?php the_excerpt(); ?>
         <p><a class="btn btn--blue" href="<?php the_permalink(); ?>">Continue reading &raquo;</a></p>
