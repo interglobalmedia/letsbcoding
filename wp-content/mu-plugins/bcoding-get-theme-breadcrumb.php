@@ -4,7 +4,7 @@ function bcoding_get_theme_breadcrumb() {
     global $post;
     $terms = get_the_terms( $post->ID, 'themes' );
     if ($terms != null) {
-        echo '<a href="'.site_url('/themes').'" rel="nofollow">Themes</a>';
+        echo '<span class="theme-taxonomy">Themes</span>';
         foreach($terms as $term) {
             $term_name = $term->name;
             if ($term || is_single()) {

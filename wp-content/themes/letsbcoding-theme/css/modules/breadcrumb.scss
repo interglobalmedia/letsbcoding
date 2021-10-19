@@ -30,6 +30,9 @@
     font-size: 0.9rem;
     margin-bottom: 0;
     margin-right: 0.75rem;
+    & .subject-taxonomy, & .theme-taxonomy {
+        color: $rustBrown;
+    }   
 
     @include atSmall {
         margin-top: 0;

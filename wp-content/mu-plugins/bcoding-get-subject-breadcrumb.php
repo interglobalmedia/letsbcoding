@@ -4,7 +4,7 @@ function bcoding_get_subject_breadcrumb() {
     global $post;
     $terms = get_the_terms( $post->ID, 'subjects' );
     if ($terms != null) {
-        echo '<a href="'.site_url('/subjects').'" rel="nofollow">Subjects</a>';
+        echo '<span class="subject-taxonomy">Subjects</span>';
         foreach($terms as $term) {
             $term_name = $term->name;
             if ($term || is_single()) {
