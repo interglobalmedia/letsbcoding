@@ -2030,6 +2030,10 @@ ul li.cat-item a {
   margin: 5px;
 }
 
+.members-access-error {
+  margin-bottom: 1.5rem;
+}
+
 /* Second part of Sticky Footer styling (for page content) - affects all pages */
 #youzify {
   flex: 1;
