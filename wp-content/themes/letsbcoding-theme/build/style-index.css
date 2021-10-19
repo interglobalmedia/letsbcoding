@@ -1910,6 +1910,12 @@ body.admin-bar .search-overlay {
     margin-top: 0;
   }
 }
+.post-item a {
+  text-decoration: none;
+}
+.post-item a:hover {
+  text-decoration: underline;
+}
 .post-item .metabox {
   margin-top: 1.88rem;
 }
@@ -1962,6 +1968,11 @@ body.admin-bar .search-overlay {
   font-size: 0.9rem;
   margin-bottom: 0;
   margin-right: 0.75rem;
+}
+.breadcrumb .subject-taxonomy, .breadcrumb .theme-taxonomy,
+.breadcrumb .subject-taxonomy,
+.breadcrumb .theme-taxonomy {
+  color: #8b4726;
 }
 @media (min-width: 530px) {
   .breadcrumb,
