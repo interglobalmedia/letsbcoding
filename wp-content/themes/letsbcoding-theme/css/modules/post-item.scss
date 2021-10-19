@@ -9,6 +9,12 @@
       margin-top: 0;
     }
   }
+  & a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 
   & .metabox {
     margin-top: 1.88rem;
