@@ -5897,6 +5897,7 @@ class CommunityHeader {
   constructor() {
     this.mainNavigationLinks = document.querySelectorAll('a.menu-link');
     this.communityLinks = document.querySelectorAll('div.menu-link');
+    this.curriculumLinks = document.querySelector('div.nav-highlight-curriculum');
     this.communityHandler();
   }
 
@@ -5908,6 +5909,8 @@ class CommunityHeader {
         this.mainNavigationLinks[4].classList.add('no-nav-link');
         this.mainNavigationLinks[5].classList.add('no-nav-link');
         this.mainNavigationLinks[6].classList.add('no-nav-link');
+        this.mainNavigationLinks[7].classList.add('no-nav-link');
+        this.curriculumLinks.classList.add('no-nav-link');
       }
 
       if (this.communityLinks[0].href == document.URL || document.URL.includes(`${bcodingData.root_url}/groups`)) {
@@ -5916,6 +5919,8 @@ class CommunityHeader {
         this.mainNavigationLinks[4].classList.add('no-nav-link');
         this.mainNavigationLinks[5].classList.add('no-nav-link');
         this.mainNavigationLinks[6].classList.add('no-nav-link');
+        this.mainNavigationLinks[7].classList.add('no-nav-link');
+        this.curriculumLinks.classList.add('no-nav-link');
       }
     }
   }
@@ -5978,19 +5983,22 @@ __webpack_require__.r(__webpack_exports__);
 class HighlightLink {
   constructor() {
     this.links = document.querySelectorAll('.menu-link');
-    this.subLinks = document.querySelectorAll('ul.sub-nav li a');
+    this.subCommunityLinks = document.querySelectorAll('ul.sub-nav-community li a');
+    this.subCurriculumLinks = document.querySelectorAll('ul.sub-nav-curriculum li a');
+    this.curriculumLink = document.querySelector(".menu-link.nav-highlight-curriculum");
     this.logoText = document.querySelector('.site-header h1 a');
-    this.linkHandler();
+    this.communityLinkHandler();
+    this.curriculumLinkHandler();
   }
 
-  linkHandler() {
+  communityLinkHandler() {
     for (let i = 0; i < this.links.length; i++) {
       if (this.links[1].href == document.URL || document.URL.includes(`${bcodingData.root_url}/members`)) {
         this.links[1].classList.add('active');
       }
 
       if (this.links[1].href == document.URL || document.URL.includes(`${bcodingData.root_url}/members`)) {
-        this.subLinks[0].classList.add('active');
+        this.subCommunityLinks[0].classList.add('active');
       }
 
       if (this.links[3].href == document.URL || document.URL.includes(`${bcodingData.root_url}/events`)) {
@@ -6002,7 +6010,7 @@ class HighlightLink {
       }
 
       if (this.links[1].href == document.URL || document.URL.includes(`/group`) || document.URL.includes(`/groups`)) {
-        this.subLinks[1].classList.add('active');
+        this.subCommunityLinks[1].classList.add('active');
       }
 
       if (this.links[i].href == document.URL || document.URL.includes(`/student`) || document.URL.includes(`/professor`)) {
@@ -6011,6 +6019,20 @@ class HighlightLink {
 
       if (this.logoText.href == document.URL) {
         this.logoText.classList.add('active');
+      }
+    }
+  }
+
+  curriculumLinkHandler() {
+    for (let i = 0; i < this.links.length; i++) {
+      if (this.links[2].href == document.URL || document.URL.includes(`${bcodingData.root_url}/programs`)) {
+        this.curriculumLink.classList.add('active');
+        this.subCurriculumLinks[0].classList.add('active');
+      }
+
+      if (this.links[2].href == document.URL || document.URL.includes(`${bcodingData.root_url}/courses`)) {
+        this.curriculumLink.classList.add('active');
+        this.subCurriculumLinks[1].classList.add('active');
       }
     }
   }
@@ -6387,18 +6409,26 @@ class MyNotes {
 __webpack_require__.r(__webpack_exports__);
 class NavSubNav {
   constructor() {
-    this.parentNavLink = document.querySelector('div .nav-highlight-community');
-    this.childNavUl = document.querySelector('ul.sub-nav');
+    this.parentCommunityNavLink = document.querySelector('div .nav-highlight-community');
+    this.parentCurriculumNavLink = document.querySelector('div .nav-highlight-curriculum');
+    this.childCommunityNavUl = document.querySelector('ul.sub-nav-community');
+    this.childCurriculumNavUl = document.querySelector('ul.sub-nav-curriculum');
     this.events();
   }
 
   events() {
-    this.parentNavLink.addEventListener('click', e => this.subnavHandler(e));
+    this.parentCommunityNavLink.addEventListener('click', e => this.communitySubNavHandler(e));
+    this.parentCurriculumNavLink.addEventListener('click', e => this.curriculumSubNavHandler(e));
   }
 
-  subnavHandler(e) {
+  communitySubNavHandler(e) {
     e.preventDefault();
-    this.childNavUl.classList.toggle('subnav-show');
+    this.childCommunityNavUl.classList.toggle('subnav-show');
+  }
+
+  curriculumSubNavHandler(e) {
+    e.preventDefault();
+    this.childCurriculumNavUl.classList.toggle('subnav-show');
   }
 
 }
