@@ -1563,6 +1563,7 @@ body.admin-bar .search-overlay {
   background: #ccc;
   padding: 10px 15px;
   overflow: auto;
+  height: 4.38rem;
 }
 .generic-content code {
   color: #ff357c;
