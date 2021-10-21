@@ -32,7 +32,7 @@
 
 /* sub-menu styling pre-visibility */
 
-li ul.sub-nav {
+li ul.sub-nav-community, li ul.sub-nav-curriculum {
   display: flex;
   flex-direction: column;
   @include atSmallLargeFix {
@@ -85,7 +85,7 @@ li ul.subnav-show {
   }
 }
 
-.menu-link.nav-highlight-community {
+.menu-link.nav-highlight-community, .menu-link.nav-highlight-curriculum {
   display: none;
   &:hover {
     color: $beige;
