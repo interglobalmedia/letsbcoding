@@ -1,17 +1,24 @@
 class NavSubNav {
     constructor() {
-        this.parentNavLink = document.querySelector('div .nav-highlight-community')
-        this.childNavUl = document.querySelector('ul.sub-nav')
+        this.parentCommunityNavLink = document.querySelector('div .nav-highlight-community')
+        this.parentCurriculumNavLink = document.querySelector('div .nav-highlight-curriculum')
+        this.childCommunityNavUl = document.querySelector('ul.sub-nav-community')
+        this.childCurriculumNavUl = document.querySelector('ul.sub-nav-curriculum')
         this.events()
     }
 
     events() {
-        this.parentNavLink.addEventListener('click', (e) => this.subnavHandler(e))
+        this.parentCommunityNavLink.addEventListener('click', (e) => this.communitySubNavHandler(e))
+        this.parentCurriculumNavLink.addEventListener('click', (e) => this.curriculumSubNavHandler(e))
     }
     
-    subnavHandler(e) {
+    communitySubNavHandler(e) {
         e.preventDefault()
-        this.childNavUl.classList.toggle('subnav-show')
+        this.childCommunityNavUl.classList.toggle('subnav-show')
+    }
+    curriculumSubNavHandler(e) {
+        e.preventDefault()
+        this.childCurriculumNavUl.classList.toggle('subnav-show')
     }
 }
 

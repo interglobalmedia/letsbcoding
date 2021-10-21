@@ -2,6 +2,7 @@ class CommunityHeader {
     constructor() {
         this.mainNavigationLinks = document.querySelectorAll('a.menu-link')
         this.communityLinks = document.querySelectorAll('div.menu-link')
+        this.curriculumLinks = document.querySelector('div.nav-highlight-curriculum')
         this.communityHandler()
     }
 
@@ -13,6 +14,8 @@ class CommunityHeader {
                 this.mainNavigationLinks[4].classList.add('no-nav-link')
                 this.mainNavigationLinks[5].classList.add('no-nav-link')
                 this.mainNavigationLinks[6].classList.add('no-nav-link')
+                this.mainNavigationLinks[7].classList.add('no-nav-link')
+                this.curriculumLinks.classList.add('no-nav-link')
             }
             if (this.communityLinks[0].href == document.URL || document.URL.includes(`${bcodingData.root_url}/groups`)) {
                 this.mainNavigationLinks[0].classList.add('no-nav-link')
@@ -20,6 +23,8 @@ class CommunityHeader {
                 this.mainNavigationLinks[4].classList.add('no-nav-link')
                 this.mainNavigationLinks[5].classList.add('no-nav-link')
                 this.mainNavigationLinks[6].classList.add('no-nav-link')
+                this.mainNavigationLinks[7].classList.add('no-nav-link')
+                this.curriculumLinks.classList.add('no-nav-link')
             }
         }
     }
