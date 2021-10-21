@@ -59,6 +59,7 @@ node_modules/
 !wp-content/mu-plugins/bcoding-get-tag-breadcrumb.php
 !wp-content/mu-plugins/bcoding-get-theme-breadcrumb.php
 !wp-content/mu-plugins/bcoding-post-types.php
+!wp-content/mu-plugins/bcoding-upload-mimes.php
 !wp-content/plugins/post-statistics-plugin/
 !wp-content/plugins/word-filter-plugin/
 !wp-content/plugins/are-you-paying-attention/
