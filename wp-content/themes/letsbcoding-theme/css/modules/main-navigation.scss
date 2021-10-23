@@ -32,22 +32,23 @@
 
 /* sub-menu styling pre-visibility */
 
-li ul.sub-nav-community, li ul.sub-nav-curriculum {
-  display: flex;
-  flex-direction: column;
+li ul.sub-nav-community,
+li ul.sub-nav-curriculum {
+  display: none;
   @include atSmallLargeFix {
     display: none;
   }
 }
 
 .main-navigation a {
-  text-shadow: 1px 2px 1px rgba(0,0,0,0.3);
+  text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
   display: block;
   padding: 10px 20px;
   color: #fff;
   text-decoration: none;
   font-weight: 300;
   font-size: 1.2rem;
+
   @include atSmallLargeFix {
     display: inline-block;
     padding: 0;
@@ -61,45 +62,68 @@ li ul.sub-nav-community, li ul.sub-nav-curriculum {
 
 /* Community sub-menu styling screens >= 1024px */
 
-li ul.subnav-show {
-  @include atSmallLargeFix {
-    box-shadow: 1px 2px 1px rgba(0,0,0,0.3);
-    display: flex;
-    cursor: pointer;
-    flex-direction: row;
-    font-weight: 300;
-    position: absolute;
-    background: $mainCoral;
-    width: 100%;
-    left: 0;
-    border-radius: 3px;
-    text-shadow: 1px 2px 1px rgba(0,0,0,0.3);
+li ul.subnav-show:nth-of-type(1) {
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
+  display: flex;
+  cursor: pointer;
+  flex-direction: row;
+  font-weight: 300;
+  position: absolute;
+  background: $mainCoral;
+  width: 100%;
+  left: 0;
+  border-radius: 3px;
+  text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
+
+  & li {
+    margin-bottom: 1rem;
     margin-top: 1rem;
-    & li {
-      margin-bottom: 0.5rem;
-      margin-top: 0.5rem;
-      & a:hover {
-        color: $beige;
-      }
+
+    & a:hover {
+      color: $beige;
     }
   }
 }
 
-.menu-link.nav-highlight-community, .menu-link.nav-highlight-curriculum {
-  display: none;
+li ul.sub-nav-community.subnav-show:nth-of-type(1) {
+    top: 175px;
+    @include atSmallLargeFix {
+      top: 50px;
+    }
+}
+
+li ul.sub-nav-curriculum.subnav-show {
+  top: 225px;
+  @include atSmallLargeFix {
+    top: 50px;
+  }
+}
+
+.menu-link.nav-highlight-community,
+.menu-link.nav-highlight-curriculum {
+  text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+  font-size: 1.2rem;
+
   &:hover {
     color: $beige;
+    cursor: pointer;
   }
+
   @include atSmallLargeFix {
     display: flex;
     cursor: pointer;
     padding-left: 0;
     margin-top: 0;
+    margin-bottom: 1rem;
+    padding: 0;
     font-size: 1.2rem;
-    text-shadow: 1px 2px 1px rgba(0,0,0,0.3);
+    text-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
     color: #fff;
     font-weight: 300;
   }
 }
-
-

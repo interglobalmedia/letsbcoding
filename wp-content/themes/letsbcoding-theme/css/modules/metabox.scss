@@ -7,16 +7,28 @@
 
   &--position-up {
     position: absolute;
-    top: 0;
+    top: 5px;
     transform: translateY(-50%);
   }
 
   &--with-home-link {
     padding: 0;
+    flex: 1 1 0;
   }
 
-  &__main {
-    padding: 10px 15px 10px 11px;
+  &__program__main {
+    text-align: left;
+
+  }
+
+  &__blog__main {
+    @media #{$minWidth600} {
+      display: inline-block;
+    }
+  }
+
+  &__main, &__program__main, &__course__main, &__blog__main {
+    padding: 10px 15px 10px 15px;
     color: $citeColor;
   }
 
@@ -39,7 +51,7 @@
   & &__blog-home-link {
     background-color: $mainCoral;
     color: #fff;
-    display: inline-block;
+    display: block;
     padding: 10px 15px;
     font-weight: normal;
   }
@@ -47,6 +59,14 @@
   & &__blog-home-link:hover {
     text-decoration: none;
     background-color: adjust-color($mainCoral, $lightness: -5%);
+  }
+
+  & &__programs-home-link, & &__courses-home-link  {
+    background-color: $mainCoral;
+    color: #fff;
+    display: block;
+    padding: 10px 15px;
+    font-weight: normal;
   }
 
   & .tags {

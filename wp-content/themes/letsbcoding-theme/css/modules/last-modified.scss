@@ -1,7 +1,15 @@
 .last-modified, .in-program {
-    display: block;
-    color: $lastModifiedColor;
     font-weight: normal;
-    background: $lastModifiedBG;
-    text-align: center;
+}
+
+.last-modified {
+    display: block;
+    color: #525266;
+    padding: 0 15px;
+}
+
+.in-program {
+    background: none;
+    display: inline-block;
+    margin-top: 5px;
 }

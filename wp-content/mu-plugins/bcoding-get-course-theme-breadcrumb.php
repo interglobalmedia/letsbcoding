@@ -1,10 +1,10 @@
 <?php 
-/* Create Breadcrumb functionality for topics */
-function bcoding_get_theme_breadcrumb() {
+/* Create Breadcrumb functionality for course_themes */
+function bcoding_get_course_theme_breadcrumb() {
     global $post;
-    $terms = get_the_terms( $post->ID, 'themes' );
+    $terms = get_the_terms( $post->ID, 'course_themes' );
     if ($terms != null) {
-        echo '<span class="theme-taxonomy">Themes</span>';
+        echo '<span class="theme-taxonomy">Course Themes</span>';
         foreach($terms as $term) {
             $term_name = $term->name;
             if ($term || is_single()) {
@@ -29,5 +29,5 @@ function bcoding_get_theme_breadcrumb() {
     }
 }
 
-add_filter( 'add_theme_breadcrumb', 'bcoding_get_theme_breadcrumb');
+add_filter( 'add_course_theme_breadcrumb', 'bcoding_get_course_theme_breadcrumb');
 ?>

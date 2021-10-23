@@ -1,10 +1,10 @@
 <?php 
-/* Create Breadcrumb functionality for topics */
-function bcoding_get_subject_breadcrumb() {
+/* Create Breadcrumb functionality for course_subjects */
+function bcoding_get_course_subject_breadcrumb() {
     global $post;
-    $terms = get_the_terms( $post->ID, 'subjects' );
+    $terms = get_the_terms( $post->ID, 'course_subjects' );
     if ($terms != null) {
-        echo '<span class="subject-taxonomy">Subjects</span>';
+        echo '<span class="subject-taxonomy">Course Subjects</span>';
         foreach($terms as $term) {
             $term_name = $term->name;
             if ($term || is_single()) {
@@ -29,5 +29,5 @@ function bcoding_get_subject_breadcrumb() {
     }
 }
 
-add_filter( 'add_subject_breadcrumb', 'bcoding_get_subject_breadcrumb');
+add_filter( 'add_course_subject_breadcrumb', 'bcoding_get_course_subject_breadcrumb');
 ?>
