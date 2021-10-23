@@ -9,12 +9,12 @@ while (have_posts()) {
   <div class="container container--narrow page-section">
 
     <div class="metabox metabox--position-up metabox--with-home-link">
-      <p><a class="metabox__blog-home-link" href="<?php echo get_post_type_archive_link('program'); ?>"><i class="fa fa-home" aria-hidden="true"></i> All Programs</a> <span class="metabox__main"><?php the_title(); ?></span></p>
+      <div class="program-metabox-wrapper"><a class="metabox__programs-home-link" href="<?php echo get_post_type_archive_link('program'); ?>"><i class="fa fa-home" aria-hidden="true"></i> All Programs</a> <div class="metabox__program__main"><?php the_title(); ?></div></div>
     </div>
     <div class="generic-content">
       <div class="breadcrumb-wrapper">
-        <p class="breadcrumb"><?php bcoding_get_subject_breadcrumb(); ?></p>
-        <p class="breadcrumb"><?php bcoding_get_theme_breadcrumb(); ?></p>
+        <p class="breadcrumb"><?php bcoding_get_program_subject_breadcrumb(); ?></p>
+        <p class="breadcrumb"><?php bcoding_get_program_theme_breadcrumb(); ?></p>
       </div>
       <?php the_content(); ?>
     </div>

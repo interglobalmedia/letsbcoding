@@ -10,7 +10,7 @@ while (have_posts()) {
 <div class="container container--narrow page-section">
 
     <div class="metabox metabox--position-up metabox--with-home-link">
-      <p><a class="metabox__blog-home-link" href="<?php echo get_post_type_archive_link('course'); ?>"><i class="fa fa-home" aria-hidden="true"></i> All Courses</a> <span class="metabox__main"><?php the_title(); ?></span> <p><strong class="in-program">in <?php
+      <div class="course-metabox-wrapper"><a class="metabox__courses-home-link" href="<?php echo get_post_type_archive_link('course'); ?>"><i class="fa fa-home" aria-hidden="true"></i> All Courses</a><div class="metabox__course__main"><?php the_title(); ?> in <strong class="in-program"><?php
         $relatedPrograms = get_field('related_programs');
 
         if ($relatedPrograms) {
@@ -18,12 +18,12 @@ while (have_posts()) {
             <a href="<?php echo get_the_permalink($program); ?>"><?php echo get_the_title($program); ?></a>
             <?php }
         }
-      ?></strong></p></p>
+      ?></strong></div></div>
     </div>
     <div class="generic-content">
       <div class="breadcrumb-wrapper">
-        <p class="breadcrumb"><?php bcoding_get_subject_breadcrumb(); ?></p>
-        <p class="breadcrumb"><?php bcoding_get_theme_breadcrumb(); ?></p>
+        <p class="breadcrumb"><?php bcoding_get_course_subject_breadcrumb(); ?></p>
+        <p class="breadcrumb"><?php bcoding_get_course_theme_breadcrumb(); ?></p>
       </div>
       <?php the_content(); ?>
     </div>

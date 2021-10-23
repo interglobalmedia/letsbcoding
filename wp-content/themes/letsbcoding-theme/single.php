@@ -9,7 +9,7 @@ while(have_posts()) {
   <div class="container container--narrow page-section">
 
 	<div class="metabox metabox--position-up metabox--with-home-link">
-		<p><a class="metabox__blog-home-link" href="<?php echo site_url('/blog');  ?>"><i class="fa fa-home" aria-hidden="true"></i> Blog Home</a> <span class="metabox__main">Posted by <?php the_author_posts_link(); ?> on <?php the_time('n.j.y'); ?></span></p>
+		<p><a class="metabox__blog-home-link" href="<?php echo site_url('/blog');  ?>"><i class="fa fa-home" aria-hidden="true"></i> Blog Home</a> <div class="metabox__blog__main">Posted by <?php the_author_posts_link(); ?> on <?php the_time('n.j.y'); ?></div></p>
 		<p><strong class="last-modified"><?php 
 			$u_time = get_the_time('U'); 
 			$u_modified_time = get_the_modified_time('U'); 
