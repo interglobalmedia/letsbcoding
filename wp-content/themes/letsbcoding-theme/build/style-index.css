@@ -1856,14 +1856,23 @@ body.admin-bar .search-overlay {
 }
 .metabox--position-up {
   position: absolute;
-  top: 0;
+  top: 5px;
   transform: translateY(-50%);
 }
 .metabox--with-home-link {
   padding: 0;
+  flex: 1 1 0;
 }
-.metabox__main {
-  padding: 10px 15px 10px 11px;
+.metabox__program__main {
+  text-align: left;
+}
+@media (min-width: 600px) {
+  .metabox__blog__main {
+    display: inline-block;
+  }
+}
+.metabox__main, .metabox__program__main, .metabox__course__main, .metabox__blog__main {
+  padding: 10px 15px 10px 15px;
   color: #1b85b8;
 }
 .metabox p {
@@ -1882,13 +1891,20 @@ body.admin-bar .search-overlay {
 .metabox .metabox__blog-home-link {
   background-color: #ee6b6b;
   color: #fff;
-  display: inline-block;
+  display: block;
   padding: 10px 15px;
   font-weight: normal;
 }
 .metabox .metabox__blog-home-link:hover {
   text-decoration: none;
   background-color: #eb5454;
+}
+.metabox .metabox__programs-home-link, .metabox .metabox__courses-home-link {
+  background-color: #ee6b6b;
+  color: #fff;
+  display: block;
+  padding: 10px 15px;
+  font-weight: normal;
 }
 .metabox .tags {
   margin-top: 0;
@@ -1964,11 +1980,19 @@ body.admin-bar .search-overlay {
 }
 
 .last-modified, .in-program {
-  display: block;
-  color: #c8412d;
   font-weight: normal;
-  background: #c3cb71;
-  text-align: center;
+}
+
+.last-modified {
+  display: block;
+  color: #525266;
+  padding: 0 15px;
+}
+
+.in-program {
+  background: none;
+  display: inline-block;
+  margin-top: 5px;
 }
 
 .breadcrumb-wrapper {
