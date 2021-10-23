@@ -59,13 +59,13 @@
 }
 
 @mixin atSmallLargeFix {
-  @media (min-width: 1027px) {
+  @media (min-width: 1170px) {
     @content;
   }
 }
 
 @mixin atSmallLargeMax {
-  @media (max-width: 1024px) {
+  @media (max-width: 1169px) {
     @content;
   }
 }

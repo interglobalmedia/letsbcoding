@@ -14,7 +14,7 @@
   transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
   box-sizing: border-box;
   @include atSmallMediumSearchFix {
-    margin-top: -0.25rem;
+    margin-top: -1rem;
   }
 
   p {
