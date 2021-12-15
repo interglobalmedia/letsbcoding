@@ -1,0 +1,8 @@
+.sitemap-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    & .sitemap-authors-list li, & .sitemap-pages-list li, & .sitemap-posts-list li {
+        line-height: 2;
+    }
+}

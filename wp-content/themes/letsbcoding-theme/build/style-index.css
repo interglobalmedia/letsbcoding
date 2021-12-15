@@ -1,6 +1,7 @@
 /*!***************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./css/style.scss ***!
   \***************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
 /* 3rd party packages */
 /* SASS and Global'ish Stuff */
 /* media queries */
@@ -433,6 +434,7 @@ li {
   box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3);
   padding: 20px;
   text-align: center;
+  margin: 1.5rem auto 3rem;
 }
 
 .search-form label {
@@ -530,6 +532,11 @@ li {
 .like-box[data-exists=yes] .fa-heart-o, .student-like-box[data-student-exists=yes] .fa-heart-o {
   visibility: hidden;
   opacity: 0;
+}
+
+/* pagination styling */
+.page-numbers {
+  margin-right: 0.75rem;
 }
 
 /* Customize Login Screen */
@@ -674,7 +681,6 @@ form#loginform {
 @media (min-width: 635px) {
   .edit-note,
 .delete-note {
-    position: relative;
     top: -12px;
   }
 }
@@ -697,8 +703,10 @@ form#loginform {
 }
 
 .note-title-field {
-  width: 40%;
-  font-size: 1.85rem;
+  width: 100%;
+  resize: none;
+  height: 50px;
+  font-size: 1.5rem;
   font-family: "Roboto Condensed", sans-serif;
   font-weight: 300;
   color: #0D3B66;
@@ -707,6 +715,7 @@ form#loginform {
   outline: none;
   position: relative;
   top: 1px;
+  display: block;
 }
 @media (max-width: 400px) {
   .note-title-field {
@@ -715,8 +724,9 @@ form#loginform {
 }
 @media (min-width: 635px) {
   .note-title-field {
-    width: 65%;
-    font-size: 3.125rem;
+    width: 100%;
+    font-size: 2.5rem;
+    height: 125px;
   }
 }
 
@@ -728,9 +738,8 @@ form#loginform {
   width: 100%;
   line-height: 1.65;
   font-size: 1.15rem;
-  padding: 7px;
+  padding: 1.5rem 7px;
   border: 1px solid transparent;
-  height: 175px;
   outline: none;
 }
 
@@ -1037,6 +1046,15 @@ form#loginform {
   display: none !important;
 }
 
+.sitemap-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.sitemap-content .sitemap-authors-list li, .sitemap-content .sitemap-pages-list li, .sitemap-content .sitemap-posts-list li {
+  line-height: 2;
+}
+
 .main-navigation {
   padding-top: 2px;
 }
@@ -1134,6 +1152,8 @@ li ul.sub-nav-community.subnav-show:nth-of-type(1) {
 
 li ul.sub-nav-curriculum.subnav-show {
   top: 225px;
+  display: flex;
+  flex-wrap: wrap;
 }
 @media (min-width: 1170px) {
   li ul.sub-nav-curriculum.subnav-show {
@@ -1503,6 +1523,50 @@ body.admin-bar .search-overlay {
   list-style: none;
 }
 
+.professor-cards__all-professors {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[1];
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+  justify-items: center;
+  row-gap: 1.5rem;
+}
+@media (min-width: 530px) {
+  .professor-cards__all-professors {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 767px) {
+  .professor-cards__all-professors {
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 960px) {
+  .professor-cards__all-professors {
+    -ms-grid-columns: (1fr)[4];
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.professors {
+  width: 100%;
+  max-width: 960px;
+  list-style-type: none;
+  margin: 3rem auto;
+  font-size: 1.7rem;
+}
+.professors.prof-item {
+  flex: 1;
+  width: 100%;
+}
+.professors a {
+  text-decoration: none;
+  line-height: 1.7;
+}
+
 .headline {
   margin: 0;
   font-family: "Roboto Condensed", sans-serif;
@@ -1559,7 +1623,15 @@ body.admin-bar .search-overlay {
 .headline--post-title a:hover {
   text-decoration: underline;
 }
+.headline--all-professors {
+  text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 1.75rem;
+}
 
+.generic-content {
+  word-break: break-word;
+}
 .generic-content ul {
   list-style-type: none;
 }
@@ -1756,12 +1828,23 @@ body.admin-bar .search-overlay {
 }
 .page-links__title {
   margin: 0;
+  margin-top: 3rem;
   font-weight: normal;
   text-align: center;
   padding: 20px 0;
   background-color: #ee6b6b;
   border-radius: 4px 4px 0 0;
   color: #fff;
+}
+@media (min-width: 530px) {
+  .page-links__title {
+    margin-top: 1.5rem;
+  }
+}
+@media (min-width: 767px) {
+  .page-links__title {
+    margin-top: 0;
+  }
 }
 .page-links__title a {
   color: #fff;
@@ -2011,32 +2094,87 @@ body.admin-bar .search-overlay {
   line-height: 1.7;
   font-size: 0.9rem;
 }
+.breadcrumb-wrapper .post-cats, .breadcrumb-wrapper .post-tags, .breadcrumb-wrapper .page-categories, .breadcrumb-wrapper .page-tags, .breadcrumb-wrapper .campus-locations, .breadcrumb-wrapper .campus-subjects, .breadcrumb-wrapper .campus-themes, .breadcrumb-wrapper .course-locations, .breadcrumb-wrapper .course-subjects, .breadcrumb-wrapper .course-themes, .breadcrumb-wrapper .event-locations, .breadcrumb-wrapper .event-subjects, .breadcrumb-wrapper .event-themes, .breadcrumb-wrapper .professor-collaborations, .breadcrumb-wrapper .professor-locations, .breadcrumb-wrapper .professor-subjects, .breadcrumb-wrapper .professor-themes, .breadcrumb-wrapper .professor-workflows, .breadcrumb-wrapper .program-locations, .breadcrumb-wrapper .program-subjects, .breadcrumb-wrapper .program-themes, .breadcrumb-wrapper .student-collaborations, .breadcrumb-wrapper .student-subjects, .breadcrumb-wrapper .student-themes, .breadcrumb-wrapper .student-workflows {
+  color: #8b4726;
+}
+.breadcrumb-wrapper .bread-parent {
+  color: #374160;
+}
+.breadcrumb-wrapper .program-subjects:after, .breadcrumb-wrapper .program-themes:after {
+  content: none;
+}
+.breadcrumb-wrapper a + .program-subjects {
+  content: none;
+}
 .breadcrumb-wrapper a {
   text-decoration: none;
 }
-.breadcrumb-wrapper a:first-child {
-  color: #8b4726;
+.breadcrumb-wrapper a:after {
+  content: " • ";
 }
 .breadcrumb-wrapper a:hover {
   text-decoration: underline;
 }
+.breadcrumb-wrapper a:hover {
+  text-decoration: underline;
+}
+.breadcrumb-wrapper a:first-child:after, .breadcrumb-wrapper a:last-child:after {
+  content: none;
+}
 
-.breadcrumb,
-.breadcrumb {
+.post-cat-breadcrumb,
+.post-tag-breadcrumb,
+.campus-location-breadcrumb,
+.campus-subject-breadcrumb,
+.campus-theme-breadcrumb,
+.course-location-breadcrumb,
+.course-subject-breadcrumb,
+.course-theme-breadcrumb,
+.event-location-breadcrumb,
+.event-subject-breadcrumb,
+.event-theme-breadcrumb,
+.professor-collaboration-breadcrumb,
+.professor-location-breadcrumb,
+.professor-subject-breadcrumb,
+.professor-theme-breadcrumb,
+.professor-workflow-breadcrumb,
+.program-location-breadcrumb,
+.program-subject-breadcrumb,
+.program-theme-breadcrumb,
+.student-collaboration-breadcrumb,
+.student-subject-breadcrumb,
+.student-theme-breadcrumb,
+.student-workflow-breadcrumb {
   color: #559e83;
   line-height: 1.7;
   font-size: 0.9rem;
   margin-bottom: 0;
-  margin-right: 0.75rem;
-}
-.breadcrumb .subject-taxonomy, .breadcrumb .theme-taxonomy,
-.breadcrumb .subject-taxonomy,
-.breadcrumb .theme-taxonomy {
-  color: #8b4726;
+  margin-right: 0.25rem;
 }
 @media (min-width: 530px) {
-  .breadcrumb,
-.breadcrumb {
+  .post-cat-breadcrumb,
+.post-tag-breadcrumb,
+.campus-location-breadcrumb,
+.campus-subject-breadcrumb,
+.campus-theme-breadcrumb,
+.course-location-breadcrumb,
+.course-subject-breadcrumb,
+.course-theme-breadcrumb,
+.event-location-breadcrumb,
+.event-subject-breadcrumb,
+.event-theme-breadcrumb,
+.professor-collaboration-breadcrumb,
+.professor-location-breadcrumb,
+.professor-subject-breadcrumb,
+.professor-theme-breadcrumb,
+.professor-workflow-breadcrumb,
+.program-location-breadcrumb,
+.program-subject-breadcrumb,
+.program-theme-breadcrumb,
+.student-collaboration-breadcrumb,
+.student-subject-breadcrumb,
+.student-theme-breadcrumb,
+.student-workflow-breadcrumb {
     margin-top: 0;
   }
 }
@@ -2087,21 +2225,44 @@ ul li.cat-item a {
 }
 
 .tag-cloud {
+  font-size: 1rem;
   list-style-type: none;
   margin: 2rem auto 0;
 }
 .tag-cloud .tag {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
 }
 .tag-cloud a.tag-cloud-link {
-  text-decoration: none;
   margin: 5px;
+  text-decoration: none;
+}
+.tag-cloud a.tag-cloud-link:hover {
+  text-decoration: underline;
+}
+
+.collaboration-tag-cloud, .location-tag-cloud, .subject-tag-cloud, .theme-tag-cloud, .workflow-tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style-type: none;
+  margin: 2rem auto 0;
+}
+.collaboration-tag-cloud .collaboration-tag, .collaboration-tag-cloud .location-tag, .collaboration-tag-cloud .subject-tag, .collaboration-tag-cloud .theme-tag, .collaboration-tag-cloud .workflow-tag, .location-tag-cloud .collaboration-tag, .location-tag-cloud .location-tag, .location-tag-cloud .subject-tag, .location-tag-cloud .theme-tag, .location-tag-cloud .workflow-tag, .subject-tag-cloud .collaboration-tag, .subject-tag-cloud .location-tag, .subject-tag-cloud .subject-tag, .subject-tag-cloud .theme-tag, .subject-tag-cloud .workflow-tag, .theme-tag-cloud .collaboration-tag, .theme-tag-cloud .location-tag, .theme-tag-cloud .subject-tag, .theme-tag-cloud .theme-tag, .theme-tag-cloud .workflow-tag, .workflow-tag-cloud .collaboration-tag, .workflow-tag-cloud .location-tag, .workflow-tag-cloud .subject-tag, .workflow-tag-cloud .theme-tag, .workflow-tag-cloud .workflow-tag {
+  margin: 0.5rem 1rem;
+}
+.collaboration-tag-cloud .collaboration-tag a, .collaboration-tag-cloud .location-tag a, .collaboration-tag-cloud .subject-tag a, .collaboration-tag-cloud .theme-tag a, .collaboration-tag-cloud .workflow-tag a, .location-tag-cloud .collaboration-tag a, .location-tag-cloud .location-tag a, .location-tag-cloud .subject-tag a, .location-tag-cloud .theme-tag a, .location-tag-cloud .workflow-tag a, .subject-tag-cloud .collaboration-tag a, .subject-tag-cloud .location-tag a, .subject-tag-cloud .subject-tag a, .subject-tag-cloud .theme-tag a, .subject-tag-cloud .workflow-tag a, .theme-tag-cloud .collaboration-tag a, .theme-tag-cloud .location-tag a, .theme-tag-cloud .subject-tag a, .theme-tag-cloud .theme-tag a, .theme-tag-cloud .workflow-tag a, .workflow-tag-cloud .collaboration-tag a, .workflow-tag-cloud .location-tag a, .workflow-tag-cloud .subject-tag a, .workflow-tag-cloud .theme-tag a, .workflow-tag-cloud .workflow-tag a {
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+.collaboration-tag-cloud .collaboration-tag a:hover, .collaboration-tag-cloud .location-tag a:hover, .collaboration-tag-cloud .subject-tag a:hover, .collaboration-tag-cloud .theme-tag a:hover, .collaboration-tag-cloud .workflow-tag a:hover, .location-tag-cloud .collaboration-tag a:hover, .location-tag-cloud .location-tag a:hover, .location-tag-cloud .subject-tag a:hover, .location-tag-cloud .theme-tag a:hover, .location-tag-cloud .workflow-tag a:hover, .subject-tag-cloud .collaboration-tag a:hover, .subject-tag-cloud .location-tag a:hover, .subject-tag-cloud .subject-tag a:hover, .subject-tag-cloud .theme-tag a:hover, .subject-tag-cloud .workflow-tag a:hover, .theme-tag-cloud .collaboration-tag a:hover, .theme-tag-cloud .location-tag a:hover, .theme-tag-cloud .subject-tag a:hover, .theme-tag-cloud .theme-tag a:hover, .theme-tag-cloud .workflow-tag a:hover, .workflow-tag-cloud .collaboration-tag a:hover, .workflow-tag-cloud .location-tag a:hover, .workflow-tag-cloud .subject-tag a:hover, .workflow-tag-cloud .theme-tag a:hover, .workflow-tag-cloud .workflow-tag a:hover {
+  text-decoration: underline;
 }
 
 .members-access-error {
+  font-size: 1.15rem;
   margin-bottom: 1.5rem;
 }
 
@@ -2444,6 +2605,19 @@ body.single-item.groups .youzify-cover-content .youzify-inner-content {
   body.single-item.groups .youzify-cover-content .youzify-inner-content {
     top: 6rem;
   }
+}
+
+/* Forum topics styling */
+.youzify-forum .youzify-main-column #bbpress-forums {
+  margin-top: 3rem;
+}
+
+/* site header styling on forums page and topics page */
+body.bp-legacy.forum-archive.bbpress.archive.post-type-archive.post-type-archive-forum.logged-in.admin-bar .school-logo-text a, body.bp-legacy.forum-archive.bbpress.archive.post-type-archive.post-type-archive-forum.logged-in.admin-bar .site-header__menu-trigger, body.bp-legacy.forum-archive.bbpress.archive.post-type-archive.post-type-archive-forum.logged-in.admin-bar .fa.fa-search, body.bp-legacy.topic-archive.bbpress.archive.post-type-archive.post-type-archive-topic.logged-in.admin-bar .school-logo-text a, body.bp-legacy.topic-archive.bbpress.archive.post-type-archive.post-type-archive-topic.logged-in.admin-bar .site-header__menu-trigger, body.bp-legacy.topic-archive.bbpress.archive.post-type-archive.post-type-archive-topic.logged-in.admin-bar .fa.fa-search {
+  color: #f75d52;
+}
+body.bp-legacy.forum-archive.bbpress.archive.post-type-archive.post-type-archive-forum.logged-in.admin-bar .school-logo-text a:hover, body.bp-legacy.forum-archive.bbpress.archive.post-type-archive.post-type-archive-forum.logged-in.admin-bar .site-header__menu-trigger:hover, body.bp-legacy.forum-archive.bbpress.archive.post-type-archive.post-type-archive-forum.logged-in.admin-bar .fa.fa-search:hover, body.bp-legacy.topic-archive.bbpress.archive.post-type-archive.post-type-archive-topic.logged-in.admin-bar .school-logo-text a:hover, body.bp-legacy.topic-archive.bbpress.archive.post-type-archive.post-type-archive-topic.logged-in.admin-bar .site-header__menu-trigger:hover, body.bp-legacy.topic-archive.bbpress.archive.post-type-archive.post-type-archive-topic.logged-in.admin-bar .fa.fa-search:hover {
+  color: #ffb990;
 }
 
 /*# sourceMappingURL=style-index.css.map*/
