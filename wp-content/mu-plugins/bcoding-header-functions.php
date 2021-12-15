@@ -10,7 +10,6 @@
  * @subpackage LetsBCoding
  * @link https://www.interglobalmedianetwork.com
  * @since LetsBCoding 2.0.0
- * @return void
  */
 
 /**
