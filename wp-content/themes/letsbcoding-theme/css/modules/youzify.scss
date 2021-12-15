@@ -60,3 +60,19 @@ body.single-item.groups .youzify-cover-content .youzify-inner-content {
     top: 6rem;
   }
 }
+
+/* Forum topics styling */
+
+.youzify-forum .youzify-main-column #bbpress-forums {
+  margin-top: 3rem;
+}
+
+/* site header styling on forums page and topics page */
+body.bp-legacy.forum-archive.bbpress.archive.post-type-archive.post-type-archive-forum.logged-in.admin-bar, body.bp-legacy.topic-archive.bbpress.archive.post-type-archive.post-type-archive-topic.logged-in.admin-bar {
+  & .school-logo-text a, & .site-header__menu-trigger, & .fa.fa-search {
+    color: #f75d52;
+    &:hover {
+      color: $beige;
+    }
+  }
+}

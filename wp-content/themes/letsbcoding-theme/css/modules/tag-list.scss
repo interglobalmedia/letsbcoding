@@ -1,14 +1,36 @@
 .tag-cloud {
+    font-size: 1rem;
     list-style-type: none;
     margin: 2rem auto 0;
     & .tag {
         display: flex;
+        align-items: center;
         flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
     }
     & a.tag-cloud-link {
-        text-decoration: none;
         margin: 5px;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+.collaboration-tag-cloud, .location-tag-cloud, .subject-tag-cloud, .theme-tag-cloud, .workflow-tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    list-style-type: none;
+    margin: 2rem auto 0;
+    & .collaboration-tag, & .location-tag, & .subject-tag, & .theme-tag, & .workflow-tag {
+        margin: 0.5rem 1rem;
+        & a {
+            font-size: 1.2rem;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 }

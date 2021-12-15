@@ -13,12 +13,19 @@
 
   &__title {
     margin: 0;
+    margin-top: 3rem;
     font-weight: normal;
     text-align: center;
     padding: 20px 0;
     background-color: $mainCoral;
     border-radius: 4px 4px 0 0;
     color: #fff;
+    @include atSmall {
+      margin-top: 1.5rem;
+    }
+    @include atSmallMedium {
+      margin-top: 0;
+    }
 
     a {
       color: #fff;

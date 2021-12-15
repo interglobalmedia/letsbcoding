@@ -236,6 +236,7 @@
   box-shadow: 1px 2px 1px rgba(0,0,0,0.3);
   padding: 20px;
   text-align: center;
+  margin: 1.5rem auto 3rem;
 }
 
 .search-form label {
@@ -331,5 +332,10 @@
 .like-box[data-exists="yes"] .fa-heart-o, .student-like-box[data-student-exists="yes"] .fa-heart-o {
   visibility: hidden;
   opacity: 0;
+}
+
+/* pagination styling */
+.page-numbers {
+  margin-right: 0.75rem;
 }
 
