@@ -1,43 +1,39 @@
-<?php get_header(); 
-	pageBanner(array(
-		'title' => 'Welcome to our blog!',
-		'subtitle' => 'Keep up with our latest news.'
-	));
+<?php
+/**
+ * Blog page
+ *
+ * Blog page file for the LetsBCoding Theme.
+ *
+ * @package    WordPress
+ * @subpackage LetsBCoding
+ * @author     Maria D. Campbell interglobalmedia@interglobalmedianetwork.com
+ * @copyright  Copyright (c) 2021 Maria D. Campbell
+ * @link       https://www.interglobalmedianetwork.com
+ * @since      2.0.0
+ */
+
+?>
+
+<?php
+get_header();
+page_banner(
+	array(
+		'title'    => 'Welcome to our blog!',
+		'subtitle' => 'Keep up with our latest news.',
+	)
+);
 ?>
 
 <div class="container container--narrow page-section">
-<?php 
-	while (have_posts()) {
-		the_post(); ?>
-		<div class="post-item">
-			<h2><a class="headline headline--medium headline--post-title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-			<div class="metabox">
-				<p><?php $u_time = get_the_time('U');
-						$u_modified_time = get_the_modified_time('U');
-						if ($u_modified_time >= $u_time + 86400) {
-							echo "Last updated ";
-							echo " by ";
-							the_author_posts_link();
-							echo " on ";
-							the_modified_time('n.j.y');
-						}
-						else {
-							echo "Posted by ";  
-							the_author_posts_link();
-							echo " on ";
-							the_time('n.j.y');
-						} 
-					?></p>
-			</div>
-
-			<div class="generic-content">
-				<?php the_excerpt(); ?>
-				<p><a class="btn btn--blue" href="<?php the_permalink(); ?>">Continue reading &raquo;</a></p>
-			</div>
-
-		</div>
-	<?php }
-	echo paginate_links();
+	<div class="metabox metabox--position-up metabox--with-home-link">
+		<p><a class="metabox__blog-home-link" href="<?php echo esc_url( site_url( '/' ) ); ?>"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+	</div>
+<?php
+while ( have_posts() ) {
+	the_post();
+	get_template_part( 'template-parts/content', 'post' );
+}
+	echo wp_kses_post( paginate_links() );
 ?>
 </div>
 

@@ -15,6 +15,8 @@ class CommunityHeader {
                 this.mainNavigationLinks[5].classList.add('no-nav-link')
                 this.mainNavigationLinks[6].classList.add('no-nav-link')
                 this.mainNavigationLinks[7].classList.add('no-nav-link')
+                this.mainNavigationLinks[8].classList.add('no-nav-link')
+                this.mainNavigationLinks[9].classList.add('no-nav-link')
                 this.curriculumLinks.classList.add('no-nav-link')
             }
             if (this.communityLinks[0].href == document.URL || document.URL.includes(`${bcodingData.root_url}/groups`)) {
@@ -24,6 +26,8 @@ class CommunityHeader {
                 this.mainNavigationLinks[5].classList.add('no-nav-link')
                 this.mainNavigationLinks[6].classList.add('no-nav-link')
                 this.mainNavigationLinks[7].classList.add('no-nav-link')
+                this.mainNavigationLinks[8].classList.add('no-nav-link')
+                this.mainNavigationLinks[9].classList.add('no-nav-link')
                 this.curriculumLinks.classList.add('no-nav-link')
             }
         }

@@ -7,32 +7,85 @@
     @include atSmall {
         margin-top: 0.75rem;
     }
+
     & p {
         margin-top: 0.5rem;
         line-height: 1.7;
         font-size: 0.9rem;
     }
+
+    & .post-cats, & .post-tags,
+    & .page-categories, & .page-tags,
+    & .campus-locations, & .campus-subjects, & .campus-themes,
+    & .course-locations, & .course-subjects, & .course-themes,
+    & .event-locations, & .event-subjects, & .event-themes,
+    & .professor-collaborations, & .professor-locations, & .professor-subjects, & .professor-themes, & .professor-workflows,
+    & .program-locations, & .program-subjects, & .program-themes,
+    & .student-collaborations, & .student-subjects, & .student-themes, & .student-workflows {
+        color: $rustBrown;
+    }
+
+    .bread-parent {
+        color: 	$pageBreadCrumbColor;
+    }
+
+    & .program-subjects:after, & .program-themes:after {
+        content: none;   
+    }
+
+    & a + .program-subjects {
+        content: none;
+    }
+
     & a {
         text-decoration: none;
-        &:first-child {
-            color: $rustBrown;
+
+        &:after  {
+            content: ' • ';
         }
+        
         &:hover {
             text-decoration: underline;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        &:first-child:after, &:last-child:after {
+            content: none;
         }
     }
 }
 
-.breadcrumb,
-.breadcrumb {
+.post-cat-breadcrumb,
+.post-tag-breadcrumb,
+.campus-location-breadcrumb,
+.campus-subject-breadcrumb,
+.campus-theme-breadcrumb,
+.course-location-breadcrumb,
+.course-subject-breadcrumb,
+.course-theme-breadcrumb,
+.event-location-breadcrumb,
+.event-subject-breadcrumb,
+.event-theme-breadcrumb,
+.professor-collaboration-breadcrumb,
+.professor-location-breadcrumb,
+.professor-subject-breadcrumb,
+.professor-theme-breadcrumb,
+.professor-workflow-breadcrumb,
+.program-location-breadcrumb,
+.program-subject-breadcrumb,
+.program-theme-breadcrumb,
+.student-collaboration-breadcrumb,
+.student-subject-breadcrumb,
+.student-theme-breadcrumb,
+.student-workflow-breadcrumb {
     color: $breadCrumbColor;
     line-height: 1.7;
     font-size: 0.9rem;
     margin-bottom: 0;
-    margin-right: 0.75rem;
-    & .subject-taxonomy, & .theme-taxonomy {
-        color: $rustBrown;
-    }   
+    margin-right: 0.25rem;
 
     @include atSmall {
         margin-top: 0;
