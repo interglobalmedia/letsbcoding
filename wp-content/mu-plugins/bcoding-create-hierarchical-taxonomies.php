@@ -17,9 +17,7 @@
  */
 
 ?>
-
 <?php
-
 /**
  * Document Function
  * Register hierarchical taxonomies for custom post types
