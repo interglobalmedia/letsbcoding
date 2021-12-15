@@ -5796,85 +5796,128 @@ if (false) {}
 __webpack_require__.r(__webpack_exports__);
 class CommunityFooter {
   constructor() {
-    this.footerNavLinks = document.querySelectorAll(".footer-menu-link");
-    console.log(this.footerNavLinks[0]);
-    this.footerHandler();
+    this.footerNavLinksExplore = document.querySelectorAll(".footer-menu-link");
+    this.footerNavLinksLearn = document.querySelectorAll(".footer-menu-link-learn");
+    this.footerHandlerExplore();
+    this.footerHandlerLearn();
   }
 
-  footerHandler() {
-    for (let i = 0; i < this.footerNavLinks.length; i++) {
-      if (this.footerNavLinks[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/about-us`)) {
-        this.footerNavLinks[0].classList.add('no-footer-link');
-        this.footerNavLinks[3].classList.add('no-footer-link');
-        this.footerNavLinks[4].classList.add('no-footer-link');
-        this.footerNavLinks[5].classList.add('no-footer-link');
-        this.footerNavLinks[6].classList.add('no-footer-link');
+  footerHandlerExplore() {
+    for (let i = 0; i < this.footerNavLinksExplore.length; i++) {
+      if (this.footerNavLinksExplore[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/about-us`)) {
+        this.footerNavLinksExplore[0].classList.add('no-footer-link');
+        this.footerNavLinksExplore[3].classList.add('no-footer-link');
+        this.footerNavLinksExplore[4].classList.add('no-footer-link');
+        this.footerNavLinksExplore[5].classList.add('no-footer-link');
+        this.footerNavLinksExplore[6].classList.add('no-footer-link');
+        this.footerNavLinksExplore[7].classList.add('no-footer-link');
+        this.footerNavLinksExplore[8].classList.add('no-footer-link');
       }
 
-      if (this.footerNavLinks[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/programs`)) {
-        this.footerNavLinks[0].classList.add('no-footer-link');
-        this.footerNavLinks[3].classList.add('no-footer-link');
-        this.footerNavLinks[4].classList.add('no-footer-link');
-        this.footerNavLinks[5].classList.add('no-footer-link');
-        this.footerNavLinks[6].classList.add('no-footer-link');
+      if (this.footerNavLinksExplore[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/programs`)) {
+        this.footerNavLinksExplore[0].classList.add('no-footer-link');
+        this.footerNavLinksExplore[3].classList.add('no-footer-link');
+        this.footerNavLinksExplore[4].classList.add('no-footer-link');
+        this.footerNavLinksExplore[5].classList.add('no-footer-link');
+        this.footerNavLinksExplore[6].classList.add('no-footer-link');
+        this.footerNavLinksExplore[7].classList.add('no-footer-link');
+        this.footerNavLinksExplore[8].classList.add('no-footer-link');
       }
 
-      if (this.footerNavLinks[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/events`)) {
-        this.footerNavLinks[0].classList.add('no-footer-link');
-        this.footerNavLinks[3].classList.add('no-footer-link');
-        this.footerNavLinks[4].classList.add('no-footer-link');
-        this.footerNavLinks[5].classList.add('no-footer-link');
-        this.footerNavLinks[6].classList.add('no-footer-link');
+      if (this.footerNavLinksExplore[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/courses`)) {
+        this.footerNavLinksExplore[0].classList.add('no-footer-link');
+        this.footerNavLinksExplore[3].classList.add('no-footer-link');
+        this.footerNavLinksExplore[4].classList.add('no-footer-link');
+        this.footerNavLinksExplore[5].classList.add('no-footer-link');
+        this.footerNavLinksExplore[6].classList.add('no-footer-link');
+        this.footerNavLinksExplore[7].classList.add('no-footer-link');
+        this.footerNavLinksExplore[8].classList.add('no-footer-link');
       }
 
-      if (this.footerNavLinks[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/campuses`)) {
-        this.footerNavLinks[0].classList.add('no-footer-link');
-        this.footerNavLinks[3].classList.add('no-footer-link');
-        this.footerNavLinks[4].classList.add('no-footer-link');
-        this.footerNavLinks[5].classList.add('no-footer-link');
-        this.footerNavLinks[6].classList.add('no-footer-link');
+      if (this.footerNavLinksExplore[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/events`)) {
+        this.footerNavLinksExplore[0].classList.add('no-footer-link');
+        this.footerNavLinksExplore[3].classList.add('no-footer-link');
+        this.footerNavLinksExplore[4].classList.add('no-footer-link');
+        this.footerNavLinksExplore[5].classList.add('no-footer-link');
+        this.footerNavLinksExplore[6].classList.add('no-footer-link');
+        this.footerNavLinksExplore[7].classList.add('no-footer-link');
+        this.footerNavLinksExplore[8].classList.add('no-footer-link');
       }
 
-      if (this.footerNavLinks[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/student`)) {
-        this.footerNavLinks[0].classList.add('no-footer-link');
-        this.footerNavLinks[3].classList.add('no-footer-link');
-        this.footerNavLinks[4].classList.add('no-footer-link');
-        this.footerNavLinks[5].classList.add('no-footer-link');
-        this.footerNavLinks[6].classList.add('no-footer-link');
+      if (this.footerNavLinksExplore[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/campuses`)) {
+        this.footerNavLinksExplore[0].classList.add('no-footer-link');
+        this.footerNavLinksExplore[3].classList.add('no-footer-link');
+        this.footerNavLinksExplore[4].classList.add('no-footer-link');
+        this.footerNavLinksExplore[5].classList.add('no-footer-link');
+        this.footerNavLinksExplore[6].classList.add('no-footer-link');
+        this.footerNavLinksExplore[7].classList.add('no-footer-link');
+        this.footerNavLinksExplore[8].classList.add('no-footer-link');
       }
 
-      if (this.footerNavLinks[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/professor`)) {
-        this.footerNavLinks[0].classList.add('no-footer-link');
-        this.footerNavLinks[3].classList.add('no-footer-link');
-        this.footerNavLinks[4].classList.add('no-footer-link');
-        this.footerNavLinks[5].classList.add('no-footer-link');
-        this.footerNavLinks[6].classList.add('no-footer-link');
+      if (this.footerNavLinksExplore[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/student`)) {
+        this.footerNavLinksExplore[0].classList.add('no-footer-link');
+        this.footerNavLinksExplore[3].classList.add('no-footer-link');
+        this.footerNavLinksExplore[4].classList.add('no-footer-link');
+        this.footerNavLinksExplore[5].classList.add('no-footer-link');
+        this.footerNavLinksExplore[6].classList.add('no-footer-link');
+        this.footerNavLinksExplore[7].classList.add('no-footer-link');
+        this.footerNavLinksExplore[8].classList.add('no-footer-link');
       }
 
-      if (this.footerNavLinks[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/blog`)) {
-        this.footerNavLinks[0].classList.add('no-footer-link');
-        this.footerNavLinks[3].classList.add('no-footer-link');
-        this.footerNavLinks[4].classList.add('no-footer-link');
-        this.footerNavLinks[5].classList.add('no-footer-link');
-        this.footerNavLinks[6].classList.add('no-footer-link');
+      if (this.footerNavLinksExplore[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/professor`)) {
+        this.footerNavLinksExplore[0].classList.add('no-footer-link');
+        this.footerNavLinksExplore[3].classList.add('no-footer-link');
+        this.footerNavLinksExplore[4].classList.add('no-footer-link');
+        this.footerNavLinksExplore[5].classList.add('no-footer-link');
+        this.footerNavLinksExplore[6].classList.add('no-footer-link');
+        this.footerNavLinksExplore[7].classList.add('no-footer-link');
+        this.footerNavLinksExplore[8].classList.add('no-footer-link');
       }
 
-      if (this.footerNavLinks[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/20`)) {
-        this.footerNavLinks[0].classList.add('no-footer-link');
-        this.footerNavLinks[3].classList.add('no-footer-link');
-        this.footerNavLinks[4].classList.add('no-footer-link');
-        this.footerNavLinks[5].classList.add('no-footer-link');
-        this.footerNavLinks[6].classList.add('no-footer-link');
+      if (this.footerNavLinksExplore[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/blog`)) {
+        this.footerNavLinksExplore[0].classList.add('no-footer-link');
+        this.footerNavLinksExplore[3].classList.add('no-footer-link');
+        this.footerNavLinksExplore[4].classList.add('no-footer-link');
+        this.footerNavLinksExplore[5].classList.add('no-footer-link');
+        this.footerNavLinksExplore[6].classList.add('no-footer-link');
+        this.footerNavLinks[7].classList.add('no-footer-link');
+        this.footerNavLinks[8].classList.add('no-footer-link');
       }
 
-      if (this.footerNavLinks[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/members`)) {
-        this.footerNavLinks[1].classList.add('no-footer-link');
-        this.footerNavLinks[2].classList.add('no-footer-link');
+      if (this.footerNavLinksExplore[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/20`)) {
+        this.footerNavLinksExplore[0].classList.add('no-footer-link');
+        this.footerNavLinksExplore[3].classList.add('no-footer-link');
+        this.footerNavLinksExplore[4].classList.add('no-footer-link');
+        this.footerNavLinksExplore[5].classList.add('no-footer-link');
+        this.footerNavLinksExplore[6].classList.add('no-footer-link');
       }
 
-      if (this.footerNavLinks[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/groups`)) {
-        this.footerNavLinks[1].classList.add('no-footer-link');
-        this.footerNavLinks[2].classList.add('no-footer-link');
+      if (this.footerNavLinksExplore[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/members`)) {
+        this.footerNavLinksExplore[1].classList.add('no-footer-link');
+        this.footerNavLinksExplore[2].classList.add('no-footer-link');
+      }
+
+      if (this.footerNavLinksExplore[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/groups`)) {
+        this.footerNavLinksExplore[1].classList.add('no-footer-link');
+        this.footerNavLinksExplore[2].classList.add('no-footer-link');
+      }
+
+      if (this.footerNavLinksExplore[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/sitemap`)) {
+        this.footerNavLinksExplore[0].classList.add('no-footer-link');
+        this.footerNavLinksExplore[3].classList.add('no-footer-link');
+        this.footerNavLinksExplore[4].classList.add('no-footer-link');
+        this.footerNavLinksExplore[5].classList.add('no-footer-link');
+        this.footerNavLinksExplore[6].classList.add('no-footer-link');
+        this.footerNavLinksExplore[7].classList.add('no-footer-link');
+        this.footerNavLinksExplore[8].classList.add('no-footer-link');
+      }
+    }
+  }
+
+  footerHandlerLearn() {
+    for (let i = 0; i < this.footerNavLinksLearn.length; i++) {
+      if (this.footerNavLinksLearn[0] == document.URL || document.URL.includes(`${bcodingData.root_url}/sitemap`)) {
+        this.footerNavLinksLearn[0].classList.add('no-footer-link');
       }
     }
   }
@@ -5910,6 +5953,8 @@ class CommunityHeader {
         this.mainNavigationLinks[5].classList.add('no-nav-link');
         this.mainNavigationLinks[6].classList.add('no-nav-link');
         this.mainNavigationLinks[7].classList.add('no-nav-link');
+        this.mainNavigationLinks[8].classList.add('no-nav-link');
+        this.mainNavigationLinks[9].classList.add('no-nav-link');
         this.curriculumLinks.classList.add('no-nav-link');
       }
 
@@ -5920,6 +5965,8 @@ class CommunityHeader {
         this.mainNavigationLinks[5].classList.add('no-nav-link');
         this.mainNavigationLinks[6].classList.add('no-nav-link');
         this.mainNavigationLinks[7].classList.add('no-nav-link');
+        this.mainNavigationLinks[8].classList.add('no-nav-link');
+        this.mainNavigationLinks[9].classList.add('no-nav-link');
         this.curriculumLinks.classList.add('no-nav-link');
       }
     }
@@ -5985,55 +6032,43 @@ class HighlightLink {
     this.links = document.querySelectorAll('.menu-link');
     this.subCommunityLinks = document.querySelectorAll('ul.sub-nav-community li a');
     this.subCurriculumLinks = document.querySelectorAll('ul.sub-nav-curriculum li a');
-    this.curriculumLink = document.querySelector(".menu-link.nav-highlight-curriculum");
+    this.SubCurriculumLis = document.querySelectorAll('ul.sub-nav-curriculum li');
+    this.curriculumLink = document.querySelector('.menu-link.nav-highlight-curriculum');
     this.logoText = document.querySelector('.site-header h1 a');
     this.communityLinkHandler();
     this.curriculumLinkHandler();
+    this.mainNavLinkHandler();
   }
 
   communityLinkHandler() {
     for (let i = 0; i < this.links.length; i++) {
       if (this.links[1].href == document.URL || document.URL.includes(`${bcodingData.root_url}/members`)) {
         this.links[1].classList.add('active');
-      }
-
-      if (this.links[1].href == document.URL || document.URL.includes(`${bcodingData.root_url}/members`)) {
         this.subCommunityLinks[0].classList.add('active');
-      }
-
-      if (this.links[3].href == document.URL || document.URL.includes(`${bcodingData.root_url}/events`)) {
-        this.links[3].classList.add('current-menu-item');
       }
 
       if (this.links[1].href == document.URL || document.URL.includes(`/group`) || document.URL.includes(`/groups`)) {
         this.links[1].classList.add('active');
-      }
-
-      if (this.links[1].href == document.URL || document.URL.includes(`/group`) || document.URL.includes(`/groups`)) {
         this.subCommunityLinks[1].classList.add('active');
-      }
-
-      if (this.links[i].href == document.URL || document.URL.includes(`/student`) || document.URL.includes(`/professor`)) {
-        this.links[4].classList.add('active');
-      }
-
-      if (this.logoText.href == document.URL) {
-        this.logoText.classList.add('active');
       }
     }
   }
 
   curriculumLinkHandler() {
     for (let i = 0; i < this.links.length; i++) {
-      if (this.links[2].href == document.URL || document.URL.includes(`${bcodingData.root_url}/programs`)) {
+      if (this.links[i].href == document.URL || document.URL.includes(`/program`) || document.URL.includes(`/course`) || document.URL.includes(`/student`) || document.URL.includes(`/professor`)) {
         this.curriculumLink.classList.add('active');
-        this.subCurriculumLinks[0].classList.add('active');
       }
+    }
+  }
 
-      if (this.links[2].href == document.URL || document.URL.includes(`${bcodingData.root_url}/courses`)) {
-        this.curriculumLink.classList.add('active');
-        this.subCurriculumLinks[1].classList.add('active');
-      }
+  mainNavLinkHandler() {
+    if (this.logoText.href == document.URL) {
+      this.logoText.classList.add('active');
+    }
+
+    if (this.links[3].href == document.URL || document.URL.includes(`/event`)) {
+      this.curriculumLink.classList.remove('active');
     }
   }
 
@@ -6318,7 +6353,7 @@ class MyNotes {
   async updateNote(e) {
     const note = e.target.closest('li'); //saves new values for current note
 
-    const title = note.querySelector('input').value;
+    const title = note.querySelector('.note-title-field').value;
     const body = note.querySelector('textarea').value;
     this.noteValues[note.dataset.noteId] = {
       title: title,
@@ -6359,7 +6394,7 @@ class MyNotes {
         document.querySelector('.new-note-title').value = ``;
         document.querySelector('.new-note-body').value = ``;
         document.querySelector('#my-notes').insertAdjacentHTML("afterbegin", `<li data-note-id="${response.data.id}" class="fade-in-calc">
-                    <input readonly class="note-title-field" value="${response.data.title.raw}">
+                    <textarea readonly class="note-title-field" value="${response.data.title.raw}"></textarea>
                     <span class="edit-note"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</span>
                     <span class="delete-note"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</span>
                     <textarea readonly class="note-body-field">${response.data.content.raw}</textarea>
@@ -6542,6 +6577,11 @@ class Search {
                         ${results.programs.length ? `<ul class="link-list min-list">` : `<p>No programs match your search. <a href="${bcodingData.root_url}/programs">View all programs.</a><p>`}
                         ${results.programs.map(result => `<li><a href="${result.permalink}">${result.title}</a></li>`).join('')}    
                     ${results.programs.length ? `</ul>` : ``}
+
+                    <h2 class="search-overlay__section-title">Courses</h2>
+                        ${results.courses.length ? `<ul class="link-list min-list">` : `<p>No programs match your search. <a href="${bcodingData.root_url}/courses">View all courses.</a><p>`}
+                        ${results.courses.map(result => `<li><a href="${result.permalink}">${result.title}</a></li>`).join('')}    
+                    ${results.courses.length ? `</ul>` : ``}
 
                     <h2 class="search-overlay__section-title">Professors</h2>
                         ${results.professors.length ? `<ul class="professor-cards">` : `<p>No professors match your search.<p>`}
