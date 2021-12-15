@@ -96,6 +96,11 @@ class Search {
                         ${results.programs.map(result => `<li><a href="${result.permalink}">${result.title}</a></li>`).join('')}    
                     ${results.programs.length ? `</ul>` : ``}
 
+                    <h2 class="search-overlay__section-title">Courses</h2>
+                        ${results.courses.length ? `<ul class="link-list min-list">` : `<p>No programs match your search. <a href="${bcodingData.root_url}/courses">View all courses.</a><p>`}
+                        ${results.courses.map(result => `<li><a href="${result.permalink}">${result.title}</a></li>`).join('')}    
+                    ${results.courses.length ? `</ul>` : ``}
+
                     <h2 class="search-overlay__section-title">Professors</h2>
                         ${results.professors.length ? `<ul class="professor-cards">` : `<p>No professors match your search.<p>`}
                         ${results.professors.map(result => `
