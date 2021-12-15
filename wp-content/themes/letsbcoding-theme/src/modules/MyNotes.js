@@ -77,7 +77,7 @@ class MyNotes {
     async updateNote(e) {
         const note = e.target.closest('li')
         //saves new values for current note
-        const title = note.querySelector('input').value
+        const title = note.querySelector('.note-title-field').value
         const body = note.querySelector('textarea').value
         this.noteValues[note.dataset.noteId] = {
             title: title,
@@ -116,7 +116,7 @@ class MyNotes {
                 document.querySelector('.new-note-body').value = ``
                 document.querySelector('#my-notes').insertAdjacentHTML("afterbegin",
                 `<li data-note-id="${response.data.id}" class="fade-in-calc">
-                    <input readonly class="note-title-field" value="${response.data.title.raw}">
+                    <textarea readonly class="note-title-field" value="${response.data.title.raw}"></textarea>
                     <span class="edit-note"><i class="fa fa-pencil" aria-hidden="true"></i> Edit</span>
                     <span class="delete-note"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</span>
                     <textarea readonly class="note-body-field">${response.data.content.raw}</textarea>
