@@ -13,9 +13,6 @@
  * @return void
  */
 
-?>
-
-<?php
 /**
  * Function for registering custom post types
  */

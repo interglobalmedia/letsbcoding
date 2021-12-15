@@ -13,10 +13,6 @@
  * @return void
  */
 
-?>
-
-<?php
-
 /**
  * Create Breadcrumb functionality for categories
  **/

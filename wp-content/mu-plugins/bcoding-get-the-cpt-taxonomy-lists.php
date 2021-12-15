@@ -13,9 +13,6 @@
  * @return void
  */
 
-?>
-
-<?php
 /**
  * Get campus_locations custom taxonomy list
  **/

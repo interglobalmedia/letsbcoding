@@ -13,9 +13,6 @@
  * @return void
  */
 
-?>
-
-<?php
 /**
  * Get post category taxonomy list
  **/

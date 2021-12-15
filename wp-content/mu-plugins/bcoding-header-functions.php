@@ -13,9 +13,6 @@
  * @return void
  */
 
-?>
-
-<?php
 /**
  * Function for conditionally highlighting about us navigation link
  */
