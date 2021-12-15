@@ -1,6 +1,0 @@
-<?php get_header(); 
-  pageBanner(array(
-    'title' => 'All Students',
-    'subtitle' => 'A list of students attending LetsBCoding'
-  ));
-?>
