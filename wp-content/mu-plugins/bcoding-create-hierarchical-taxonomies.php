@@ -16,8 +16,7 @@
  */
 
 /**
- * Document Function
- * Register hierarchical taxonomies for custom post types
+ * Document Function registers hierarchical taxonomies for custom post types
  */
 function bcoding_create_hierarchical_taxonomies() {
 	/*
