@@ -343,6 +343,19 @@ function wpse28145_add_custom_types( $query ) {
 add_filter( 'pre_get_posts', 'wpse28145_add_custom_types' );
 
 /**
+ * Function for redirecting users to the home page after they have logged out
+ */
+function auto_redirect_after_logout() {
+	wp_safe_redirect( home_url() );
+	exit;
+}
+
+/**
+ * Redirect all accounts account out of admin and onto home page
+ */
+add_action( 'wp_logout', 'auto_redirect_after_logout' );
+
+/**
  * Function for redirecting subscribers to the home page so they are not redirected to the admin dashboard
  */
 function redirect_subs_home() {
@@ -361,6 +374,7 @@ function redirect_subs_home() {
  */
 add_action( 'admin_init', 'redirect_subs_home' );
 
+
 /**
  * Function so we can manipulate the generated HTML code for our tag cloud
  */
@@ -368,10 +382,10 @@ add_action( 'admin_init', 'redirect_subs_home' );
 /**
  * Parameter Document Comment
  *
- * @param string       $content stores a string containing the generated HTML of the tag cloud.
- * @param object array $tags stores an array of tags data (which is also an array containing various information about the tag).
- * @param object array $args stores an array of parameters for a tag cloud.
- * @return [function] $output
+ * @param string $content stores a string containing the generated HTML of the tag cloud.
+ * @param array  $tags stores an array of tags data (which is also an array containing various information about the tag).
+ * @param array  $args stores an array of parameters for a tag cloud.
+ * @return function $output.
  */
 function set_wp_generate_tag_cloud( $content, $tags, $args ) {
 	$count  = 0;
@@ -400,11 +414,11 @@ function subs_no_admin_bar() {
 		show_admin_bar( false );
 	}
 }
-
 /**
  *Hide admin bar from subscriber account
  */
 add_action( 'wp_loaded', 'subs_no_admin_bar' );
+
 /**
  * Function for customizing login go to home page instead of wp-admin dashboard
  */
@@ -491,27 +505,85 @@ add_filter( 'ai1wm_exclude_content_from_export', 'files_to_ignore' );
  * Function for removing tools in admin dashboard
  */
 function trim_admin_menu() {
-	global $current_user;
-	if ( ! current_user_can( 'administrator' ) ) {
+	if ( is_admin() && ! current_user_can( 'administrator' ) ) {
+		/* DASHBOARD */
+		remove_menu_page( 'index.php' );
+		remove_menu_page( 'about.php' );
+		remove_menu_page( 'edit-comments.php' );
+		remove_submenu_page( 'index.php', 'update-core.php' );
 		remove_menu_page( 'tools.php' ); // No tools for <= editors !
+		remove_menu_page( 'users.php' );
+		remove_menu_page( 'edit.php' ); // Posts !
+		remove_menu_page( 'profile.php' );
+		remove_menu_page( 'edit.php?post_type=course' );
+		remove_menu_page( 'edit.php?post_type=event' );
+		remove_menu_page( 'edit.php?post_type=like' );
+		remove_menu_page( 'edit.php?post_type=professor' );
+		remove_menu_page( 'edit.php?post_type=program' );
+		remove_menu_page( 'edit.php?post_type=slide' );
+		remove_menu_page( 'edit.php?post_type=student' );
+		remove_menu_page( 'edit.php?post_type=studentlike' );
 	}
 }
 add_action( 'admin_init', 'trim_admin_menu' );
 
 /**
- * Remove dashboard, WP logo, site name, and comments, and search links from admin-bar
+ * Function that removes Collapse Menu from the wp-admin menu
  */
-function letsbcoding_admin_bar_render() {
+function wpse_remove_collapse() {
+	if ( is_admin() && ! current_user_can( 'administrator' ) ) {
+		echo '<style type="text/css">#collapse-menu { display: none; visibility: hidden; }</style>';
+	}
+}
+add_action( 'admin_head', 'wpse_remove_collapse' );
+
+/**
+ * Remove WordPress logo and submenu, new content and comments in wp-admin bar on backend for all users except admin and remove comments if admin
+ */
+function admin_bar_remove_menu_items() {
 	global $wp_admin_bar;
-	if ( is_admin() && ! current_user_can( 'administrator' ) && ! wp_doing_ajax() ) {
+	if ( is_admin() && ! current_user_can( 'administrator' ) ) {
+		$wp_admin_bar->remove_menu( 'wp-logo' );
+		$wp_admin_bar->remove_menu( 'new-content' );
+		$wp_admin_bar->remove_menu( 'comments' );
+	}
+	if ( is_admin() && current_user_can( 'administrator' ) ) {
+		$wp_admin_bar->remove_menu( 'comments' );
+	}
+}
+add_action( 'wp_before_admin_bar_render', 'admin_bar_remove_menu_items' );
+
+/**
+ * Remove items in the appearance menu in wp-admin men area for admin user
+ */
+function remove_appearance_items() {
+	if ( is_admin() && current_user_can( 'administrator' ) ) {
+		remove_submenu_page( 'themes.php', 'widgets.php' );
+		remove_submenu_page( 'themes.php', 'nav-menus.php' );
+	}
+}
+add_action( 'admin_init', 'remove_appearance_items' );
+
+/**
+ * Remove dashboard, WP logo, site name, and comments from admin-bar on front end for everyone except admin user. Then remove comments, customize, wp-logo, widgets, and menus for admin user.
+ */
+function remove_admin_bar_items_frontend() {
+	global $wp_admin_bar;
+	if ( ! is_admin() && ! current_user_can( 'administrator' ) && ! wp_doing_ajax() ) {
 		$wp_admin_bar->remove_menu( 'dashboard' );
 		$wp_admin_bar->remove_menu( 'wp-logo' );
 		$wp_admin_bar->remove_menu( 'site-name' );
 		$wp_admin_bar->remove_menu( 'comments' );
-		$wp_admin_bar->remove_menu( 'search' );
+	}
+	if ( ! is_admin() && current_user_can( 'administrator' ) && ! wp_doing_ajax() ) {
+		$wp_admin_bar->remove_menu( 'comments' );
+		$wp_admin_bar->remove_node( 'customize' );
+		$wp_admin_bar->remove_menu( 'wp-logo' );
+		$wp_admin_bar->remove_menu( 'widgets' );
+		$wp_admin_bar->remove_menu( 'menus' );
 	}
 }
 
-add_action( 'wp_before_admin_bar_render', 'letsbcoding_admin_bar_render' );
+add_action( 'wp_before_admin_bar_render', 'remove_admin_bar_items_frontend' );
 
 ?>
