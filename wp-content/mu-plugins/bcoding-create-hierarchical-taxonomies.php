@@ -11,16 +11,11 @@
  *
  * @package WordPress
  * @subpackage LetsBcoding
- * @link https://www.interglobalmedianetwork.com
  * @since LetsBCoding 2.0.0
- * @return void
  */
 
-?>
-<?php
 /**
- * Document Function
- * Register hierarchical taxonomies for custom post types
+ * Document Function registers hierarchical taxonomies for custom post types
  */
 function bcoding_create_hierarchical_taxonomies() {
 	/*

@@ -16,10 +16,6 @@
  * @return void
  */
 
-?>
-
-<?php
-
 /**
  * Document function
  * Register nonhierarchical taxonomies for custom post types

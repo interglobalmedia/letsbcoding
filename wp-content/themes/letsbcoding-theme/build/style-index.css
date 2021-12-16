@@ -2261,6 +2261,11 @@ ul li.cat-item a {
   text-decoration: underline;
 }
 
+#collapse-menu {
+  display: none;
+  visibility: hidden;
+}
+
 .members-access-error {
   font-size: 1.15rem;
   margin-bottom: 1.5rem;

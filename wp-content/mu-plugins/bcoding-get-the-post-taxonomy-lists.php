@@ -10,12 +10,8 @@
  * @subpackage LetsBcoding
  * @link https://www.interglobalmedianetwork.com
  * @since LetsBCoding 2.0.0
- * @return void
  */
 
-?>
-
-<?php
 /**
  * Get post category taxonomy list
  **/

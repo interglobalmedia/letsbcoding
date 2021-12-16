@@ -16,9 +16,6 @@
  * @return void
  */
 
-?>
-
-<?php
 /**
  * Document Function
  * Register custom taxonomies for post types
