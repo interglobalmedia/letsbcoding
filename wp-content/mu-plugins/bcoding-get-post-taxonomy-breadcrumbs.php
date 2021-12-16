@@ -10,12 +10,7 @@
  * @subpackage LetsBcoding
  * @link https://www.interglobalmedianetwork.com
  * @since LetsBCoding 2.0.0
- * @return void
  */
-
-?>
-
-<?php
 
 /**
  * Create Breadcrumb functionality for categories
