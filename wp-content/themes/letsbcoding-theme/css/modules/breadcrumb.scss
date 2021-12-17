@@ -14,6 +14,7 @@
         font-size: 0.9rem;
     }
 
+    & .post-genres, & .post-labels,
     & .post-cats, & .post-tags,
     & .page-categories, & .page-tags,
     & .campus-locations, & .campus-subjects, & .campus-themes,
@@ -58,6 +59,8 @@
     }
 }
 
+.post-genre-breadcrumb,
+.post-label-breadcrumb,
 .post-cat-breadcrumb,
 .post-tag-breadcrumb,
 .campus-location-breadcrumb,
