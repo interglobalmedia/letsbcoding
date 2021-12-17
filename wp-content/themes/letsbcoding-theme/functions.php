@@ -1,6 +1,6 @@
 <?php
 /**
- * Functions and definitions
+ * Functions and their definitions
  *
  * Main functions file for letsBCoding theme
  *
