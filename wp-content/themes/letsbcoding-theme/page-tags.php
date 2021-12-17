@@ -18,7 +18,7 @@ get_header();
 page_banner(
 	array(
 		'title'    => 'All Tags',
-		'subtitle' => 'A tag cloud of all site tags',
+		'subtitle' => 'A tag cloud of all site tags.',
 	)
 );
 ?>

@@ -16,14 +16,14 @@
         }
     }
 }
-
+.post-genre-cloud, .post-label-cloud,
 .collaboration-tag-cloud, .location-tag-cloud, .subject-tag-cloud, .theme-tag-cloud, .workflow-tag-cloud {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     list-style-type: none;
     margin: 2rem auto 0;
-    & .collaboration-tag, & .location-tag, & .subject-tag, & .theme-tag, & .workflow-tag {
+    & .collaboration-tag, & .location-tag, & .subject-tag, & .theme-tag, & .workflow-tag, .post-genre-taxonomy, .post-label-taxonomy {
         margin: 0.5rem 1rem;
         & a {
             font-size: 1.2rem;
