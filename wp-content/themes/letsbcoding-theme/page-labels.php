@@ -11,9 +11,6 @@
  * @since LetsBCoding 2.0.0
  */
 
-?>
-
-<?php
 get_header();
 page_banner(
 	array(
