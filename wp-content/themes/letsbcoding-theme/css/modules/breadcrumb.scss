@@ -1,11 +1,11 @@
 .breadcrumb-wrapper {
-    margin-top: 2.5rem;
+    margin-top: 4rem;
     margin-bottom: 2.5rem;
     display: flex;
     flex-wrap: wrap;
 
     @include atSmall {
-        margin-top: 0.75rem;
+        margin-top: 2rem;
     }
 
     & p {
