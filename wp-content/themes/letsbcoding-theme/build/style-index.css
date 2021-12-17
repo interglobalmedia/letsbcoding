@@ -2094,7 +2094,7 @@ body.admin-bar .search-overlay {
   line-height: 1.7;
   font-size: 0.9rem;
 }
-.breadcrumb-wrapper .post-cats, .breadcrumb-wrapper .post-tags, .breadcrumb-wrapper .page-categories, .breadcrumb-wrapper .page-tags, .breadcrumb-wrapper .campus-locations, .breadcrumb-wrapper .campus-subjects, .breadcrumb-wrapper .campus-themes, .breadcrumb-wrapper .course-locations, .breadcrumb-wrapper .course-subjects, .breadcrumb-wrapper .course-themes, .breadcrumb-wrapper .event-locations, .breadcrumb-wrapper .event-subjects, .breadcrumb-wrapper .event-themes, .breadcrumb-wrapper .professor-collaborations, .breadcrumb-wrapper .professor-locations, .breadcrumb-wrapper .professor-subjects, .breadcrumb-wrapper .professor-themes, .breadcrumb-wrapper .professor-workflows, .breadcrumb-wrapper .program-locations, .breadcrumb-wrapper .program-subjects, .breadcrumb-wrapper .program-themes, .breadcrumb-wrapper .student-collaborations, .breadcrumb-wrapper .student-subjects, .breadcrumb-wrapper .student-themes, .breadcrumb-wrapper .student-workflows {
+.breadcrumb-wrapper .post-genres, .breadcrumb-wrapper .post-labels, .breadcrumb-wrapper .post-cats, .breadcrumb-wrapper .post-tags, .breadcrumb-wrapper .page-categories, .breadcrumb-wrapper .page-tags, .breadcrumb-wrapper .campus-locations, .breadcrumb-wrapper .campus-subjects, .breadcrumb-wrapper .campus-themes, .breadcrumb-wrapper .course-locations, .breadcrumb-wrapper .course-subjects, .breadcrumb-wrapper .course-themes, .breadcrumb-wrapper .event-locations, .breadcrumb-wrapper .event-subjects, .breadcrumb-wrapper .event-themes, .breadcrumb-wrapper .professor-collaborations, .breadcrumb-wrapper .professor-locations, .breadcrumb-wrapper .professor-subjects, .breadcrumb-wrapper .professor-themes, .breadcrumb-wrapper .professor-workflows, .breadcrumb-wrapper .program-locations, .breadcrumb-wrapper .program-subjects, .breadcrumb-wrapper .program-themes, .breadcrumb-wrapper .student-collaborations, .breadcrumb-wrapper .student-subjects, .breadcrumb-wrapper .student-themes, .breadcrumb-wrapper .student-workflows {
   color: #8b4726;
 }
 .breadcrumb-wrapper .bread-parent {
@@ -2122,6 +2122,8 @@ body.admin-bar .search-overlay {
   content: none;
 }
 
+.post-genre-breadcrumb,
+.post-label-breadcrumb,
 .post-cat-breadcrumb,
 .post-tag-breadcrumb,
 .campus-location-breadcrumb,
@@ -2152,7 +2154,9 @@ body.admin-bar .search-overlay {
   margin-right: 0.25rem;
 }
 @media (min-width: 530px) {
-  .post-cat-breadcrumb,
+  .post-genre-breadcrumb,
+.post-label-breadcrumb,
+.post-cat-breadcrumb,
 .post-tag-breadcrumb,
 .campus-location-breadcrumb,
 .campus-subject-breadcrumb,
@@ -2243,6 +2247,7 @@ ul li.cat-item a {
   text-decoration: underline;
 }
 
+.post-genre-cloud, .post-label-cloud,
 .collaboration-tag-cloud, .location-tag-cloud, .subject-tag-cloud, .theme-tag-cloud, .workflow-tag-cloud {
   display: flex;
   flex-wrap: wrap;
@@ -2250,14 +2255,35 @@ ul li.cat-item a {
   list-style-type: none;
   margin: 2rem auto 0;
 }
-.collaboration-tag-cloud .collaboration-tag, .collaboration-tag-cloud .location-tag, .collaboration-tag-cloud .subject-tag, .collaboration-tag-cloud .theme-tag, .collaboration-tag-cloud .workflow-tag, .location-tag-cloud .collaboration-tag, .location-tag-cloud .location-tag, .location-tag-cloud .subject-tag, .location-tag-cloud .theme-tag, .location-tag-cloud .workflow-tag, .subject-tag-cloud .collaboration-tag, .subject-tag-cloud .location-tag, .subject-tag-cloud .subject-tag, .subject-tag-cloud .theme-tag, .subject-tag-cloud .workflow-tag, .theme-tag-cloud .collaboration-tag, .theme-tag-cloud .location-tag, .theme-tag-cloud .subject-tag, .theme-tag-cloud .theme-tag, .theme-tag-cloud .workflow-tag, .workflow-tag-cloud .collaboration-tag, .workflow-tag-cloud .location-tag, .workflow-tag-cloud .subject-tag, .workflow-tag-cloud .theme-tag, .workflow-tag-cloud .workflow-tag {
+.post-genre-cloud .collaboration-tag, .post-genre-cloud .location-tag, .post-genre-cloud .subject-tag, .post-genre-cloud .theme-tag, .post-genre-cloud .workflow-tag, .post-genre-cloud .post-genre-taxonomy, .post-genre-cloud .post-label-taxonomy, .post-label-cloud .collaboration-tag, .post-label-cloud .location-tag, .post-label-cloud .subject-tag, .post-label-cloud .theme-tag, .post-label-cloud .workflow-tag, .post-label-cloud .post-genre-taxonomy, .post-label-cloud .post-label-taxonomy,
+.collaboration-tag-cloud .collaboration-tag,
+.collaboration-tag-cloud .location-tag,
+.collaboration-tag-cloud .subject-tag,
+.collaboration-tag-cloud .theme-tag,
+.collaboration-tag-cloud .workflow-tag,
+.collaboration-tag-cloud .post-genre-taxonomy,
+.collaboration-tag-cloud .post-label-taxonomy, .location-tag-cloud .collaboration-tag, .location-tag-cloud .location-tag, .location-tag-cloud .subject-tag, .location-tag-cloud .theme-tag, .location-tag-cloud .workflow-tag, .location-tag-cloud .post-genre-taxonomy, .location-tag-cloud .post-label-taxonomy, .subject-tag-cloud .collaboration-tag, .subject-tag-cloud .location-tag, .subject-tag-cloud .subject-tag, .subject-tag-cloud .theme-tag, .subject-tag-cloud .workflow-tag, .subject-tag-cloud .post-genre-taxonomy, .subject-tag-cloud .post-label-taxonomy, .theme-tag-cloud .collaboration-tag, .theme-tag-cloud .location-tag, .theme-tag-cloud .subject-tag, .theme-tag-cloud .theme-tag, .theme-tag-cloud .workflow-tag, .theme-tag-cloud .post-genre-taxonomy, .theme-tag-cloud .post-label-taxonomy, .workflow-tag-cloud .collaboration-tag, .workflow-tag-cloud .location-tag, .workflow-tag-cloud .subject-tag, .workflow-tag-cloud .theme-tag, .workflow-tag-cloud .workflow-tag, .workflow-tag-cloud .post-genre-taxonomy, .workflow-tag-cloud .post-label-taxonomy {
   margin: 0.5rem 1rem;
 }
-.collaboration-tag-cloud .collaboration-tag a, .collaboration-tag-cloud .location-tag a, .collaboration-tag-cloud .subject-tag a, .collaboration-tag-cloud .theme-tag a, .collaboration-tag-cloud .workflow-tag a, .location-tag-cloud .collaboration-tag a, .location-tag-cloud .location-tag a, .location-tag-cloud .subject-tag a, .location-tag-cloud .theme-tag a, .location-tag-cloud .workflow-tag a, .subject-tag-cloud .collaboration-tag a, .subject-tag-cloud .location-tag a, .subject-tag-cloud .subject-tag a, .subject-tag-cloud .theme-tag a, .subject-tag-cloud .workflow-tag a, .theme-tag-cloud .collaboration-tag a, .theme-tag-cloud .location-tag a, .theme-tag-cloud .subject-tag a, .theme-tag-cloud .theme-tag a, .theme-tag-cloud .workflow-tag a, .workflow-tag-cloud .collaboration-tag a, .workflow-tag-cloud .location-tag a, .workflow-tag-cloud .subject-tag a, .workflow-tag-cloud .theme-tag a, .workflow-tag-cloud .workflow-tag a {
+.post-genre-cloud .collaboration-tag a, .post-genre-cloud .location-tag a, .post-genre-cloud .subject-tag a, .post-genre-cloud .theme-tag a, .post-genre-cloud .workflow-tag a, .post-genre-cloud .post-genre-taxonomy a, .post-genre-cloud .post-label-taxonomy a, .post-label-cloud .collaboration-tag a, .post-label-cloud .location-tag a, .post-label-cloud .subject-tag a, .post-label-cloud .theme-tag a, .post-label-cloud .workflow-tag a, .post-label-cloud .post-genre-taxonomy a, .post-label-cloud .post-label-taxonomy a,
+.collaboration-tag-cloud .collaboration-tag a,
+.collaboration-tag-cloud .location-tag a,
+.collaboration-tag-cloud .subject-tag a,
+.collaboration-tag-cloud .theme-tag a,
+.collaboration-tag-cloud .workflow-tag a,
+.collaboration-tag-cloud .post-genre-taxonomy a,
+.collaboration-tag-cloud .post-label-taxonomy a, .location-tag-cloud .collaboration-tag a, .location-tag-cloud .location-tag a, .location-tag-cloud .subject-tag a, .location-tag-cloud .theme-tag a, .location-tag-cloud .workflow-tag a, .location-tag-cloud .post-genre-taxonomy a, .location-tag-cloud .post-label-taxonomy a, .subject-tag-cloud .collaboration-tag a, .subject-tag-cloud .location-tag a, .subject-tag-cloud .subject-tag a, .subject-tag-cloud .theme-tag a, .subject-tag-cloud .workflow-tag a, .subject-tag-cloud .post-genre-taxonomy a, .subject-tag-cloud .post-label-taxonomy a, .theme-tag-cloud .collaboration-tag a, .theme-tag-cloud .location-tag a, .theme-tag-cloud .subject-tag a, .theme-tag-cloud .theme-tag a, .theme-tag-cloud .workflow-tag a, .theme-tag-cloud .post-genre-taxonomy a, .theme-tag-cloud .post-label-taxonomy a, .workflow-tag-cloud .collaboration-tag a, .workflow-tag-cloud .location-tag a, .workflow-tag-cloud .subject-tag a, .workflow-tag-cloud .theme-tag a, .workflow-tag-cloud .workflow-tag a, .workflow-tag-cloud .post-genre-taxonomy a, .workflow-tag-cloud .post-label-taxonomy a {
   font-size: 1.2rem;
   text-decoration: none;
 }
-.collaboration-tag-cloud .collaboration-tag a:hover, .collaboration-tag-cloud .location-tag a:hover, .collaboration-tag-cloud .subject-tag a:hover, .collaboration-tag-cloud .theme-tag a:hover, .collaboration-tag-cloud .workflow-tag a:hover, .location-tag-cloud .collaboration-tag a:hover, .location-tag-cloud .location-tag a:hover, .location-tag-cloud .subject-tag a:hover, .location-tag-cloud .theme-tag a:hover, .location-tag-cloud .workflow-tag a:hover, .subject-tag-cloud .collaboration-tag a:hover, .subject-tag-cloud .location-tag a:hover, .subject-tag-cloud .subject-tag a:hover, .subject-tag-cloud .theme-tag a:hover, .subject-tag-cloud .workflow-tag a:hover, .theme-tag-cloud .collaboration-tag a:hover, .theme-tag-cloud .location-tag a:hover, .theme-tag-cloud .subject-tag a:hover, .theme-tag-cloud .theme-tag a:hover, .theme-tag-cloud .workflow-tag a:hover, .workflow-tag-cloud .collaboration-tag a:hover, .workflow-tag-cloud .location-tag a:hover, .workflow-tag-cloud .subject-tag a:hover, .workflow-tag-cloud .theme-tag a:hover, .workflow-tag-cloud .workflow-tag a:hover {
+.post-genre-cloud .collaboration-tag a:hover, .post-genre-cloud .location-tag a:hover, .post-genre-cloud .subject-tag a:hover, .post-genre-cloud .theme-tag a:hover, .post-genre-cloud .workflow-tag a:hover, .post-genre-cloud .post-genre-taxonomy a:hover, .post-genre-cloud .post-label-taxonomy a:hover, .post-label-cloud .collaboration-tag a:hover, .post-label-cloud .location-tag a:hover, .post-label-cloud .subject-tag a:hover, .post-label-cloud .theme-tag a:hover, .post-label-cloud .workflow-tag a:hover, .post-label-cloud .post-genre-taxonomy a:hover, .post-label-cloud .post-label-taxonomy a:hover,
+.collaboration-tag-cloud .collaboration-tag a:hover,
+.collaboration-tag-cloud .location-tag a:hover,
+.collaboration-tag-cloud .subject-tag a:hover,
+.collaboration-tag-cloud .theme-tag a:hover,
+.collaboration-tag-cloud .workflow-tag a:hover,
+.collaboration-tag-cloud .post-genre-taxonomy a:hover,
+.collaboration-tag-cloud .post-label-taxonomy a:hover, .location-tag-cloud .collaboration-tag a:hover, .location-tag-cloud .location-tag a:hover, .location-tag-cloud .subject-tag a:hover, .location-tag-cloud .theme-tag a:hover, .location-tag-cloud .workflow-tag a:hover, .location-tag-cloud .post-genre-taxonomy a:hover, .location-tag-cloud .post-label-taxonomy a:hover, .subject-tag-cloud .collaboration-tag a:hover, .subject-tag-cloud .location-tag a:hover, .subject-tag-cloud .subject-tag a:hover, .subject-tag-cloud .theme-tag a:hover, .subject-tag-cloud .workflow-tag a:hover, .subject-tag-cloud .post-genre-taxonomy a:hover, .subject-tag-cloud .post-label-taxonomy a:hover, .theme-tag-cloud .collaboration-tag a:hover, .theme-tag-cloud .location-tag a:hover, .theme-tag-cloud .subject-tag a:hover, .theme-tag-cloud .theme-tag a:hover, .theme-tag-cloud .workflow-tag a:hover, .theme-tag-cloud .post-genre-taxonomy a:hover, .theme-tag-cloud .post-label-taxonomy a:hover, .workflow-tag-cloud .collaboration-tag a:hover, .workflow-tag-cloud .location-tag a:hover, .workflow-tag-cloud .subject-tag a:hover, .workflow-tag-cloud .theme-tag a:hover, .workflow-tag-cloud .workflow-tag a:hover, .workflow-tag-cloud .post-genre-taxonomy a:hover, .workflow-tag-cloud .post-label-taxonomy a:hover {
   text-decoration: underline;
 }
 
