@@ -57,6 +57,11 @@ function bcoding_create_posts_custom_taxonomies() {
 		'rewrite'               => array(
 			'slug' => 'genre',
 		),
+		'default_term'          => array(
+			'name'        => 'LetsBCoding Post Genre',
+			'slug'        => 'bcoding-post-genre',
+			'description' => 'The default post genre taxonomy applied to posts when no post genre taxonomy has been added.',
+		),
 	);
 	register_taxonomy(
 		'genre', // taxonomy !
@@ -98,6 +103,11 @@ function bcoding_create_posts_custom_taxonomies() {
 		'query_var'             => true,
 		'rewrite'               => array(
 			'slug' => 'label',
+		),
+		'default_term'          => array(
+			'name'        => 'LetsBCoding Post Label',
+			'slug'        => 'bcoding-post-label',
+			'description' => 'The default post label taxonomy applied to posts when no post label taxonomy has been added.',
 		),
 	);
 	register_taxonomy(
