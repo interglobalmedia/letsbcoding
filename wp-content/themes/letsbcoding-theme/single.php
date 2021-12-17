@@ -50,6 +50,8 @@ while ( have_posts() ) {
 		<div class="breadcrumb-wrapper">
 			<span class="post-cat-breadcrumb"><?php bcoding_get_cat_breadcrumb(); ?></span>
 			<span class="post-tag-breadcrumb"><?php bcoding_get_tag_breadcrumb(); ?></span>
+			<span class="post-genre-breadcrumb"><?php bcoding_get_post_genre_breadcrumb(); ?></span>
+			<span class="post-label-breadcrumb"><?php bcoding_get_post_label_breadcrumb(); ?></span>
 		</div>
 		<div class="generic-content">
 			<?php

@@ -1,6 +1,6 @@
 <?php
 /**
- * Functions and definitions
+ * Functions and their definitions
  *
  * Main functions file for letsBCoding theme
  *
@@ -210,7 +210,7 @@ function set_archive_taxonomy_on_publish( $post_id, $post ) {
 	// phpcs:disable WordPress.PHP.StrictComparisons.LooseComparison
 	if ( 'post' == $post->post_type
 	&& 'publish' == $post->post_status ) {
-		wp_set_post_tags( $post_id, $category_id, true );
+		wp_set_post_tags( $post_id, 'LetsBCoding Post Tag', true );
 	}
 	if ( 'campus' == $post->post_type
 		&& 'publish' == $post->post_status ) {
