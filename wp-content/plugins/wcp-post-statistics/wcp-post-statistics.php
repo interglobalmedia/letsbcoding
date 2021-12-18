@@ -109,7 +109,7 @@ class WordCountAndTimePlugin {
 				'wcp-post-statistics'
 			)
 			// phpcs:disable WordPress.WP.I18n.NonSingularStringLiteralText
-			. ' ' . esc_html__( round( $word_count / 225 ), 'wcp-post-statistics' ) . ' ' . esc_html__( 'minute(s)', 'wcp-post-statistics' ) . '<br>';
+			. ' ' . round( $word_count / 225 ) . ' ' . esc_html__( 'minute(s)', 'wcp-post-statistics' ) . '<br>';
 		}
 
 		$html .= '</p>';

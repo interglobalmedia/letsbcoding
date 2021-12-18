@@ -23,7 +23,6 @@ function bcoding_get_cat_breadcrumb() {
 		bcoding_get_the_cat_list();
 		if ( is_single() ) {
 			echo wp_kses_post( ' &nbsp;&nbsp;&#187;&nbsp;&nbsp; ' );
-			// echo esc_html( get_the_title() );
 		}
 	} elseif ( is_page() ) {
 		echo wp_kses_post( ' &nbsp;&nbsp;&#187;&nbsp;&nbsp; ' );
