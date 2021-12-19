@@ -1669,8 +1669,7 @@ body.admin-bar .search-overlay {
 .generic-content .wp-block-code code {
   background: #ccc;
   padding: 10px 15px;
-  overflow: auto;
-  height: 4.38rem;
+  overflow-x: scroll;
 }
 .generic-content code {
   color: #ff357c;
