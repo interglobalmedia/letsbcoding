@@ -1667,15 +1667,16 @@ body.admin-bar .search-overlay {
   text-decoration: underline;
 }
 .generic-content .wp-block-code code {
-  background: #ccc;
   padding: 10px 15px;
   overflow-x: scroll;
+  font-size: 1.25rem;
 }
 .generic-content code {
   color: #ff357c;
   font-size: 0.9rem;
   margin: 0;
   padding: 0;
+  font-size: 1.25rem;
 }
 .generic-content h1,
 .generic-content h2,
