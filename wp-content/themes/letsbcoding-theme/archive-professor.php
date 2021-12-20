@@ -1,6 +1,6 @@
 <?php
 /**
- * Template for professors content in the LetsBCoding Theme.
+ * Template for the list of professor posts content in the LetsBCoding Theme.
  *
  * @author Maria D. Campbell interglobalmedia@interglobalmedianetwork.com
  * @copyright Copyright (c) 2021 Maria D. Campbell
